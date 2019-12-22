@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "alias": "nclayton-CGC",
+    "name": "clayton-game-corner",
+    "routes": [
+        { "handle": "filesystem" },
+        {
+            "src": "^/static/(.*)",
+            "dest": "/static/$1"
+        },
+        {
+            "src": "/.*",
+            "dest": "/index.html"
+        }
+    ]
+}

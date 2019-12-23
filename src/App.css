@@ -1,0 +1,68 @@
+img {
+    width: 200px;
+    height: 200px;
+}
+
+main {
+    margin-bottom: 150px;
+}
+
+nav {
+    background-color: white;
+}
+
+article,
+section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    border: 1px solid black;
+    width: fit-content;
+    margin: 80px auto;
+    padding: 15px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    display: flex;
+    width: 100%;
+    background-color: white;
+}
+
+h2,
+h1 {
+    font-size: 22px;
+    text-align: center;
+}
+
+h3 {
+    margin: 20px auto;
+    text-align: center;
+}
+
+footer address {
+    margin: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+form textarea {
+    height: 150px;
+}
+
+button {
+    border: 1px solid black;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    margin: 40px auto 20px;
+}

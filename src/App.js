@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch,Route} from 'react-router-dom';
+import {Switch,Route,withRouter} from 'react-router-dom';
 import Context from './Context';
 import LandingPage from './Components/LandingPage';
 import PublicOnlyRoute from './Utils/PublicOnlyRoute';
@@ -17,16 +17,16 @@ class App extends React.Component {
   render(){
   return (
     <main className='App'>
-    <Header/>
-    <Nav/>
-     <Switch>
+        <Header/>
+        <Nav/>
+        <Switch>
           <Route exact path='/' component={LandingPage}/>
           <PublicOnlyRoute path='/game/review/tabletop' component={TabletopGameReview}/>
           <PublicOnlyRoute path='/game/review/video' component={VideoGameReview}/>
           <PublicOnlyRoute path='/game/upcoming' component={UpcomingGame}/>
           <Route component={NotFound}/>
           <PublicOnlyRoute component={UpcomingGameInfo}/>
-      </Switch>
+          </Switch>
       <Footer/>
     </main>
   ); 
@@ -34,4 +34,4 @@ class App extends React.Component {
  
 }
 
-export default App;
+export default withRouter(App);

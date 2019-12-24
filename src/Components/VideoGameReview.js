@@ -1,5 +1,6 @@
 import React from 'react';
 import Review from './Review';
+import Pagination from './Pagination';
 
 class VideoGameReview extends React.Component{
     render(){
@@ -7,6 +8,7 @@ class VideoGameReview extends React.Component{
             <>
                 <h2>Tabletop Game Review</h2>
                 <Review/>
+                <Pagination/>
             </>)
     }
 }

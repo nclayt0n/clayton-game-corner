@@ -1,5 +1,6 @@
 import React from 'react';
 import AdminReview from './AdminReview';
+import Pagination from '../Components/Pagination';
 
 class AdminReviewList extends React.Component{
     render(){
@@ -27,6 +28,7 @@ class AdminReviewList extends React.Component{
 
             <h2>Review List</h2>
             <AdminReview/> 
+            <Pagination/>
         </>)
     }
 }

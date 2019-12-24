@@ -1,5 +1,6 @@
 import React from 'react';
 import AdminUpcomingGame from './AdminUpcomingGame';
+import Pagination from '../Components/Pagination';
 
 class AdminUpcomingGameList extends React.Component{
     render(){
@@ -21,6 +22,7 @@ class AdminUpcomingGameList extends React.Component{
             </section>
             <h2>Upcoming Game List</h2>
             <AdminUpcomingGame/> 
+            <Pagination/>
         </>)
     }
 }

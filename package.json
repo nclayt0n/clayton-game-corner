@@ -3,15 +3,19 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "acorn": "^6.4.0",
         "dotenv": "^8.2.0",
         "jest": "^24.9.0",
         "npm-check-updates": "^4.0.1",
         "react": "^16.11.0",
         "react-dom": "^16.11.0",
+        "react-dropzone-component": "^3.2.0",
+        "react-file-uploader": "^1.0.0",
         "react-redux": "^7.1.3",
         "react-scripts": "3.3.0",
         "react-test-renderer": "^16.11.0",
-        "watchman": "^1.0.0"
+        "watchman": "^1.0.0",
+        "xcode": "^2.1.0"
     },
     "scripts": {
         "start": "react-scripts start",

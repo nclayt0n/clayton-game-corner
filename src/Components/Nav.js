@@ -52,7 +52,7 @@ class Nav extends React.Component{
                 </li>
                 <li>
                     <Link to={'/admin/game/review-list'}>
-                        Video Game Review
+                        Game Review
                     </Link>
                 </li>
                 <li>

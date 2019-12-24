@@ -2,7 +2,7 @@ import React from 'react';
 import {Switch} from 'react-router-dom';
 import TabletopGameReview from './TabletopGameReviews';
 import VideoGameReview from './VideoGameReview';
-import UpcomingGame from './UpcomingGame';
+import UpcomingGameList from './UpcomingGameList';
 import NotFound from './NotFound.js';
 import logo from '../images/largelogo.png'
 
@@ -19,7 +19,7 @@ class LandingPage extends React.Component{
                     </section>
                     <TabletopGameReview/>
                     <VideoGameReview/>
-                    <UpcomingGame/>
+                    <UpcomingGameList/>
                     <NotFound/>
                 </Switch>
             </div>

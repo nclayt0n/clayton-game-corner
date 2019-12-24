@@ -18,11 +18,11 @@ class Nav extends React.Component{
     render(){
         return(
         <>
-        {/* <nav className='nav-main'>
+        <nav className='nav-main'>
             <button  
                 type='button'
                 className='btn-toggle-nav'></button>
-        </nav> */}
+        </nav>
         <aside className='nav-sidebar'>
             <ul className='navPageLinks'>
                 <li>
@@ -43,6 +43,21 @@ class Nav extends React.Component{
                 <li>
                     <Link to={'/game/upcoming'}>
                         Upcoming Game        
+                    </Link>
+                </li>
+                <li>
+                    <Link to={`/admin`}>
+                        Admin Home
+                    </Link>
+                </li>
+                <li>
+                    <Link to={'/admin/game/review-list'}>
+                        Video Game Review
+                    </Link>
+                </li>
+                <li>
+                    <Link to={'/admin/game/upcoming-list'}>
+                        Admin Upcoming Game
                     </Link>
                 </li>
             </ul> 

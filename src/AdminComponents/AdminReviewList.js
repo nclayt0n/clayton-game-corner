@@ -3,9 +3,10 @@ import AdminReview from './AdminReview';
 import Pagination from '../Components/Pagination';
 import { Receiver, UploadManager,UploadHandler } from 'react-file-uploader';
 import ReactDOM from 'react-dom';
+
 import DropzoneComponent from 'react-dropzone-component';
 import '../../node_modules/dropzone/dist/min/dropzone.min.css';
-
+let ReactDOMServer = require('react-dom/server');
 class AdminReviewList extends React.Component{
     
     render(){
@@ -21,33 +22,43 @@ function removeFile () {
     }
 }
         let componentConfig = { postUrl: '/uploadHandler' };
-        let djsConfig = { autoProcessQueue: false };
-        let eventHandlers = { addedfile: (file) => console.log(file) };
+        let djsConfig = { autoProcessQueue: false,addRemoveLinks: true, maxfilesexceeded: 5,maxfilesreached: 5, };
+        let eventHandlers = { 
+            maxfilesexceeded: 5,maxfilesreached: 5, addedfile: (file) => console.log(file) };
         return(
         <>
-            <h2>Add Game Review</h2>
             <section>
                 <form>
+                <fieldset>
+                    <legend>Add Game Review</legend>
                     <label>Title: 
-                        <input type="text"/></label>
+                        <input type="text"/>
+                    </label><br/>
                     <label>Review: <br/>
                         <textarea placeholder='add review here'></textarea>
-                    </label>
+                    </label><br/>
                     <label>Link to Buy: 
                         <input type="url"/>
-                    </label>
+                    </label><br/>
                     <select>
                         <option >Type</option>
                         <option value='video'>Video</option>
                         <option value='tabletop'>Tabletop</option>
                     </select>
+                    <fieldset>
+                        <legend> Images (max. 5):</legend>
+                            <DropzoneComponent 
+                                config={componentConfig}
+                                eventHandlers={eventHandlers}
+                                djsConfig={djsConfig} />
+                                <button data-dz-remove >Cancel</button>
+                        
+                    </fieldset>
+                </fieldset>
                 </form>
                 <button>Add Review</button>
             </section>
-            <DropzoneComponent config={componentConfig}
-                       eventHandlers={eventHandlers}
-                       djsConfig={djsConfig} />
-                       <img src="/removebutton.png" alt="Click me to remove the file." data-dz-remove />
+            
 
             {/* <Receiver
                 customClass={'addReview'}

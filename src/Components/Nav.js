@@ -8,12 +8,6 @@ class Nav extends React.Component{
             clicked:false
         };
     }
-    // navStyles=()=>{
-    //     if(this.state.clicked===false){this.setState({clicked:true});
-    // }
-    //     if(this.state.clicked===true){this.setState({clicked:false});
-    // }
-    // };
     
     render(){
         return(
@@ -52,7 +46,7 @@ class Nav extends React.Component{
                 </li>
                 <li>
                     <Link to={'/admin/game/review-list'}>
-                        Game Review
+                       Admin Game Review
                     </Link>
                 </li>
                 <li>

@@ -12,19 +12,19 @@ class AdminReviewList extends React.Component{
     render(){
         var myDropzone;
 
-function initCallback (dropzone) {
-    myDropzone = dropzone;
-}
+        function initCallback (dropzone) {
+            myDropzone = dropzone;
+        }
 
-function removeFile () {
-    if (myDropzone) {
-        myDropzone.removeFile();
-    }
-}
+        function removeFile () {
+            if (myDropzone) {
+                myDropzone.removeFile();
+            }
+        }
         let componentConfig = { postUrl: '/uploadHandler' };
-        let djsConfig = { autoProcessQueue: false,addRemoveLinks: true, maxfilesexceeded: 5,maxfilesreached: 5, };
+        let djsConfig = { autoProcessQueue: false,addRemoveLinks: true, maxfilesexceeded: 1,maxfilesreached: 5, };
         let eventHandlers = { 
-            maxfilesexceeded: 5,maxfilesreached: 5, addedfile: (file) => console.log(file) };
+            maxfilesexceeded: 1,maxfilesreached: 5, addedfile: (file) => console.log(file) };
         return(
         <>
             <section>

@@ -6,17 +6,24 @@ class AdminUpcomingGameList extends React.Component{
     render(){
         return(
         <>
-         <h2>Add Upcoming Game</h2>
             <section>
                 <form>
-                    <label>Date: 
-                        <input type="date"/></label>
-                    <label>Title:<input type="text"/></label>
-                    <select>
-                        <option >Type</option>
-                        <option value='video'>Video</option>
-                        <option value='tabletop'>Tabletop</option>
-                    </select>
+                    <fieldset>
+                        <legend>Add Upcoming Game</legend>
+                        <label>Date: 
+                            <input type="date"/>
+                        </label>
+                        <br/>
+                        <label>Title:
+                            <input type="text"/>
+                        </label>
+                        <br/>
+                        <select>
+                            <option >Type</option>
+                            <option value='video'>Video</option>
+                            <option value='tabletop'>Tabletop</option>
+                        </select>
+                    </fieldset>
                 </form>
                 <button>Add Game</button>
             </section>

@@ -6,7 +6,7 @@ class TabletopGameReview extends React.Component{
     render(){
         return(
        <>
-           <h2>Video Game Review</h2>
+           <h2>Tabletop Game Review</h2>
                 <Review/>
                 <Pagination/>
        </>)

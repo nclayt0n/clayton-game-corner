@@ -1,5 +1,6 @@
 import React from 'react';
 import Review from './Review';
+import {withRouter} from 'react-router-dom';
 import Pagination from './Pagination';
 import Nav from './Nav';
 import Header from './Header';
@@ -7,6 +8,16 @@ import GameApiService from '../services/game-api-services';
 import Context from '../Context';
 
 class VideoGameReview extends React.Component{
+    static contextType=Context;
+    componentDidMount(){
+        GameApiService.getAllVideoGameReviews()
+        .then(([reviews]) => {
+                    this.context.addReviews(reviews);
+                })
+                .catch(error => {
+                    console.error({ error });
+                });
+    }
     render(){
         return(
             <><Header/>
@@ -17,4 +28,4 @@ class VideoGameReview extends React.Component{
             </>)
     }
 }
-export default VideoGameReview;
+export default withRouter(VideoGameReview);

@@ -42,12 +42,7 @@ const GameApiService = {
         return fetch(`${config.API_ENDPOINT}/api/game/review/video`, options)
             .then(res =>
                 (!res.ok) ? res.json().then(e => Promise.reject(e)) : res.json()
-                .then(([reviews]) => {
-                    this.context.addReview(reviews);
-                })
-                .catch(error => {
-                    console.error({ error });
-                }));
+            );
     },
     getAllTabletopReviews() {
         let options = {

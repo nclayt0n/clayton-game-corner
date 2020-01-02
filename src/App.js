@@ -26,6 +26,7 @@ class App extends React.Component {
       this.state={
           user_id:0,
           reviews:[],
+          bio:'',
           upcomingGames:[]
       };
     }
@@ -39,6 +40,11 @@ class App extends React.Component {
       upcomingGames:[...upcomingGames]
     })
   }
+  handleAddBio=(bio)=>{
+    this.setState({
+      bio:bio
+    })
+  }
   render(){
     let userId;
     (TokenService.getAuthToken()===null)?userId=0
@@ -46,10 +52,12 @@ class App extends React.Component {
     
     const contextValue={
       user_id:userId,
+      bio:this.state.bio,
       upcomingGames:this.state.upcomingGames,
       reviews:this.state.reviews,
       addReviews:this.handleAddReviews,
-      addUpcomingGames:this.handleAddUpcomings
+      addUpcomingGames:this.handleAddUpcomings,
+      addBio:this.handleAddBio
     };
   return (
     <main className='App'>

@@ -15,7 +15,8 @@
         "react-scripts": "3.3.0",
         "react-test-renderer": "^16.11.0",
         "watchman": "^1.0.0",
-        "xcode": "^2.1.0"
+        "xcode": "^2.1.0",
+        "xss": "^1.0.6"
     },
     "scripts": {
         "start": "react-scripts start",

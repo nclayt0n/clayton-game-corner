@@ -19,7 +19,6 @@ class AdminUpcomingGameList extends React.Component{
     componentDidMount(){
         GameApiService.getApiCall(`${config.API_ENDPOINT}/api/admin/game/upcoming`)
         .then((games) => {
-            console.log(games)
                     this.context.addUpcomingGames(games);
                 })
                 .catch(error => {

@@ -1,5 +1,6 @@
 import React from 'react';
 import fillerImage from '../images/githubicon.png';
+import xss from 'xss';
 const uuidv4 = require('uuid/v4');
 
 class Review extends React.Component{

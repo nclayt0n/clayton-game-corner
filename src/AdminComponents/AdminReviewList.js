@@ -8,10 +8,12 @@ import DropzoneComponent from 'react-dropzone-component';
 import '../../node_modules/dropzone/dist/min/dropzone.min.css';
 import Nav from '../Components/Nav';
 import Header from '../Components/Header';
+import config from '../config';
 let ReactDOMServer = require('react-dom/server');
 class AdminReviewList extends React.Component{
     
     render(){
+        let url=`${config.API_ENDPOINT}/api/game/review`;
         var myDropzone;
 
         function initCallback (dropzone) {

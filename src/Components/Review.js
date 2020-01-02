@@ -1,5 +1,6 @@
 import React from 'react';
 import fillerImage from '../images/githubicon.png';
+const uuidv4 = require('uuid/v4');
 
 class Review extends React.Component{
     // createImages(review){
@@ -10,7 +11,7 @@ class Review extends React.Component{
     render(){
         // let pics=this.createImages(this.props.review);
         return(
-           <article>
+           <article key={uuidv4}>
                 <h3>{this.props.review.title}</h3>
                 <div>
                     {/* {pics} */}

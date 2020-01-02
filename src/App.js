@@ -30,7 +30,7 @@ class App extends React.Component {
     }
     handleAddReviews=(reviews)=>{
     this.setState({
-      reviews:[...this.state.reviews,reviews]
+      reviews:[reviews]
     })
   }
   render(){

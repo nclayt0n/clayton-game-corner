@@ -19,13 +19,14 @@ class TabletopGameReview extends React.Component{
                 });
     }
     render(){
-        console.log(this.context)
         return(
        <>
         <Header/>
         <Nav/>
            <h2>Tabletop Game Review</h2>
-                <Review/>
+           {this.context.reviews.map(review=>{
+                    return <Review review={review}/>
+                })}
                 <Pagination/>
        </>)
     }

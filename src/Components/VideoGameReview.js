@@ -9,10 +9,17 @@ import Context from '../Context';
 
 class VideoGameReview extends React.Component{
     static contextType=Context;
+    constructor(){
+        super()
+        this.state={
+            reviews:[],
+        };
+    }
     componentDidMount(){
         GameApiService.getAllVideoGameReviews()
         .then(([reviews]) => {
                     this.context.addReviews(reviews);
+                    this.setState({reviews})
                 })
                 .catch(error => {
                     console.error({ error });
@@ -23,7 +30,10 @@ class VideoGameReview extends React.Component{
             <><Header/>
             <Nav/>
                 <h2>Video Game Review</h2>
-                <Review/>
+                {this.context.reviews.map(review=>{
+                    return <Review review={review}/>
+                })}
+                
                 <Pagination/>
             </>)
     }

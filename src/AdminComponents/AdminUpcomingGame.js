@@ -3,12 +3,14 @@ import {withRouter} from 'react-router-dom';
 import GameApiService from '../services/game-api-services';
 import config from '../config';
 import Context from '../Context';
+import ValidationError from '../Validation/ValidationError';
 
 class AdminUpcomingGame extends React.Component{
     static contextType=Context;
     constructor(props){
         super()
         this.state={
+            error:'',
             game:props.game
         };
     }
@@ -17,7 +19,7 @@ class AdminUpcomingGame extends React.Component{
         GameApiService.deleteUpcoming(`${config.API_ENDPOINT}/api/game/upcoming/${id}`)
             .then(context.deleteUpcomingGame(id))
                 .catch(error =>{
-                 this.setState({error});
+                 this.setState({error:error.message});
                 });
             this.props.history.push('/game/upcoming');
     }
@@ -34,7 +36,7 @@ class AdminUpcomingGame extends React.Component{
         GameApiService.patchUpcoming(`${config.API_ENDPOINT}/api/game/upcoming/${id}`,updatedGame)
             .then(context.updateUpcomingGame(updatedGame))
                 .catch(error =>{
-                    this.setState({error});
+                    this.setState({error:error.message});
                 });
             this.props.history.push('/game/upcoming');
 }
@@ -60,6 +62,7 @@ class AdminUpcomingGame extends React.Component{
                 </form>
                 
                 <button type='button' onClick={()=>this.onDelete(this.props.game.id,this.context)}>Delete</button>
+                <ValidationError errorMessage={this.state.error}/>
             </section>)
     }
 }

@@ -22,41 +22,68 @@ class AdminUpcomingGameList extends React.Component{
                     this.context.addUpcomingGames(games);
                 })
                 .catch(error => {
-                    this.setState({ error });
+                    this.setState({ error:error.message });
                 });
     }
+    addGame=(e,context)=>{
+        e.preventDefault();
+        let title=e.target.title.value;
+        let date=e.target.date.value;
+        let game_type=e.target.game_type.value;
+        let newUpcoming={
+            title,date,game_type
+        }
+        if(date.length===0){
+            this.setState({error:'Must include a game date'});
+        }
+        if(title.length===0){
+            this.setState({error:'Must include a game title'});
+        }
+        if(game_type===''){
+            this.setState({error:'Must choose a game type'});
+        }else{
+            this.setState({error:''})
+            GameApiService.postUpcoming(date,game_type,title)
+                .then((game) => {
+                    this.context.addUpcomingGame(game); this.props.history.push('/game/upcoming');
+                })
+                .catch(error => {
+                    this.setState({ error:error.message });
+                }) 
+        }
+    }
     render(){
-        console.log(this.context)
         return(
         <>
         <Header/>
         <Nav/>
             <section>
-                <form>
+                <form onSubmit={(e)=>this.addGame(e,this.context)}>
                     <fieldset>
                         <legend>Add Upcoming Game</legend>
-                        <label>Date: 
-                            <input type="date"/>
+                        <label htmlFor='date'>Date: 
+                            <input name='date' type="date"/>
                         </label>
                         <br/>
-                        <label>Title:
-                            <input type="text"/>
+                        <label htmlFor='title'>Title:
+                            <input name='title' type="text"/>
                         </label>
                         <br/>
-                        <select>
-                            <option >Type</option>
+                        <select name='game_type'>
+                            <option value=''>Game Type:</option>
                             <option value='video'>Video</option>
                             <option value='tabletop'>Tabletop</option>
                         </select>
                     </fieldset>
+                    <button type='submit'>Add Game</button>
                 </form>
-                <button>Add Game</button>
+                
+                <ValidationError errorMessage={this.state.error}/>
             </section>
             <h2>Upcoming Game List</h2>
             {this.context.upcomingGames.map(game=>{
                     return <AdminUpcomingGame key={game.id} game={game}/>
                 })}
-            <ValidationError/>
             <Pagination/>
         </>)
     }

@@ -40,6 +40,11 @@ class App extends React.Component {
       upcomingGames:[...upcomingGames]
     })
   }
+  handleAddUpcoming=(upcomingGame)=>{
+    this.setState({
+      upcomingGames:[...this.state.upcomingGames,upcomingGame]
+    })
+  }
   handleAddBio=(bio)=>{
     this.setState({
       bio:bio
@@ -69,7 +74,8 @@ class App extends React.Component {
       addUpcomingGames:this.handleAddUpcomings,
       addBio:this.handleAddBio,
       updateUpcomingGame:this.handleUpdateUpcomingGame,
-      deleteUpcomingGame:this.handleDeleteUpcomingGame
+      deleteUpcomingGame:this.handleDeleteUpcomingGame,
+      addUpcomingGame:this.handleAddUpcoming
     };
   return (
     <main className='App'>

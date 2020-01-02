@@ -25,13 +25,13 @@ const GameApiService = {
                 (!res.ok) ? res.json().then(e => Promise.reject(e)) : res.json()
             );
     },
-    postUpcoming(title, game_type, date) {
+    postUpcoming(date, game_type, title) {
         let options = {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
             },
-            body: JSON.stringify({ title, game_type, date }),
+            body: JSON.stringify({ date, game_type, title }),
         };
         return fetch(`${config.API_ENDPOINT}/api/game/upcoming`, options)
             .then(res =>

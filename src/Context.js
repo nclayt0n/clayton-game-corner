@@ -9,6 +9,7 @@ const Context = React.createContext({
     updateUpcomingGame: () => {},
     addBio: () => {},
     addUpcomingGames: () => {},
-    deleteUpcomingGame: () => {}
+    deleteUpcomingGame: () => {},
+    addUpcomingGame: () => {}
 });
 export default Context;

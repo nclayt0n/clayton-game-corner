@@ -3,7 +3,6 @@ import {Switch,withRouter} from 'react-router-dom';
 import TabletopGameReview from './TabletopGameReviews';
 import VideoGameReview from './VideoGameReview';
 import UpcomingGameList from './UpcomingGameList';
-import Header from './Header';
 import Nav from './Nav';
 import NotFound from './NotFound.js';
 import logo from '../images/largelogo.png';

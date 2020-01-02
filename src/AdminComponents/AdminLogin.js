@@ -1,6 +1,5 @@
 import React from 'react';
 import {withRouter} from 'react-router-dom';
-import AdminReview from './AdminReview';
 import TokenService from '../services/token-service';
 import AuthApiService from '../services/auth-api-service';
 import ValidationError from '../Validation/ValidationError';

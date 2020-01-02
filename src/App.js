@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch,Route,withRouter} from 'react-router-dom';
+import {Switch,Route} from 'react-router-dom';
 import Context from './Context';
 import LandingPage from './Components/LandingPage';
 import PublicOnlyRoute from './Utils/PublicOnlyRoute';

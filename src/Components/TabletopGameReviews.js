@@ -8,7 +8,6 @@ import GameApiService from '../services/game-api-services';
 import config from '../config';
 import Context from '../Context';
 import ValidationError from '../Validation/ValidationError';
-const uuidv4 = require('uuid/v4');
 
 class TabletopGameReview extends React.Component{
     static contextType=Context;

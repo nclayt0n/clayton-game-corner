@@ -1,6 +1,4 @@
 import config from '../config';
-import TokenService from './token-service';
-import Context from '../Context';
 const GameApiService = {
     postReview(title, game_type, link, picture, review) {
         let options = {

@@ -219,3 +219,15 @@ aside {
     width: 80px;
     margin: 10px;
 }
+
+#loginContainer {
+    margin-top: 150px;
+}
+
+#loginForm {
+    width: 300px;
+}
+
+#loginForm input {
+    width: 200px;
+}

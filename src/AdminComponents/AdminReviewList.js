@@ -6,6 +6,8 @@ import ReactDOM from 'react-dom';
 
 import DropzoneComponent from 'react-dropzone-component';
 import '../../node_modules/dropzone/dist/min/dropzone.min.css';
+import Nav from '../Components/Nav';
+import Header from '../Components/Header';
 let ReactDOMServer = require('react-dom/server');
 class AdminReviewList extends React.Component{
     
@@ -27,6 +29,8 @@ class AdminReviewList extends React.Component{
             maxfilesexceeded: 1,maxfilesreached: 5, addedfile: (file) => console.log(file) };
         return(
         <>
+        <Header/>
+        <Nav/>
             <section>
                 <form>
                 <fieldset>

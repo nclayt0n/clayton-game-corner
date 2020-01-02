@@ -5,12 +5,9 @@ class Header extends React.Component{
     render(){
         return(
         <>
-            {(this.props.location.pathname==='/')
-                ?''
-                :(<header>
+            <header>
                     <img id='headerLogo'src={logo} alt='clayton game corner logo'/>
-                </header>)
-            }
+                </header>
         </>)
     }
 }

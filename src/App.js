@@ -18,31 +18,53 @@ import AdminReview from './AdminComponents/AdminReviewList';
 import AdminReviewList from './AdminComponents/AdminReviewList';
 import AdminLogin from './AdminComponents/AdminLogin';
 import AdminUpcomingGameList from './AdminComponents/AdminUpcomingGameList';
+import TokenService from './services/token-service'
 
 class App extends React.Component {
+  constructor(){
+    super()
+      this.state={
+          user_id:0,
+          reviews:[]
+      };
+    }
+    handleAddReviews=(reviews)=>{
+    this.setState({
+      reviews:[...this.state.reviews,reviews]
+    })
+  }
   render(){
+    let userId;
+    (TokenService.getAuthToken()===null)?userId=0
+      :userId=TokenService.decodeAuthToken(TokenService.getAuthToken());
+    
+    const contextValue={
+      user_id:userId,
+      reviews:this.state.reviews,
+      addReviews:this.handleAddReviews,
+    };
+    console.log(contextValue)
   return (
     <main className='App'>
-        <Header/>
-        <Nav/>
+        <Context.Provider value={contextValue}>
         <Switch>
           <Route exact path='/' component={LandingPage}/>
-          <PublicOnlyRoute path='/game/review/tabletop' component={TabletopGameReview}/>
-          <PublicOnlyRoute path='/game/review/video' component={VideoGameReview}/>
-          <PublicOnlyRoute exact path='/game/upcoming' component={UpcomingGameList}/>
-          <PublicOnlyRoute exact path='/game/upcoming/info' component={UpcomingGameInfo}/>
-          
-          <PublicOnlyRoute exact path='/admin' component={AdminLandingPage}/>
-          <PublicOnlyRoute exact path='/admin/game/review-list' component={AdminReviewList}/>
-          <PublicOnlyRoute exact path='/admin/game/upcoming-list' component={AdminUpcomingGameList}/>
+          <Route path='/game/review/tabletop' component={TabletopGameReview}/>
+          <Route path='/game/review/video' component={VideoGameReview}/>
+          <Route exact path='/game/upcoming' component={UpcomingGameList}/>
+          <Route exact path='/game/upcoming/info' component={UpcomingGameInfo}/>
+          <Route path='/nav' component={Nav}/>
+          <PrivateRoute exact path='/admin' component={AdminLandingPage}/>
+          <PrivateRoute exact path='/admin/game/review-list' component={AdminReviewList}/>
+          <PrivateRoute exact path='/admin/game/upcoming-list' component={AdminUpcomingGameList}/>
           <Route exact path='/admin/login' component={AdminLogin}/>
           <Route component={NotFound}/>
         </Switch>
+        </Context.Provider>
       <Footer/>
     </main>
-  ); 
+  );
   }
- 
 }
 
-export default withRouter(App);
+export default App;

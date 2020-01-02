@@ -1,21 +1,20 @@
 import React from 'react'
 import {Link,withRouter} from 'react-router-dom';
-
+import Context from '../Context';
+import TokenService from '../services/token-service';
 class Nav extends React.Component{
-    constructor(){
-        super()
-        this.state={
-            clicked:false
-        };
-    }
-    
+    static contextType=Context;
+    handleLogoutClick = () => {
+        return TokenService.clearAuthToken();
+    };
     render(){
         return(
         <>
         <nav className='nav-main'>
             <button  
                 type='button'
-                className='btn-toggle-nav'></button>
+                className='btn-toggle-nav'>
+            </button>
         </nav>
         <aside className='nav-sidebar'>
             <ul className='navPageLinks'>
@@ -39,6 +38,8 @@ class Nav extends React.Component{
                         Upcoming Game        
                     </Link>
                 </li>
+                {this.context.user_id>0
+                ?<>
                 <li>
                     <Link to={`/admin`}>
                         Admin Home
@@ -54,10 +55,19 @@ class Nav extends React.Component{
                         Admin Upcoming Game
                     </Link>
                 </li>
+                <li>
+                    <Link 
+                        to='/' 
+                        onClick={this.handleLogoutClick}>
+                        Logout
+                    </Link>
+                </li>
+                </>
+                :null}
             </ul> 
         </aside>
         </>
         )
     
 }}
-export default withRouter(Nav)
+export default withRouter(Nav);

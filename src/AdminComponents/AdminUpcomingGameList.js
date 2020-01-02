@@ -1,11 +1,15 @@
 import React from 'react';
 import AdminUpcomingGame from './AdminUpcomingGame';
 import Pagination from '../Components/Pagination';
+import Nav from '../Components/Nav';
+import Header from '../Components/Header';
 
 class AdminUpcomingGameList extends React.Component{
     render(){
         return(
         <>
+        <Header/>
+        <Nav/>
             <section>
                 <form>
                     <fieldset>

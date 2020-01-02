@@ -1,16 +1,20 @@
 import React from 'react';
-import {Switch} from 'react-router-dom';
+import {Switch,withRouter} from 'react-router-dom';
 import TabletopGameReview from './TabletopGameReviews';
 import VideoGameReview from './VideoGameReview';
 import UpcomingGameList from './UpcomingGameList';
+import Header from './Header';
+import Nav from './Nav';
 import NotFound from './NotFound.js';
-import logo from '../images/largelogo.png'
+import logo from '../images/largelogo.png';
+import Context from '../Context';
 
 class LandingPage extends React.Component{
-    
+    static contextType=Context;
     render(){
         return(
             <div> 
+            <Nav/>
                 <Switch>
                     <section>
                         <div className='logoContainer'><img src={logo} alt='clayton game corrin big logo'/>
@@ -26,4 +30,4 @@ class LandingPage extends React.Component{
         )
     }
 }
-export default LandingPage;
+export default withRouter(LandingPage);

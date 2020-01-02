@@ -25,13 +25,18 @@ class App extends React.Component {
     super()
       this.state={
           user_id:0,
-          reviews:[]
+          reviews:[],
+          upcomingGames:[]
       };
     }
     handleAddReviews=(reviews)=>{
-      console.log(reviews)
     this.setState({
       reviews:[...reviews]
+    })
+  }
+  handleAddUpcomings=(upcomingGames)=>{
+    this.setState({
+      upcomingGames:[...upcomingGames]
     })
   }
   render(){
@@ -41,10 +46,11 @@ class App extends React.Component {
     
     const contextValue={
       user_id:userId,
+      upcomingGames:this.state.upcomingGames,
       reviews:this.state.reviews,
       addReviews:this.handleAddReviews,
+      addUpcomingGames:this.handleAddUpcomings
     };
-    console.log(contextValue)
   return (
     <main className='App'>
         <Context.Provider value={contextValue}>

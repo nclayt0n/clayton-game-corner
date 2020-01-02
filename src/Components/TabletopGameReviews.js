@@ -17,7 +17,7 @@ class TabletopGameReview extends React.Component{
         this.state={error:''};
     }
     componentDidMount(){
-        GameApiService.getReviews(`${config.API_ENDPOINT}/api/game/review/tabletop`)
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/api/game/review/tabletop`)
         .then((reviews) => {
                     this.context.addReviews(reviews);
                 })

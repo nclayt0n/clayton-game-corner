@@ -8,7 +8,6 @@ import GameApiService from '../services/game-api-services';
 import config from '../config';
 import Context from '../Context';
 import ValidationError from '../Validation/ValidationError';
-const uuidv4 = require('uuid/v4');
 
 class VideoGameReview extends React.Component{
     static contextType=Context;
@@ -19,7 +18,7 @@ class VideoGameReview extends React.Component{
         };
     }
     componentDidMount(){
-        GameApiService.getReviews(`${config.API_ENDPOINT}/api/game/review/video`)
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/api/game/review/video`)
         .then((reviews) => {
                     this.context.addReviews(reviews);
                 })

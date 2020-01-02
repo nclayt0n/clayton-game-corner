@@ -18,7 +18,6 @@ class AdminLogin extends React.Component{
 
 state = { error: null }
   handleLoginSuccess = (token) => {
-      console.log(this.props)
     let user_id=TokenService.decodeAuthToken(token)
     this.context.user_id=user_id;
     this.props.history.push('/admin')

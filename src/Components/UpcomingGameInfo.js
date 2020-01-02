@@ -2,9 +2,10 @@ import React from 'react';
 
 class UpcomingGameInfo extends React.Component{
     render(){
+        console.log(this.props)
         return(
         <ul>
-            <li>Date - Name - Video or Tabletop</li>
+            <li>{this.props.game.date} - {this.props.game.title} - {this.props.game.game_type}</li>
         </ul>)
     }
 }

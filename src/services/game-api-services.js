@@ -15,7 +15,7 @@ const GameApiService = {
                 (!res.ok) ?
                 res.json().then(e => Promise.reject(e)) : res.json());
     },
-    getReviews(url) {
+    getApiCall(url) {
         let options = {
             method: 'GET',
             headers: {
@@ -26,6 +26,6 @@ const GameApiService = {
             .then(res =>
                 (!res.ok) ? res.json().then(e => Promise.reject(e)) : res.json()
             );
-    }
+    },
 };
 export default GameApiService;

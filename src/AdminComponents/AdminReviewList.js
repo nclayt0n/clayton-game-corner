@@ -3,17 +3,35 @@ import AdminReview from './AdminReview';
 import Pagination from '../Components/Pagination';
 import { Receiver, UploadManager,UploadHandler } from 'react-file-uploader';
 import ReactDOM from 'react-dom';
-
 import DropzoneComponent from 'react-dropzone-component';
 import '../../node_modules/dropzone/dist/min/dropzone.min.css';
 import Nav from '../Components/Nav';
 import Header from '../Components/Header';
 import config from '../config';
+import GameApiService from '../services/game-api-services';
+import Context from '../Context';
+import ValidationError from '../Validation/ValidationError';
 let ReactDOMServer = require('react-dom/server');
+
 class AdminReviewList extends React.Component{
-    
+    static contextType=Context;
+    constructor(){
+        super()
+        this.state={
+            error:''
+        };
+    }
+    componentDidMount(){
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/api/game/review`)
+        .then((reviews) => {
+                    this.context.addReviews(reviews);
+                })
+                .catch(error => {
+                    this.setState({ error });
+                });
+    }
     render(){
-        let url=`${config.API_ENDPOINT}/api/game/review`;
+        console.log(this.context)
         var myDropzone;
 
         function initCallback (dropzone) {
@@ -82,6 +100,7 @@ class AdminReviewList extends React.Component{
             <h2>Review List</h2>
             <AdminReview/> 
             <Pagination/>
+            <ValidationError errorMessage={this.state.error}/>
         </>)
     }
 }

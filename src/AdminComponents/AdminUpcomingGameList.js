@@ -26,6 +26,7 @@ class AdminUpcomingGameList extends React.Component{
                 });
     }
     render(){
+        console.log(this.context)
         return(
         <>
         <Header/>
@@ -52,7 +53,9 @@ class AdminUpcomingGameList extends React.Component{
                 <button>Add Game</button>
             </section>
             <h2>Upcoming Game List</h2>
-            <AdminUpcomingGame/> 
+            {this.context.upcomingGames.map(game=>{
+                    return <AdminUpcomingGame key={game.id} game={game}/>
+                })}
             <ValidationError/>
             <Pagination/>
         </>)

@@ -30,11 +30,11 @@ class App extends React.Component {
           upcomingGames:[]
       };
     }
-    handleAddReviews=(reviews)=>{
+  handleAddReviews=(reviews)=>{
     this.setState({
       reviews:[...reviews]
     })
-  }
+    }
   handleAddUpcomings=(upcomingGames)=>{
     this.setState({
       upcomingGames:[...upcomingGames]
@@ -44,6 +44,16 @@ class App extends React.Component {
     this.setState({
       bio:bio
     })
+  }
+  handleUpdateUpcomingGame=(updatedUpcomingGame)=>{
+    this.setState({
+        upcomingGames:[...this.state.upcomingGames.filter(game=>game.id!==updatedUpcomingGame.id),updatedUpcomingGame]
+    })
+  }
+  handleDeleteUpcomingGame=(id)=>{
+    this.setState({
+            upcomingGames: this.state.upcomingGames.filter(game => game.id !== id)
+        });
   }
   render(){
     let userId;
@@ -57,7 +67,9 @@ class App extends React.Component {
       reviews:this.state.reviews,
       addReviews:this.handleAddReviews,
       addUpcomingGames:this.handleAddUpcomings,
-      addBio:this.handleAddBio
+      addBio:this.handleAddBio,
+      updateUpcomingGame:this.handleUpdateUpcomingGame,
+      deleteUpcomingGame:this.handleDeleteUpcomingGame
     };
   return (
     <main className='App'>

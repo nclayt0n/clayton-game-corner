@@ -8,6 +8,7 @@ import GameApiService from '../services/game-api-services';
 import config from '../config';
 import Context from '../Context';
 import ValidationError from '../Validation/ValidationError';
+const uuidv4=require('uuid');
 
 
 class UpcomingGameList extends React.Component{
@@ -28,11 +29,10 @@ class UpcomingGameList extends React.Component{
                 });
     }
     render(){
-   
         return(<>
         <Header/>
         <Nav/>
-        <article>
+        <article key={uuidv4()}>
             <h3>Upcoming Games</h3>
             {this.context.upcomingGames.map(game=>{
                     return <UpcomingGameInfo key={game.id} game={game}/>

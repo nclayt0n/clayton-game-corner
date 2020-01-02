@@ -14,6 +14,7 @@ class AdminUpcomingGame extends React.Component{
             game:props.game
         };
     }
+    
     onDelete(id,context){
         console.log(id)
         GameApiService.deleteUpcoming(`${config.API_ENDPOINT}/api/game/upcoming/${id}`)
@@ -38,7 +39,6 @@ class AdminUpcomingGame extends React.Component{
                 .catch(error =>{
                     this.setState({error:error.message});
                 });
-            this.props.history.push('/game/upcoming');
 }
     render(){
         return(

@@ -48,8 +48,6 @@ const GameApiService = {
             body: JSON.stringify({ id, title, date, game_type })
         };
         return fetch(url, options)
-            .then(res =>
-                (!res.ok) ? res.json().then(e => Promise.reject(e)) : res.json());
     },
     deleteUpcoming(url, id) {
         const options = {

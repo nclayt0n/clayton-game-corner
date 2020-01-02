@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch,Route} from 'react-router-dom';
+import {Switch,Route,withRouter} from 'react-router-dom';
 import Context from './Context';
 import LandingPage from './Components/LandingPage';
 import PublicOnlyRoute from './Utils/PublicOnlyRoute';
@@ -54,12 +54,13 @@ class App extends React.Component {
     this.setState({
         upcomingGames:[...this.state.upcomingGames.filter(game=>game.id!==updatedUpcomingGame.id),updatedUpcomingGame]
     })
+    this.props.history.push('/game/upcoming')
   }
   handleDeleteUpcomingGame=(id)=>{
     this.setState({
             upcomingGames: this.state.upcomingGames.filter(game => game.id !== id)
         });
-  }
+  };
   render(){
     let userId;
     (TokenService.getAuthToken()===null)?userId=0
@@ -100,4 +101,4 @@ class App extends React.Component {
   }
 }
 
-export default App;
+export default withRouter(App);

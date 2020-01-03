@@ -14,11 +14,13 @@ class VideoGameReview extends React.Component{
     constructor(){
         super()
         this.state={
-            error:''
+            error:'',
+            page:0,
+            pageLimit:10
         };
     }
     componentDidMount(){
-        GameApiService.getApiCall(`${config.API_ENDPOINT}/api/game/review/video`)
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/api/game/review/video?limit=${this.state.pageLimit}&offset=${this.state.page*this.state.pageLimit}`)
         .then((reviews) => {
                     this.context.addReviews(reviews);
                 })
@@ -26,16 +28,32 @@ class VideoGameReview extends React.Component{
                     this.setState({ error });
                 });
     }
+    setPage=(page)=>{
+        this.setState({page:page})
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/api/game/review/video?limit=${this.state.pageLimit}&offset=${page*this.state.pageLimit}`)
+        .then((reviews) => {
+                    this.context.addReviews(reviews);
+                })
+                .catch(error => {
+                    this.setState({ error });
+                })
+    }
     render(){
         return(
             <><Header/>
             <Nav/>
                 <h2>Video Game Review</h2>
                 {this.context.reviews.map(review=>{
-                    return <Review key={review.id} review={review}/>
+                    return <Review 
+                                key={review.id} 
+                                review={review}/>
                 })}
                 <ValidationError errorMessage={this.state.error}/>
-                <Pagination/>
+                <Pagination 
+                    page={this.state.page} 
+                    pageLimit={this.state.pageLimit} 
+                    setPage={(page)=>this.setPage(page)} 
+                    items={this.context.reviews}/>
             </>)
     }
 }

@@ -1,5 +1,17 @@
 import config from '../config';
 const GameApiService = {
+    getApiCall(url) {
+        let options = {
+            method: 'GET',
+            headers: {
+                'content-type': 'application/json',
+            }
+        };
+        return fetch(url, options)
+            .then(res =>
+                (!res.ok) ? res.json().then(e => Promise.reject(e)) : res.json()
+            );
+    },
     postReview(title, game_type, link, picture, review) {
         let options = {
             method: 'POST',
@@ -13,18 +25,7 @@ const GameApiService = {
                 (!res.ok) ?
                 res.json().then(e => Promise.reject(e)) : res.json());
     },
-    getApiCall(url) {
-        let options = {
-            method: 'GET',
-            headers: {
-                'content-type': 'application/json',
-            }
-        };
-        return fetch(url, options)
-            .then(res =>
-                (!res.ok) ? res.json().then(e => Promise.reject(e)) : res.json()
-            );
-    },
+
     postUpcoming(date, game_type, title) {
         let options = {
             method: 'POST',

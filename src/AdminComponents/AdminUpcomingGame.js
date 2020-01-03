@@ -16,7 +16,6 @@ class AdminUpcomingGame extends React.Component{
     }
     
     onDelete(id,context){
-        console.log(id)
         GameApiService.deleteUpcoming(`${config.API_ENDPOINT}/api/game/upcoming/${id}`)
             .then(context.deleteUpcomingGame(id))
                 .catch(error =>{
@@ -44,7 +43,7 @@ class AdminUpcomingGame extends React.Component{
         return(
        <section key={this.props.game.id}>
                 <form key={this.props.game.id} onSubmit={(e)=>this.onSubmit(e,this.props.game.id,this.context)}>
-                    <label htmlFor='gameDate' > Release Date: <input name='gameDate' type='text' value={this.state.game.date} readOnly/><br/>    
+                    <label htmlFor='gameDate'> Current Date: {this.state.game.date}
                     </label>
                     <label htmlFor='newGameDate'>New Date:
                         <input type="date" name='newGameDate'/>

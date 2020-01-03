@@ -27,7 +27,7 @@ class App extends React.Component {
           user_id:0,
           reviews:[],
           bio:'',
-          upcomingGames:[]
+          upcomingGames:[],
       };
     }
   handleAddReviews=(reviews)=>{
@@ -76,7 +76,7 @@ class App extends React.Component {
       addBio:this.handleAddBio,
       updateUpcomingGame:this.handleUpdateUpcomingGame,
       deleteUpcomingGame:this.handleDeleteUpcomingGame,
-      addUpcomingGame:this.handleAddUpcoming
+      addUpcomingGame:this.handleAddUpcoming,
     };
   return (
     <main className='App'>

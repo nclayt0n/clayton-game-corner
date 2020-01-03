@@ -13,7 +13,9 @@ class AdminUpcomingGameList extends React.Component{
     constructor(){
         super()
         this.state={
-            error:''
+            error:'',
+            page:0,
+            pageLimit:10
         };
     }
     componentDidMount(){
@@ -25,14 +27,11 @@ class AdminUpcomingGameList extends React.Component{
                     this.setState({ error:error.message });
                 });
     }
-    addGame=(e,context)=>{
+    addGame=(e)=>{
         e.preventDefault();
         let title=e.target.title.value;
         let date=e.target.date.value;
         let game_type=e.target.game_type.value;
-        let newUpcoming={
-            title,date,game_type
-        }
         if(date.length===0){
             this.setState({error:'Must include a game date'});
         }
@@ -51,6 +50,16 @@ class AdminUpcomingGameList extends React.Component{
                     this.setState({ error:error.message });
                 }) 
         }
+    }
+    setPage=(page)=>{
+        this.setState({page:page})
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/api/admin/game/upcoming?limit=${this.state.pageLimit}&offset=${page*this.state.pageLimit}`)
+        .then((games) => {
+                    this.context.addUpcomingGames(games);
+                })
+                .catch(error => {
+                    this.setState({ error });
+                })
     }
     render(){
         return(
@@ -84,7 +93,11 @@ class AdminUpcomingGameList extends React.Component{
             {this.context.upcomingGames.map(game=>{
                     return <AdminUpcomingGame key={game.id} game={game}/>
                 })}
-            <Pagination/>
+            <Pagination 
+                page={this.state.page} 
+                pageLimit={this.state.pageLimit} 
+                setPage={(page)=>this.setPage(page)} 
+                items={this.context.upcomingGames}/>
         </>)
     }
 }

@@ -16,17 +16,29 @@ class UpcomingGameList extends React.Component{
     constructor(){
         super()
         this.state={
-            error:''
+            error:'',
+            page:0,
+            pageLimit:30
         };
     }
     componentDidMount(){
-        GameApiService.getApiCall(`${config.API_ENDPOINT}/api/game/upcoming`)
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/api/game/upcoming?limit=${this.state.pageLimit}&offset=${this.state.page*this.state.pageLimit}`)
         .then((games) => {
                     this.context.addUpcomingGames(games);
                 })
                 .catch(error => {
                     this.setState({ error });
                 });
+    }
+    setPage=(page)=>{
+        this.setState({page:page})
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/api/game/upcoming?limit=${this.state.pageLimit}&offset=${page*this.state.pageLimit}`)
+        .then((games) => {
+                    this.context.addUpcomingGames(games);
+                })
+                .catch(error => {
+                    this.setState({ error });
+                })
     }
     render(){
         return(<>
@@ -35,11 +47,17 @@ class UpcomingGameList extends React.Component{
         <article key={uuidv4()}>
             <h3>Upcoming Games</h3>
             {this.context.upcomingGames.map(game=>{
-                    return <UpcomingGameInfo key={game.id} game={game}/>
+                    return <UpcomingGameInfo 
+                                key={game.id} 
+                                game={game}/>
                 })}
         </article>
         <ValidationError errorMessage={this.state.error}/>
-        <Pagination/>
+        <Pagination 
+            page={this.state.page} 
+            pageLimit={this.state.pageLimit} 
+            setPage={(page)=>this.setPage(page)} 
+            items={this.context.upcomingGames}/>
         </>)
     }
 }

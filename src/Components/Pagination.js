@@ -1,56 +1,40 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
+import Context from '../Context';
 
 class Pagination extends React.Component{
-    constructor(){
-        super()
-        this.state={
-            page:1
-        };
-    }
+    static contextType=Context;
+    
     render(){
         return(
             <section className='buttonContainer'>
-                {this.state.page===1 ? null: 
-                    <button 
-                        aria-label='button for previous page of users'
+                {this.props.page<1 
+                    ? null
+                    :<button 
+                        aria-label='button for previous page'
                         className='button' 
                         type='button' 
-                        // onClick={()=>this.callApi(this.state.page-1)}
+                        onClick={()=>this.props.setPage(this.props.page-1)}
                         >Back
                     </button>}
-                {this.state.page===1 ? null: 
-                    <button 
-                        aria-label='button for previous page of users'
-                        className='button' 
-                        type='button' 
-                        // onClick={()=>this.callApi(this.state.page-1)}
-                        >{this.state.page-1}
-                    </button>}
 
-                    <button 
-                    aria-label='current page of users'
+                <button 
+                        aria-label='current page'
                         className='button' 
                         id='currentPage' 
-                        type='button'>{this.state.page}
+                        type='button'>{this.props.page+1}
                     </button>
-                {this.state.page===1 ? null: 
-                    <button 
+                {this.props.items.length <this.props.pageLimit
+                    ?null
+                    :<button 
                         aria-label='button for next page of users'
                         className='button' 
                         type='button' 
-                        // onClick={()=>this.callApi(this.state.page+1)}
-                        >{this.state.page+1}
-                    </button>}
-
-                    <button 
-                        aria-label='button for next page of users'
-                        className='button' 
-                        type='button' 
-                        // onClick={()=>this.callApi(this.state.page+1)}
+                        onClick={()=>this.props.setPage(this.props.page+1)}
                         >Next
-                    </button>
+                    </button>}
             </section>
         )
     }
 }
-export default Pagination;
+export default withRouter(Pagination);

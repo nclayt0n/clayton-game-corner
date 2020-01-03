@@ -18,20 +18,40 @@ class AdminLandingPage extends React.Component{
                     this.setState({ error });
                 });
     }
+    updateBio(e){
+        e.preventDefault();
+        let bio=e.target.bio.value;
+        const options = {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({ bio })
+        }
+        fetch(`${config.API_ENDPOINT}/users/1`, options)
+        .then(this.context.updateBio(bio))
+        .then(this.props.history.push('/'))
+                .catch(error =>{
+                    this.setState({error:error.message});
+                });
+    }
     render(){
         return(
-            <div>
-            <Header/>
+            <>
+            {/* <Header/> */}
                 <Nav/>
-                    <section>
-                        <form>
-                            <textarea defaultValue={this.context.bio}>
+                    <section key='adminLandingSection'>
+                        <div className='logoContainer'>
+                            <img src={logo} alt='clayton game corrin big logo'/>
+                        </div>
+                        <form onSubmit={(e)=>this.updateBio(e)}>
+                            <textarea name='bio' defaultValue={this.context.bio}>
                             
                             </textarea>
-                            <button type='button'>Update</button>
+                            <button type='submit'>Update</button>
                         </form>
                     </section>
-            </div>
+            </>
         )
     }
 }

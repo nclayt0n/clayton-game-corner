@@ -66,6 +66,11 @@ class App extends React.Component {
       bio:bio
     });
   };
+  handleUpdateBio=(bio)=>{
+    this.setState({
+      bio:bio
+    });
+  };
   handleUpdateUpcomingGame=(updatedUpcomingGame)=>{
     this.setState({
         upcomingGames:[...this.state.upcomingGames.filter(game=>game.id!==updatedUpcomingGame.id),updatedUpcomingGame]
@@ -93,6 +98,7 @@ class App extends React.Component {
       deleteReview:this.handleDeleteReview,
       addUpcomingGames:this.handleAddUpcomings,
       addBio:this.handleAddBio,
+      updateBio:this.handleUpdateBio,
       updateUpcomingGame:this.handleUpdateUpcomingGame,
       deleteUpcomingGame:this.handleDeleteUpcomingGame,
       addUpcomingGame:this.handleAddUpcoming,

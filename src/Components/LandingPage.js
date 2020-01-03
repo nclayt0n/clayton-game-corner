@@ -23,7 +23,7 @@ class LandingPage extends React.Component{
     }
     render(){
         return(
-            <div> 
+            <> 
             <Nav/>
                     <section>
                         <div className='logoContainer'><img src={logo} alt='clayton game corrin big logo'/>
@@ -40,7 +40,7 @@ class LandingPage extends React.Component{
                         exact path='/game/upcoming' 
                         component={UpcomingGameList}/>
                    
-            </div>
+            </>
         )
     }
 }

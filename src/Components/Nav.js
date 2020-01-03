@@ -35,7 +35,7 @@ class Nav extends React.Component{
                 </li>
                 <li>
                     <Link to={'/game/upcoming'}>
-                        Upcoming Game        
+                        Upcoming Games        
                     </Link>
                 </li>
                 {this.context.user_id>0
@@ -52,7 +52,7 @@ class Nav extends React.Component{
                 </li>
                 <li>
                     <Link to={'/admin/game/upcoming-list'}>
-                        Admin Upcoming Game
+                        Admin Upcoming Games
                     </Link>
                 </li>
                 <li>

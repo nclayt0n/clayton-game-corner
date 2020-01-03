@@ -101,17 +101,38 @@ class App extends React.Component {
     <main className='App'>
         <Context.Provider value={contextValue}>
         <Switch>
-          <Route exact path='/' component={LandingPage}/>
-          <Route path='/game/review/tabletop' component={TabletopGameReview}/>
-          <Route path='/game/review/video' component={VideoGameReview}/>
-          <Route exact path='/game/upcoming' component={UpcomingGameList}/>
-          <Route exact path='/game/upcoming/info' component={UpcomingGameInfo}/>
-          <Route path='/nav' component={Nav}/>
-          <PrivateRoute exact path='/admin' component={AdminLandingPage}/>
-          <PrivateRoute exact path='/admin/game/review-list' component={AdminReviewList}/>
-          <PrivateRoute exact path='/admin/game/upcoming-list' component={AdminUpcomingGameList}/>
-          <Route exact path='/admin/login' component={AdminLogin}/>
-          <Route component={NotFound}/>
+          <Route 
+            exact path='/' 
+            component={LandingPage}/>
+          <Route 
+            path='/game/review/tabletop' 
+            component={TabletopGameReview}/>
+          <Route 
+            path='/game/review/video' 
+            component={VideoGameReview}/>
+          <Route 
+            exact path='/game/upcoming' 
+            component={UpcomingGameList}/>
+          <Route 
+            path='/game/upcoming/info' 
+            component={UpcomingGameInfo}/>
+          <Route 
+            path='/nav' 
+            component={Nav}/>
+          <PrivateRoute 
+            exact path='/admin' 
+            component={AdminLandingPage}/>
+          <PrivateRoute 
+            path='/admin/game/review-list' 
+            component={AdminReviewList}/>
+          <PrivateRoute 
+            path='/admin/game/upcoming-list' 
+            component={AdminUpcomingGameList}/>
+          <Route 
+            path='/admin/login' 
+            component={AdminLogin}/>
+          <Route 
+            component={NotFound}/>
         </Switch>
         </Context.Provider>
       <Footer/>

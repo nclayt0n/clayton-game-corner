@@ -1,6 +1,7 @@
 import React from 'react';
 import AdminReview from './AdminReview';
 import Pagination from '../Components/Pagination';
+import {withRouter} from 'react-router-dom';
 import { Receiver, UploadManager,UploadHandler } from 'react-file-uploader';
 import ReactDOM from 'react-dom';
 import DropzoneComponent from 'react-dropzone-component';
@@ -149,4 +150,4 @@ class AdminReviewList extends React.Component{
         </>)
     }
 }
-export default AdminReviewList;
+export default withRouter(AdminReviewList);

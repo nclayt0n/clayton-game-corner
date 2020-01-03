@@ -1,5 +1,5 @@
 import React from 'react';
-import {Switch,withRouter} from 'react-router-dom';
+import {Switch,withRouter,Route} from 'react-router-dom';
 import TabletopGameReview from './TabletopGameReviews';
 import VideoGameReview from './VideoGameReview';
 import UpcomingGameList from './UpcomingGameList';
@@ -25,17 +25,21 @@ class LandingPage extends React.Component{
         return(
             <div> 
             <Nav/>
-                <Switch>
                     <section>
                         <div className='logoContainer'><img src={logo} alt='clayton game corrin big logo'/>
                         </div>
                         <p>{this.context.bio} </p>
                     </section>
-                    <TabletopGameReview/>
-                    <VideoGameReview/>
-                    <UpcomingGameList/>
-                    <NotFound/>
-                </Switch>
+                    <Route 
+                        path='/game/review/tabletop' 
+                        component={TabletopGameReview}/>
+                    <Route 
+                        path='/game/review/video' 
+                        component={VideoGameReview}/>
+                    <Route 
+                        exact path='/game/upcoming' 
+                        component={UpcomingGameList}/>
+                   
             </div>
         )
     }

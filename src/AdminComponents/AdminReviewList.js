@@ -32,6 +32,32 @@ class AdminReviewList extends React.Component{
                     this.setState({ error });
                 });
     }
+    addReview=(e)=>{
+        e.preventDefault();
+        let title=e.target.title.value;
+        let review=e.target.review.value;
+        let game_type=e.target.game_type.value;
+        let link=e.target.link.value;
+        let picture='';
+        if(review.length===0){
+            this.setState({error:'Must include a game review'});
+        }
+        if(title.length===0){
+            this.setState({error:'Must include a game title'});
+        }
+        if(game_type===''){
+            this.setState({error:'Must choose a game type'});
+        }else{
+            this.setState({error:''})
+            GameApiService.postReview(title,game_type,link,picture, review)
+                .then((newReview) => {
+                    this.context.addReview(newReview); this.props.history.push('/');
+                })
+                .catch(error => {
+                    this.setState({ error:error.message });
+                }) 
+        }
+    }
     setPage=(page)=>{
         this.setState({page:page})
         GameApiService.getApiCall(`${config.API_ENDPOINT}/api/game/review/tabletop?limit=${this.state.pageLimit}&offset=${page*this.state.pageLimit}`)
@@ -63,20 +89,20 @@ class AdminReviewList extends React.Component{
         <Header/>
         <Nav/>
             <section>
-                <form>
+                <form onSubmit={(e)=>this.addReview(e,this.context)}>
                 <fieldset>
                     <legend>Add Game Review</legend>
-                    <label>Title: 
-                        <input type="text"/>
+                    <label htmlFor='title'>Title: 
+                        <input name='title' type="text"/>
                     </label><br/>
-                    <label>Review: <br/>
-                        <textarea placeholder='add review here'></textarea>
+                    <label htmlFor='review'>Review: <br/>
+                        <textarea placeholder='add review here' name='review'></textarea>
                     </label><br/>
-                    <label>Link to Buy: 
-                        <input type="url"/>
+                    <label htmlFor='link'>Link to Buy: 
+                        <input name='link' type="url"/>
                     </label><br/>
-                    <select>
-                        <option >Type</option>
+                    <select name='game_type'>
+                        <option value=''>Game Type:</option>
                         <option value='video'>Video</option>
                         <option value='tabletop'>Tabletop</option>
                     </select>
@@ -89,9 +115,10 @@ class AdminReviewList extends React.Component{
                                 <button data-dz-remove >Cancel</button>
                         
                     </fieldset>
-                </fieldset>
+                </fieldset> 
+                <button type='submit'>Add Review</button>
                 </form>
-                <button>Add Review</button>
+                <ValidationError errorMessage={this.state.error}/>
             </section>
             
 
@@ -115,7 +142,7 @@ class AdminReviewList extends React.Component{
                     pageLimit={this.state.pageLimit} 
                     setPage={(page)=>this.setPage(page)} 
                     items={this.context.reviews}/>
-            <ValidationError errorMessage={this.state.error}/>
+           
         </>)
     }
 }

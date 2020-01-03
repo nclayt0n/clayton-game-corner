@@ -34,7 +34,12 @@ class App extends React.Component {
     this.setState({
       reviews:[...reviews]
     })
-    }
+  }
+  handleAddReview=(newReview)=>{
+    this.setState({
+      reviews:[...this.state.reviews,newReview]
+    })
+  }
   handleAddUpcomings=(upcomingGames)=>{
     this.setState({
       upcomingGames:[...upcomingGames]
@@ -72,6 +77,7 @@ class App extends React.Component {
       upcomingGames:this.state.upcomingGames,
       reviews:this.state.reviews,
       addReviews:this.handleAddReviews,
+      addReview:this.handleAddReview,
       addUpcomingGames:this.handleAddUpcomings,
       addBio:this.handleAddBio,
       updateUpcomingGame:this.handleUpdateUpcomingGame,

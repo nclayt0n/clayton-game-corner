@@ -2,7 +2,6 @@ import React from 'react';
 import {withRouter} from 'react-router-dom';
 import logo from '../images/largelogo.png';
 import Nav from '../Components/Nav';
-import Header from '../Components/Header';
 import Context from '../Context';
 import GameApiService from '../services/game-api-services';
 import config from '../config';
@@ -28,7 +27,7 @@ class AdminLandingPage extends React.Component{
             },
             body: JSON.stringify({ bio })
         }
-        fetch(`${config.API_ENDPOINT}/users/1`, options)
+        fetch(`${config.API_ENDPOINT}/users/2`, options)
         .then(this.context.updateBio(bio))
         .then(this.props.history.push('/'))
                 .catch(error =>{

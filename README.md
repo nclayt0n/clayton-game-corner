@@ -13,7 +13,7 @@ https://clayton-game-corner.nrclayton.now.sh/admin and you will be routed to the
 Email is case-sensitive so type it exactly as is below.
 <br/>
 email: admin@test.com
-password: testPassw0rd
+password: testP@ssw0rd
 <br/>
 Once logged in you will land on the admin Landing Page where you can view and update current welcome paragraph. Once logged in you can also now see the Nav bar Admin links as well. To add/update/delete Reviews or Upcoming Dates go to Admin Game Reviews or Admin Upcoming Game Dates.
 

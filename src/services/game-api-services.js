@@ -20,7 +20,7 @@ const GameApiService = {
             },
             body: JSON.stringify({ title, game_type, link, picture, review }),
         };
-        return fetch(`${config.API_ENDPOINT}/api/game/review`, options)
+        return fetch(`${config.API_ENDPOINT}/game/review`, options)
             .then(res =>
                 (!res.ok) ?
                 res.json().then(e => Promise.reject(e)) : res.json());
@@ -44,7 +44,7 @@ const GameApiService = {
             },
             body: JSON.stringify({ date, game_type, title }),
         };
-        return fetch(`${config.API_ENDPOINT}/api/game/upcoming`, options)
+        return fetch(`${config.API_ENDPOINT}/game/upcoming`, options)
             .then(res =>
                 (!res.ok) ?
                 res.json().then(e => Promise.reject(e)) : res.json());

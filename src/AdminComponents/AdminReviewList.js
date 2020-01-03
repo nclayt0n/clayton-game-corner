@@ -26,7 +26,7 @@ class AdminReviewList extends React.Component{
         };
     }
     componentDidMount(){
-        GameApiService.getApiCall(`${config.API_ENDPOINT}/api/game/review?limit=${this.state.pageLimit}&offset=${this.state.page*this.state.pageLimit}`)
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/game/review?limit=${this.state.pageLimit}&offset=${this.state.page*this.state.pageLimit}`)
         .then((reviews) => {
                     this.context.addReviews(reviews);
                 })
@@ -62,7 +62,7 @@ class AdminReviewList extends React.Component{
     }
     setPage=(page)=>{
         this.setState({page:page})
-        GameApiService.getApiCall(`${config.API_ENDPOINT}/api/game/review/tabletop?limit=${this.state.pageLimit}&offset=${page*this.state.pageLimit}`)
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/game/review/tabletop?limit=${this.state.pageLimit}&offset=${page*this.state.pageLimit}`)
         .then((reviews) => {
                     this.context.addReviews(reviews);
                 })

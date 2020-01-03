@@ -22,7 +22,7 @@ class UpcomingGameList extends React.Component{
         };
     }
     componentDidMount(){
-        GameApiService.getApiCall(`${config.API_ENDPOINT}/api/game/upcoming?limit=${this.state.pageLimit}&offset=${this.state.page*this.state.pageLimit}`)
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/game/upcoming?limit=${this.state.pageLimit}&offset=.GF${this.state.page*this.state.pageLimit}`)
         .then((games) => {
                     this.context.addUpcomingGames(games);
                 })
@@ -32,7 +32,7 @@ class UpcomingGameList extends React.Component{
     }
     setPage=(page)=>{
         this.setState({page:page})
-        GameApiService.getApiCall(`${config.API_ENDPOINT}/api/game/upcoming?limit=${this.state.pageLimit}&offset=${page*this.state.pageLimit}`)
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/game/upcoming?limit=${this.state.pageLimit}&offset=${page*this.state.pageLimit}`)
         .then((games) => {
                     this.context.addUpcomingGames(games);
                 })

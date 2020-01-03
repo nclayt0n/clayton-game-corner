@@ -10,7 +10,7 @@ import config from '../config';
 class AdminLandingPage extends React.Component{
     static contextType=Context;
     componentDidMount(){
-        GameApiService.getApiCall(`${config.API_ENDPOINT}/api/users/1`)
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/users/1`)
         .then(([user]) => {
                     this.context.addBio(user.bio);
                 })

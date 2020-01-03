@@ -21,7 +21,7 @@ class AdminUpcomingGameList extends React.Component{
         };
     }
     componentDidMount(){
-        GameApiService.getApiCall(`${config.API_ENDPOINT}/api/admin/game/upcoming`)
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/admin/game/upcoming`)
         .then((games) => {
                     this.context.addUpcomingGames(games);
                 })
@@ -55,7 +55,7 @@ class AdminUpcomingGameList extends React.Component{
     }
     setPage=(page)=>{
         this.setState({page:page})
-        GameApiService.getApiCall(`${config.API_ENDPOINT}/api/admin/game/upcoming?limit=${this.state.pageLimit}&offset=${page*this.state.pageLimit}`)
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/admin/game/upcoming?limit=${this.state.pageLimit}&offset=${page*this.state.pageLimit}`)
         .then((games) => {
                     this.context.addUpcomingGames(games);
                 })

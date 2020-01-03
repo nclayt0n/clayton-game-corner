@@ -15,7 +15,7 @@ class AdminReview extends React.Component{
     }
     
     onDelete(id,context){
-        GameApiService.deleteGame(`${config.API_ENDPOINT}/api/game/review/${id}`)
+        GameApiService.deleteGame(`${config.API_ENDPOINT}/game/review/${id}`)
             .then(context.deleteReview(id))
                 .catch(error =>{
                  this.setState({error:error.message});
@@ -33,7 +33,7 @@ class AdminReview extends React.Component{
             picture:'',
             review:e.target.review.value
         };
-        GameApiService.patchReview(`${config.API_ENDPOINT}/api/game/review/${id}`,updatedReview)
+        GameApiService.patchReview(`${config.API_ENDPOINT}/game/review/${id}`,updatedReview)
             .then(res=>context.updateReview(res))
                 .catch(error =>{
                     this.setState({error:error.message});

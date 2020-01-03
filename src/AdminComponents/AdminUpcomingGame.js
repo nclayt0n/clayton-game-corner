@@ -16,7 +16,7 @@ class AdminUpcomingGame extends React.Component{
     }
     
     onDelete(id,context){
-        GameApiService.deleteGame(`${config.API_ENDPOINT}/api/game/upcoming/${id}`)
+        GameApiService.deleteGame(`${config.API_ENDPOINT}/game/upcoming/${id}`)
             .then(context.deleteUpcomingGame(id))
                 .catch(error =>{
                  this.setState({error:error.message});
@@ -33,7 +33,7 @@ class AdminUpcomingGame extends React.Component{
             game_type:e.target.game_type.value,
             date
         };
-        GameApiService.patchUpcoming(`${config.API_ENDPOINT}/api/game/upcoming/${id}`,updatedGame)
+        GameApiService.patchUpcoming(`${config.API_ENDPOINT}/game/upcoming/${id}`,updatedGame)
             .then(context.updateUpcomingGame(updatedGame))
                 .catch(error =>{
                     this.setState({error:error.message});

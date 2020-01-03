@@ -231,3 +231,7 @@ aside {
 #loginForm input {
     width: 200px;
 }
+
+.notFoundPage {
+    margin-top: 150px;
+}

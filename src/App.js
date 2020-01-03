@@ -131,8 +131,7 @@ class App extends React.Component {
           <Route 
             path='/admin/login' 
             component={AdminLogin}/>
-          <Route 
-            component={NotFound}/>
+          <NotFound/>
         </Switch>
         </Context.Provider>
       <Footer/>

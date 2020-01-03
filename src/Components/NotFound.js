@@ -7,10 +7,10 @@ class NotFound extends React.Component {
         return ( 
             <>
                 <Header/>
-                <div className = 'notFoundPage' >
+                <section className = 'notFoundPage' >
                     <h2> 404 - Page not found </h2> 
                     <p> Try going back to your previous page. </p> 
-                </div>
+                </section>
             </>
         )
     }

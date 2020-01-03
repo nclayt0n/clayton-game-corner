@@ -16,7 +16,7 @@ class AdminUpcomingGame extends React.Component{
     }
     
     onDelete(id,context){
-        GameApiService.deleteUpcoming(`${config.API_ENDPOINT}/api/game/upcoming/${id}`)
+        GameApiService.deleteGame(`${config.API_ENDPOINT}/api/game/upcoming/${id}`)
             .then(context.deleteUpcomingGame(id))
                 .catch(error =>{
                  this.setState({error:error.message});
@@ -38,7 +38,7 @@ class AdminUpcomingGame extends React.Component{
                 .catch(error =>{
                     this.setState({error:error.message});
                 });
-}
+    }
     render(){
         return(
        <section key={this.props.game.id}>

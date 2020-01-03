@@ -12,6 +12,7 @@ import GameApiService from '../services/game-api-services';
 import Context from '../Context';
 import ValidationError from '../Validation/ValidationError';
 let ReactDOMServer = require('react-dom/server');
+const uuidv4=require('uuid');
 
 class AdminReviewList extends React.Component{
     static contextType=Context;
@@ -47,15 +48,15 @@ class AdminReviewList extends React.Component{
         }
         if(game_type===''){
             this.setState({error:'Must choose a game type'});
-        }else{
+        }if(review.length===0&&title.length===0&&game_type===''){
             this.setState({error:''})
             GameApiService.postReview(title,game_type,link,picture, review)
                 .then((newReview) => {
-                    this.context.addReview(newReview); this.props.history.push('/');
+                    this.context.addReview(newReview); this.props.history.push('/admin');
                 })
                 .catch(error => {
                     this.setState({ error:error.message });
-                }) 
+                });
         }
     }
     setPage=(page)=>{
@@ -88,7 +89,7 @@ class AdminReviewList extends React.Component{
         <>
         <Header/>
         <Nav/>
-            <section>
+            <section key={uuidv4()}>
                 <form onSubmit={(e)=>this.addReview(e,this.context)}>
                 <fieldset>
                     <legend>Add Game Review</legend>
@@ -136,7 +137,9 @@ class AdminReviewList extends React.Component{
             </Receiver> */}
 
             <h2>Review List</h2>
-            <AdminReview/> 
+            {this.context.reviews.map(review=>{
+                    return <AdminReview key={review.id} review={review}/>
+                })}
             <Pagination 
                     page={this.state.page} 
                     pageLimit={this.state.pageLimit} 

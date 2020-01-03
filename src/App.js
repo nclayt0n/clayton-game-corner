@@ -40,27 +40,38 @@ class App extends React.Component {
       reviews:[...this.state.reviews,newReview]
     })
   }
+  handleDeleteReview=(id)=>{
+    this.setState({
+            reviews: this.state.reviews.filter(review => review.id !== id)
+        });
+  }
+  handleUpdateReview=(updatedReview)=>{
+    this.setState({
+        reviews:[...this.state.reviews.filter(review=>review.id!==updatedReview.id),updatedReview]
+    });
+    this.props.history.push('/admin');
+  };
   handleAddUpcomings=(upcomingGames)=>{
     this.setState({
       upcomingGames:[...upcomingGames]
-    })
-  }
+    });
+  };
   handleAddUpcoming=(upcomingGame)=>{
     this.setState({
       upcomingGames:[...this.state.upcomingGames,upcomingGame]
-    })
-  }
+    });
+  };
   handleAddBio=(bio)=>{
     this.setState({
       bio:bio
-    })
-  }
+    });
+  };
   handleUpdateUpcomingGame=(updatedUpcomingGame)=>{
     this.setState({
         upcomingGames:[...this.state.upcomingGames.filter(game=>game.id!==updatedUpcomingGame.id),updatedUpcomingGame]
-    })
-    this.props.history.push('/game/upcoming')
-  }
+    });
+    this.props.history.push('/game/upcoming');
+  };
   handleDeleteUpcomingGame=(id)=>{
     this.setState({
             upcomingGames: this.state.upcomingGames.filter(game => game.id !== id)
@@ -78,6 +89,8 @@ class App extends React.Component {
       reviews:this.state.reviews,
       addReviews:this.handleAddReviews,
       addReview:this.handleAddReview,
+      updateReview:this.handleUpdateReview,
+      deleteReview:this.handleDeleteReview,
       addUpcomingGames:this.handleAddUpcomings,
       addBio:this.handleAddBio,
       updateUpcomingGame:this.handleUpdateUpcomingGame,

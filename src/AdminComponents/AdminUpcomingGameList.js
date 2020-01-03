@@ -8,6 +8,8 @@ import ValidationError from '../Validation/ValidationError';
 import Context from '../Context';
 import config from '../config';
 import GameApiService from '../services/game-api-services';
+const uuidv4=require('uuid');
+
 class AdminUpcomingGameList extends React.Component{
     static contextType=Context;
     constructor(){
@@ -40,7 +42,7 @@ class AdminUpcomingGameList extends React.Component{
         }
         if(game_type===''){
             this.setState({error:'Must choose a game type'});
-        }else{
+        }if(date.length>0&&title.length>0&&game_type===''){
             this.setState({error:''})
             GameApiService.postUpcoming(date,game_type,title)
                 .then((game) => {
@@ -48,7 +50,7 @@ class AdminUpcomingGameList extends React.Component{
                 })
                 .catch(error => {
                     this.setState({ error:error.message });
-                }) 
+                });
         }
     }
     setPage=(page)=>{
@@ -66,7 +68,7 @@ class AdminUpcomingGameList extends React.Component{
         <>
         <Header/>
         <Nav/>
-            <section>
+            <section key={uuidv4()}>
                 <form onSubmit={(e)=>this.addGame(e,this.context)}>
                     <fieldset>
                         <legend>Add Upcoming Game</legend>

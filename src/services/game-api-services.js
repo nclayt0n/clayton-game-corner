@@ -25,7 +25,17 @@ const GameApiService = {
                 (!res.ok) ?
                 res.json().then(e => Promise.reject(e)) : res.json());
     },
-
+    patchReview(url, updatedReview) {
+        const { id, title, game_type, link, picture, review } = updatedReview;
+        const options = {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json',
+            },
+            body: JSON.stringify({ id, title, game_type, link, picture, review })
+        };
+        return fetch(url, options)
+    },
     postUpcoming(date, game_type, title) {
         let options = {
             method: 'POST',
@@ -50,7 +60,7 @@ const GameApiService = {
         };
         return fetch(url, options)
     },
-    deleteUpcoming(url, id) {
+    deleteGame(url, id) {
         const options = {
             method: 'DELETE',
             headers: {

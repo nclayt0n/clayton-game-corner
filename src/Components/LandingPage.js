@@ -29,6 +29,12 @@ class LandingPage extends React.Component{
                         </div>
                         <p>{this.context.bio}</p>
                     </section>
+                    <section>
+                        <p>
+                        To get to and test the admin pages go to
+https://clayton-game-corner.nrclayton.now.sh/admin and you will be routed to the admin login page where email and password will be required. Test credentials will be on page.
+                        </p>
+                    </section>
                     <Route 
                         path='/game/review/tabletop' 
                         component={TabletopGameReview}/>

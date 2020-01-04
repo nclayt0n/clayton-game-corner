@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 import Header from './Header';
 
 class NotFound extends React.Component {
@@ -15,4 +14,4 @@ class NotFound extends React.Component {
         )
     }
 }
-export default withRouter(NotFound)
+export default NotFound;

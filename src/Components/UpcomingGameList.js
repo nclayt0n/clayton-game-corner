@@ -1,5 +1,4 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
 import UpcomingGameInfo from './UpcomingGameInfo';
 import Pagination from './Pagination';
 import Nav from './Nav';
@@ -61,4 +60,4 @@ class UpcomingGameList extends React.Component{
         </>)
     }
 }
-export default withRouter(UpcomingGameList);
+export default UpcomingGameList;

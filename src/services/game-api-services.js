@@ -10,7 +10,7 @@ const GameApiService = {
         return fetch(url, options)
             .then(res =>
                 (!res.ok) ? res.json().then(e => Promise.reject(e)) : res.json()
-            );
+            )
     },
     postReview(title, game_type, link, picture, review) {
         let options = {

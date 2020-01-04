@@ -69,7 +69,7 @@ class AdminReviewList extends React.Component{
                 .catch(error => {
                     this.setState({ error });
                 })
-    }
+    };
     render(){
         var myDropzone;
 
@@ -93,7 +93,8 @@ class AdminReviewList extends React.Component{
             <section key={uuidv4()}>
                 <form onSubmit={(e)=>this.addReview(e,this.context)}>
                 <fieldset>
-                    <legend>Add Game Review</legend>
+                    <legend>Add Game Review
+                    </legend>
                     <label htmlFor='title'>Title: 
                         <input name='title' type="text"/>
                     </label><br/>

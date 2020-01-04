@@ -1,6 +1,5 @@
 import React from 'react';
 import Review from './Review';
-import {withRouter} from 'react-router-dom';
 import Pagination from './Pagination';
 import Nav from './Nav';
 import Header from './Header';
@@ -57,4 +56,4 @@ class VideoGameReview extends React.Component{
             </>)
     }
 }
-export default withRouter(VideoGameReview);
+export default VideoGameReview;

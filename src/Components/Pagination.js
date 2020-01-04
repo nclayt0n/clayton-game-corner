@@ -1,5 +1,4 @@
 import React from 'react';
-import {withRouter} from 'react-router-dom';
 import Context from '../Context';
 
 class Pagination extends React.Component{
@@ -37,4 +36,4 @@ class Pagination extends React.Component{
         )
     }
 }
-export default withRouter(Pagination);
+export default Pagination;

@@ -72,7 +72,7 @@ handleSubmitJWTAuth=ev=>{
                         <button type='submit'>Login</button>
                 </fieldset>
               </form>  
-              <ValidationError Namemessage={this.state.error}/>
+              <ValidationError errorMessage={this.state.error}/>
             </section>
             </div>)
     }

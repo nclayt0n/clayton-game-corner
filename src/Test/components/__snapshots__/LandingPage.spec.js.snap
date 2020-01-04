@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App snapshot 1`] = `
+<Fragment>
+  <withRouter(Nav) />
+  <section>
+    <div
+      className="logoContainer"
+    >
+      <img
+        alt="clayton game corrin big logo"
+        src="largelogo.png"
+      />
+    </div>
+    <p />
+  </section>
+  <Route
+    component={[Function]}
+    path="/game/review/tabletop"
+  />
+  <Route
+    component={[Function]}
+    path="/game/review/video"
+  />
+  <Route
+    component={[Function]}
+    exact={true}
+    path="/game/upcoming"
+  />
+</Fragment>
+`;

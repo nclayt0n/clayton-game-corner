@@ -26,7 +26,7 @@ class AdminLandingPage extends React.Component{
                 'content-type': 'application/json',
             },
             body: JSON.stringify({ bio })
-        }
+        };
         fetch(`${config.API_ENDPOINT}/users/2`, options)
         .then(this.context.updateBio(bio))
         .then(this.props.history.push('/'))
@@ -37,7 +37,6 @@ class AdminLandingPage extends React.Component{
     render(){
         return(
             <>
-            {/* <Header/> */}
                 <Nav/>
                     <section key='adminLandingSection'>
                         <div className='logoContainer'>

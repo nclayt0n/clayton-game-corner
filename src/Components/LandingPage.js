@@ -14,11 +14,11 @@ class LandingPage extends React.Component{
     componentDidMount(){
         GameApiService.getApiCall(`${config.API_ENDPOINT}/users/2`)
         .then(([user]) => {
-                    this.context.addBio(user.bio);
-                })
-                .catch(error => {
-                    this.setState({ error });
-                });
+            this.context.addBio(user.bio);
+        })
+        .catch(error => {
+            this.setState({ error });
+        });
     }
     render(){
         return(
@@ -27,7 +27,7 @@ class LandingPage extends React.Component{
                     <section>
                         <div className='logoContainer'><img src={logo} alt='clayton game corrin big logo'/>
                         </div>
-                        <p>{this.context.bio} </p>
+                        <p>{this.context.bio}</p>
                     </section>
                     <Route 
                         path='/game/review/tabletop' 
@@ -43,4 +43,4 @@ class LandingPage extends React.Component{
         )
     }
 }
-export default withRouter(LandingPage);
+export default LandingPage;

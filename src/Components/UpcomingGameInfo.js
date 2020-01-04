@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 
 class UpcomingGameInfo extends React.Component{
     render(){
@@ -9,4 +8,4 @@ class UpcomingGameInfo extends React.Component{
         </ul>)
     }
 }
-export default withRouter(UpcomingGameInfo);
+export default UpcomingGameInfo;

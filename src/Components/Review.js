@@ -1,5 +1,4 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
 const uuidv4 = require('uuid/v4');
 
 class Review extends React.Component{
@@ -24,4 +23,4 @@ class Review extends React.Component{
             </article>)
     }
 }
-export default withRouter(Review);
+export default Review;

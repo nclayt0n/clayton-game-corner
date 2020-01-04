@@ -6,7 +6,7 @@ class Pagination extends React.Component{
     
     render(){
         return(
-            <section className='buttonContainer'>
+            <section className='PaginationButtonContainer'>
                 {this.props.page<1 
                     ? null
                     :<button 
@@ -21,8 +21,7 @@ class Pagination extends React.Component{
                         aria-label='current page'
                         className='button' 
                         id='currentPage' 
-                        type='button'
-                        style={{flex:1}}>{this.props.page+1}
+                        type='button'>Page {this.props.page+1}
                     </button>
                 {this.props.items.length <this.props.pageLimit
                     ?null

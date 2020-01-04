@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdminLogin snapshot 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <withRouter(App)>
+    <withRouter(AdminLogin)>
+      <div
+        id="loginContainer"
+      >
+        <Header />
+        <section>
+          <form
+            id="loginForm"
+          >
+            <fieldset>
+              <legend>
+                Login Form
+              </legend>
+              <label
+                htmlFor="username"
+              >
+                Email:
+                <br />
+                <input
+                  name="email"
+                  type="text"
+                />
+              </label>
+              <br />
+              <label
+                htmlFor="password"
+              >
+                Password:
+                <br />
+                <input
+                  name="password"
+                  type="password"
+                />
+              </label>
+              <br />
+              <button
+                type="submit"
+              >
+                Login
+              </button>
+            </fieldset>
+          </form>
+        </section>
+      </div>
+    </withRouter(AdminLogin)>
+  </withRouter(App)>
+</Router>
+`;

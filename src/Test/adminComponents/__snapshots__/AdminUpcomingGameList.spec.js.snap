@@ -1,0 +1,133 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdminUpcomingGameList snapshot 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+  staticContext={Object {}}
+>
+  <withRouter(App)>
+    <ContextProvider>
+      <withRouter(AdminUpcomingGameList)
+        key="5"
+      >
+        <Header />
+        <Nav />
+        <section
+          key="78"
+        >
+          <form>
+            <fieldset>
+              <legend>
+                Add Upcoming Game
+              </legend>
+              <label
+                htmlFor="date"
+              >
+                Date:
+                <input
+                  name="date"
+                  type="date"
+                />
+              </label>
+              <br />
+              <label
+                htmlFor="title"
+              >
+                Title:
+                <input
+                  name="title"
+                  type="text"
+                />
+              </label>
+              <br />
+              <select
+                name="game_type"
+              >
+                <option
+                  value=""
+                >
+                  Game Type:
+                </option>
+                <option
+                  value="video"
+                >
+                  Video
+                </option>
+                <option
+                  value="tabletop"
+                >
+                  Tabletop
+                </option>
+              </select>
+            </fieldset>
+            <button
+              type="submit"
+            >
+              Add Game
+            </button>
+          </form>
+        </section>
+        <h2>
+          Upcoming Game List
+        </h2>
+        <withRouter(AdminUpcomingGame)
+          game={
+            Object {
+              "date": "02/01/2020",
+              "game_type": "video",
+              "title": "Upcoming test Game 1",
+            }
+          }
+          key="42"
+        />
+        <withRouter(AdminUpcomingGame)
+          game={
+            Object {
+              "date": "03/01/2020",
+              "game_type": "tabletop",
+              "title": "Upcoming test Game 2",
+            }
+          }
+          key="42"
+        />
+        <Pagination
+          items={
+            Array [
+              Object {
+                "date": "02/01/2020",
+                "game_type": "video",
+                "title": "Upcoming test Game 1",
+              },
+              Object {
+                "date": "03/01/2020",
+                "game_type": "tabletop",
+                "title": "Upcoming test Game 2",
+              },
+            ]
+          }
+          page={0}
+          pageLimit={10}
+        />
+      </withRouter(AdminUpcomingGameList)>
+    </ContextProvider>
+  </withRouter(App)>
+</Router>
+`;

@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer snapshot 1`] = `
+<footer>
+  <h3>
+    Clayton Game Corner
+  </h3>
+  <address>
+    <a
+      href="mailto:claytongamecorner@gmail.com"
+    >
+      Contact
+    </a>
+  </address>
+</footer>
+`;

@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import App from '../../App';
-import LandingPage from '../../Components/LandingPage';
+import NotFound from '../../Components/NotFound';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 describe('LandingPage',()=>{
@@ -11,7 +11,7 @@ describe('LandingPage',()=>{
             ReactDOM.render(
                 <BrowserRouter>
                     <App>
-                        <LandingPage/>
+                        <NotFound/>
                     </App>
                 </BrowserRouter>,
                 div
@@ -19,7 +19,7 @@ describe('LandingPage',()=>{
             ReactDOM.unmountComponentAtNode(div);
         });
     it('snapshot', () => {
-        const wrapper=shallow(<LandingPage/>)
+        const wrapper=shallow(<NotFound/>)
         expect(toJson(wrapper))
  .      toMatchSnapshot()
     });

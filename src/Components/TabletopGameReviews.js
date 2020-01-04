@@ -7,6 +7,7 @@ import GameApiService from '../services/game-api-services';
 import config from '../config';
 import Context from '../Context';
 import ValidationError from '../Validation/ValidationError';
+const uuidv4 = require('uuid/v4');
 
 class TabletopGameReview extends React.Component{
     static contextType=Context;
@@ -44,7 +45,7 @@ class TabletopGameReview extends React.Component{
         <Nav/>
            <h2>Tabletop Game Review</h2>
            {this.context.reviews.map(review=>{
-                    return <Review key={review.id} review={review}/>
+                    return <Review key={uuidv4()} review={review}/>
                 })}
                 <ValidationError errorMessage={this.state.error}/>
                 <Pagination 

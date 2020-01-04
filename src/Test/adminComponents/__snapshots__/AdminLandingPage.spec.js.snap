@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdminLandingPage snapshot 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "length": 1,
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+>
+  <withRouter(App)>
+    <withRouter(AdminLandingPage)>
+      <Nav />
+      <section
+        key="adminLandingSection"
+      >
+        <div
+          className="logoContainer"
+        >
+          <img
+            alt="clayton game corrin big logo"
+            src="largelogo.png"
+          />
+        </div>
+        <form
+          onSubmit={[Function]}
+        >
+          <textarea
+            defaultValue="User bio 4"
+            name="bio"
+          />
+          <button
+            type="submit"
+          >
+            Update
+          </button>
+        </form>
+      </section>
+    </withRouter(AdminLandingPage)>
+  </withRouter(App)>
+</Router>
+`;

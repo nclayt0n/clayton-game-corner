@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header snapshot 1`] = `
+<Fragment>
+  <header>
+    <img
+      alt="clayton game corner logo"
+      id="headerLogo"
+      src="smallCGCLogo.png"
+    />
+  </header>
+</Fragment>
+`;

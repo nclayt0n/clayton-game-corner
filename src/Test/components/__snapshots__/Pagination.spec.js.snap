@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination  snapshot 1`] = `
+<section
+  className="buttonContainer"
+>
+  <button
+    aria-label="current page"
+    className="button"
+    id="currentPage"
+    type="button"
+  >
+    1
+  </button>
+</section>
+`;

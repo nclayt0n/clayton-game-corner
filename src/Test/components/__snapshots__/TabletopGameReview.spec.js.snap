@@ -1,0 +1,84 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabletop  snapshot 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+  staticContext={Object {}}
+>
+  <withRouter(App)>
+    <ContextProvider>
+      <TabletopGameReview>
+        <Header />
+        <Nav />
+        <h2>
+          Tabletop Game Review
+        </h2>
+        <Review
+          key="7"
+          review={
+            Object {
+              "game_type": "tabletop",
+              "link": "http://www.notArealSite.com",
+              "picture": "['http://ecx.images-amazon.com/images/I/51l4YWeAEvL._SY300_.jpg']",
+              "review": "This was the best game ever!",
+              "title": "Test Review 1",
+            }
+          }
+        />
+        <Review
+          key="7"
+          review={
+            Object {
+              "game_type": "tabletop",
+              "link": "http://www.notArealSite.com",
+              "picture": "['http://ecx.images-amazon.com/images/I/51l4YWeAEvL._SY300_.jpg']",
+              "review": "This was an ok game.",
+              "title": "Test Review 2",
+            }
+          }
+        />
+        <Pagination
+          items={
+            Array [
+              Object {
+                "game_type": "tabletop",
+                "link": "http://www.notArealSite.com",
+                "picture": "['http://ecx.images-amazon.com/images/I/51l4YWeAEvL._SY300_.jpg']",
+                "review": "This was the best game ever!",
+                "title": "Test Review 1",
+              },
+              Object {
+                "game_type": "tabletop",
+                "link": "http://www.notArealSite.com",
+                "picture": "['http://ecx.images-amazon.com/images/I/51l4YWeAEvL._SY300_.jpg']",
+                "review": "This was an ok game.",
+                "title": "Test Review 2",
+              },
+            ]
+          }
+          page={0}
+          pageLimit={10}
+        />
+      </TabletopGameReview>
+    </ContextProvider>
+  </withRouter(App)>
+</Router>
+`;

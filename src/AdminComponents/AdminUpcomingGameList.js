@@ -40,9 +40,9 @@ class AdminUpcomingGameList extends React.Component{
         if(title.length===0){
             this.setState({error:'Must include a game title'});
         }
-        if(game_type===''){
+        if(game_type.length===0){
             this.setState({error:'Must choose a game type'});
-        }if(date.length>0&&title.length>0&&game_type===''){
+        }if(date.length>0&&title.length>0&&game_type.length>0){
             this.setState({error:''})
             GameApiService.postUpcoming(date,game_type,title)
                 .then((game) => {
@@ -93,13 +93,18 @@ class AdminUpcomingGameList extends React.Component{
             </section>
             <h2>Upcoming Game List</h2>
             {this.context.upcomingGames.map(game=>{
-                    return <AdminUpcomingGame key={game.id} game={game}/>
-                })}
-            <Pagination 
-                page={this.state.page} 
-                pageLimit={this.state.pageLimit} 
-                setPage={(page)=>this.setPage(page)} 
-                items={this.context.upcomingGames}/>
+                return <AdminUpcomingGame key={game.id} game={game}/>
+            })}
+            {this.context.upcomingGames.length===0
+                ?<section>
+                    <p>No Upcoming Games to be displayed</p>
+                </section>
+                :<Pagination 
+                    page={this.state.page} 
+                    pageLimit={this.state.pageLimit} 
+                    setPage={(page)=>this.setPage(page)} 
+                    items={this.context.upcomingGames}/>
+            }
         </>)
     }
 }

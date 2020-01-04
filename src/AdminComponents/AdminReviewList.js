@@ -41,19 +41,20 @@ class AdminReviewList extends React.Component{
         let game_type=e.target.game_type.value;
         let link=e.target.link.value;
         let picture='';
+       
         if(review.length===0){
             this.setState({error:'Must include a game review'});
         }
         if(title.length===0){
             this.setState({error:'Must include a game title'});
         }
-        if(game_type===''){
+        if(game_type.length===0){
             this.setState({error:'Must choose a game type'});
-        }if(review.length===0&&title.length===0&&game_type===''){
-            this.setState({error:''})
+        }if(review.length>0&&title.length>0&&game_type.length>0){
+            this.setState({error:''});
             GameApiService.postReview(title,game_type,link,picture, review)
                 .then((newReview) => {
-                    this.context.addReview(newReview); this.props.history.push('/admin');
+                    this.context.addReview(newReview); this.props.history.push('/admin/game/review-list');
                 })
                 .catch(error => {
                     this.setState({ error:error.message });
@@ -141,12 +142,17 @@ class AdminReviewList extends React.Component{
             <h2>Review List</h2>
             {this.context.reviews.map(review=>{
                     return <AdminReview key={review.id} review={review}/>
-                })}
-            <Pagination 
+            })}
+            {this.context.reviews.length===0
+                ?<section>
+                    <p>No Reviews to be displayed</p>
+                </section>
+                :<Pagination 
                     page={this.state.page} 
                     pageLimit={this.state.pageLimit} 
                     setPage={(page)=>this.setPage(page)} 
                     items={this.context.reviews}/>
+            }
            
         </>)
     }

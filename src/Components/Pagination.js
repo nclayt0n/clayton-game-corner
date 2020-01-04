@@ -21,17 +21,19 @@ class Pagination extends React.Component{
                         aria-label='current page'
                         className='button' 
                         id='currentPage' 
-                        type='button'>{this.props.page+1}
+                        type='button'
+                        style={{flex:1}}>{this.props.page+1}
                     </button>
                 {this.props.items.length <this.props.pageLimit
                     ?null
-                    :<button 
+                    :
+                    <button 
                         aria-label='button for next page of users'
                         className='button' 
                         type='button' 
-                        onClick={()=>this.props.setPage(this.props.page+1)}
-                        >Next
-                    </button>}
+                        onClick={()=>this.props.setPage(this.props.page+1)}>Next
+                    </button>
+                    }
             </section>
         )
     }

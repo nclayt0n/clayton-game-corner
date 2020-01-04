@@ -49,11 +49,16 @@ class VideoGameReview extends React.Component{
                                 review={review}/>
                 })}
                 <ValidationError errorMessage={this.state.error}/>
-                <Pagination 
-                    page={this.state.page} 
-                    pageLimit={this.state.pageLimit} 
-                    setPage={(page)=>this.setPage(page)} 
-                    items={this.context.reviews}/>
+                {this.context.reviews.length===0
+                    ?<section>
+                        <p>No Reviews to be displayed</p>
+                    </section>
+                    :<Pagination 
+                        page={this.state.page} 
+                        pageLimit={this.state.pageLimit} 
+                        setPage={(page)=>this.setPage(page)} 
+                        items={this.context.reviews}/>
+                }
             </>)
     }
 }

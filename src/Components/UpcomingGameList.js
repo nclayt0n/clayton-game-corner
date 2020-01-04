@@ -52,11 +52,16 @@ class UpcomingGameList extends React.Component{
                 })}
         </article>
         <ValidationError errorMessage={this.state.error}/>
-        <Pagination 
-            page={this.state.page} 
-            pageLimit={this.state.pageLimit} 
-            setPage={(page)=>this.setPage(page)} 
-            items={this.context.upcomingGames}/>
+        {this.context.upcomingGames.length===0
+            ?<section>
+                    <p>No Upcoming Games to be displayed</p>
+                </section>
+            :<Pagination 
+                page={this.state.page} 
+                pageLimit={this.state.pageLimit} 
+                setPage={(page)=>this.setPage(page)} 
+                items={this.context.upcomingGames}/>
+        }
         </>)
     }
 }

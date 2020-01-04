@@ -69,8 +69,9 @@ handleSubmitJWTAuth=ev=>{
                         <label htmlFor='password'>Password:<br/>
                             <input type='password' name='password'/>
                         </label><br/>
-                        <button type='submit'>Login</button>
-                </fieldset>
+                </fieldset> 
+                <button type='submit'>Login</button>
+                <button type='button' onClick={()=>this.props.history.goBack()}>Back</button>
               </form>  
               <ValidationError errorMessage={this.state.error}/>
             </section>

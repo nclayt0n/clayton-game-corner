@@ -159,9 +159,18 @@ section {
     flex-direction: column;
     text-align: center;
     border: 1px solid black;
-    width: fit-content;
+    width: 300px;
     margin: 80px auto;
     padding: 15px;
+}
+
+p {
+    padding: 10px;
+    margin: auto;
+}
+
+textarea {
+    border: 1px solid black;
 }
 
 footer {
@@ -199,6 +208,10 @@ form textarea {
 
 button {
     border: 1px solid black;
+    margin: auto;
+    width: 150px;
+    background-color: var(--mainColor);
+    color: white;
 }
 
 header {

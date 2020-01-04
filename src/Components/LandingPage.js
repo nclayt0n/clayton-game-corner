@@ -1,5 +1,5 @@
 import React from 'react';
-import {withRouter,Route} from 'react-router-dom';
+import {withRouter,Route,Link} from 'react-router-dom';
 import TabletopGameReview from './TabletopGameReviews';
 import VideoGameReview from './VideoGameReview';
 import UpcomingGameList from './UpcomingGameList';
@@ -31,8 +31,8 @@ class LandingPage extends React.Component{
                     </section>
                     <section>
                         <p>
-                        To get to and test the admin pages go to
-https://clayton-game-corner.nrclayton.now.sh/admin and you will be routed to the admin login page where email and password will be required. Test credentials will be on page.
+                        To get to and test: 
+<Link to="/admin">Click Admin Login Page</Link> and you will be routed to the admin login page where email and password will be required. Test credentials will be on page.
                         </p>
                     </section>
                     <Route 

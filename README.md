@@ -2,9 +2,9 @@
 ### `Live Link`
 https://clayton-game-corner.nrclayton.now.sh/
 ### `API`
-Repo: https://github.com/nclayt0n/clayton-game-corner
+Repo: https://github.com/nclayt0n/clayton-game-corner-api
 ### `Summary`
-Clayton Game Corner is a blog, tailored for the client to be able to (view)GET (create)POST (update)PATCH & (delte)DELETE Game Reviews and Upcoming Game Dates. The user will be able to view(GET) Game reviews where game_type is Tabletop on the tabletop game page, and Game reviews where game_type is Video on the Video Game Review page. Also view(GET) Upcoming Game Dates in asc order on the Upcoming Games Page. The Client can (update)PATCH their welcome text on the admin Landing Page, and user can view(GET) the welcome text on the Clayton Game Corner Landing Page.
+Clayton Game Corner is a blog, tailored for the client to be able to (view)GET (create)POST (update)PATCH & (delete)DELETE Game Reviews and Upcoming Game Dates. The user will be able to view(GET) Game reviews where game_type is Tabletop on the tabletop game page, and Game reviews where game_type is Video on the Video Game Review page. Also view(GET) Upcoming Game Dates in asc order on the Upcoming Games Page. The Client can (update)PATCH their welcome text on the admin Landing Page, and user can view(GET) the welcome text on the Clayton Game Corner Landing Page.
 
 ### `Demo Credentials`
 To get to and test the admin pages go to 

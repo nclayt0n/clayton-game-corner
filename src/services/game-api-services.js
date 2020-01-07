@@ -12,44 +12,39 @@ const GameApiService = {
                 (!res.ok) ? res.json().then(e => Promise.reject(e)) : res.json()
             )
     },
-    // postReview(title, game_type, link, picture, review) {
     postReview(formData) {
         console.log(formData)
-        let settings = {
-            "async": true,
-            "crossDomain": true,
-            "url": `${config.API_ENDPOINT}/game/review`,
-            "method": "POST",
-            "headers": {
-                "Accept": "*/*",
-                "Cache-Control": "no-cache",
-                "accept-encoding": "gzip, deflate",
-                "Connection": "keep-alive"
-            },
+        let options = {
+            method: 'POST',
+            body: formData,
             "processData": false,
             "contentType": false,
             "mimeType": "multipart/form-data",
-            "data": formData
+            // data: form,
         };
-        return fetch(settings)
+        return fetch(`${config.API_ENDPOINT}/game/review`, options)
             .then(res =>
                 (!res.ok) ?
                 res.json().then(e => Promise.reject(e)) : res.json());
     },
-    patchReview(url, updatedReview) {
-        const { id, title, game_type, link, picture, review } = updatedReview;
-        const options = {
+    patchReview(url, formData) {
+        console.log(url, formData)
+        let options = {
             method: 'PATCH',
-            headers: {
-                'content-type': 'application/json',
-            },
-            body: JSON.stringify({ id, title, game_type, link, picture, review })
+            body: formData,
+            "processData": false,
+            "contentType": false,
+            "mimeType": "multipart/form-data",
+            // data: form,
         };
         return fetch(url, options)
+            .then(res =>
+                (!res.ok) ?
+                res.json().then(e => Promise.reject(e)) : res.json());
     },
     postUpcoming(date, game_type, title) {
         let options = {
-            method: 'POST',
+            method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
             },

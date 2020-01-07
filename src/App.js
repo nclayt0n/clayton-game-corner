@@ -29,6 +29,7 @@ class App extends React.Component {
       };
     }
   handleAddReviews=(reviews)=>{
+    console.log(reviews)
     this.setState({
       reviews:[...reviews]
     })

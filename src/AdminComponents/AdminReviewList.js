@@ -19,18 +19,15 @@ class AdminReviewList extends React.Component{
             error:'',
             page:0,
             pageLimit:10,
-            file:[],
             id:0,
             picture:'',
-            selectedFile:'',
         };
     }
     componentDidMount(){
         GameApiService.getApiCall(`${config.API_ENDPOINT}/game/review?limit=${this.state.pageLimit}&offset=${this.state.page*this.state.pageLimit}`)
                 .then((reviews) => {
-                    if(reviews.ok){
                      this.context.addReviews(reviews);   
-                    }
+                    
                 })
                 .catch(error => {
                     this.setState({ error });
@@ -38,20 +35,19 @@ class AdminReviewList extends React.Component{
     }
     addReview=(e)=>{
         e.preventDefault();
-        let formData= new FormData();
+        let formData= new FormData()
         
         let title=e.target.title.value;
         let review=e.target.review.value;
         let game_type=e.target.game_type.value;
         let link=e.target.link.value;
         let picture=this.state.picture;
-        let picName=picture.name
+
         formData.append("title", JSON.stringify(title));
         formData.append("review", JSON.stringify(review));
         formData.append("game_type", JSON.stringify(game_type));
         formData.append("link", JSON.stringify(link));
-        formData.append("picture",picName)
-        console.log(formData)
+        formData.append("picture",picture)
         if(review.length===0){
             this.setState({error:'Must include a game review'});
         }
@@ -60,13 +56,14 @@ class AdminReviewList extends React.Component{
         }
         if(game_type.length===0){
             this.setState({error:'Must choose a game type'});
+        }if(picture.length===0){
+            this.setState({error:'Must upload an image'});
         }if(review.length>0&&title.length>0&&game_type.length>0){
             this.setState({error:''});
             GameApiService.postReview(formData)
                 .then((newReview) => {
-                    console.log(newReview)
-                    this.state.addReview(newReview); 
-                    this.setState({id:newReview.id,selectedFile:''})
+                    this.context.addReview(newReview); 
+                    this.setState({id:newReview.id,picture:''})
                     this.props.history.push('/admin/game/review-list');
                 })
                 .catch(error => {
@@ -84,22 +81,9 @@ class AdminReviewList extends React.Component{
                     this.setState({ error });
                 });
     };
-   
-    fileSelectedHandler= (event) => {
-        
-        let file=event.target.files[0];
-        this.setState({selectedFile:file});
 
-    };
-    handleChange(e) {
-        console.log(e.target)
-      let getInputValue = e.target.value;
-      console.log(getInputValue)
-    //   this.setState({
-    //     postVal :getInputValue
-    //   });
-}
     render(){ 
+        console.log(this.context)
         return(
         <>
         <Header/>
@@ -108,7 +92,20 @@ class AdminReviewList extends React.Component{
                 <form id='addReview' onSubmit={(e)=>this.addReview(e)}>
                     <fieldset >
                         <legend>Add Game Review</legend>
-                        
+                        <label aria-label='Form instructions'> First select an image, or form will reset</label>
+
+                        <br/>
+                        <label htmlFor="picture" >
+                                {this.state.picture.length===0
+                                ?'Click here to upload image'
+                                :`Click to change ${this.state.picture.name}`}
+                        </label><br/>
+                            <input 
+                                type="file" 
+                                name="uploadfile" 
+                                id="picture" 
+                                style={{display:'none'}} 
+                                onChange={(e)=>this.setState({picture:e.target.files[0]})}/>
                         <label htmlFor='title'>Title: </label>
                             <input name='title' type="text"/>
                         <br/>
@@ -125,17 +122,7 @@ class AdminReviewList extends React.Component{
                             <option value='video'>Video</option>
                             <option value='tabletop'>Tabletop</option>
                         </select><br/>  
-                        <label htmlFor="picture" >
-                                {this.state.picture.length===0
-                                ?'Click me to upload File image'
-                                :`Click to change ${this.state.picture.name}`}
-                        </label>     
-                            <input 
-                                type="file" 
-                                name="uploadfile" 
-                                id="picture" 
-                                style={{display:'none'}} 
-                                onChange={(e)=>this.setState({picture:e.target.files[0]})}/>
+                        
                             
                     </fieldset> 
                     <button type='submit'>Add Review</button>

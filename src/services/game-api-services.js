@@ -12,15 +12,26 @@ const GameApiService = {
                 (!res.ok) ? res.json().then(e => Promise.reject(e)) : res.json()
             )
     },
-    postReview(title, game_type, link, picture, review) {
-        let options = {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json',
+    // postReview(title, game_type, link, picture, review) {
+    postReview(formData) {
+        console.log(formData)
+        let settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": `${config.API_ENDPOINT}/game/review`,
+            "method": "POST",
+            "headers": {
+                "Accept": "*/*",
+                "Cache-Control": "no-cache",
+                "accept-encoding": "gzip, deflate",
+                "Connection": "keep-alive"
             },
-            body: JSON.stringify({ title, game_type, link, picture, review }),
+            "processData": false,
+            "contentType": false,
+            "mimeType": "multipart/form-data",
+            "data": formData
         };
-        return fetch(`${config.API_ENDPOINT}/game/review`, options)
+        return fetch(settings)
             .then(res =>
                 (!res.ok) ?
                 res.json().then(e => Promise.reject(e)) : res.json());
@@ -42,6 +53,7 @@ const GameApiService = {
             headers: {
                 'content-type': 'application/json',
             },
+
             body: JSON.stringify({ date, game_type, title }),
         };
         return fetch(`${config.API_ENDPOINT}/game/upcoming`, options)

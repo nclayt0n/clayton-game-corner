@@ -5,6 +5,8 @@ const Context = React.createContext({
     reviews: [],
     bio: '',
     upcomingGames: [],
+    picture: '',
+    addPicture: () => {},
     addReviews: () => {},
     addReview: () => {},
     deleteReview: () => {},

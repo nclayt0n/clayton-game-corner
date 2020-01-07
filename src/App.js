@@ -25,6 +25,7 @@ class App extends React.Component {
           reviews:[],
           bio:'',
           upcomingGames:[],
+          picture:''
       };
     }
   handleAddReviews=(reviews)=>{
@@ -79,6 +80,12 @@ class App extends React.Component {
             upcomingGames: this.state.upcomingGames.filter(game => game.id !== id)
         });
   };
+  handleAddPicture=(picture)=>{
+    console.log(picture)
+    this.setState({
+      picture:picture
+    });
+  };
   render(){
     let userId;
     (TokenService.getAuthToken()===null)?userId=0
@@ -87,6 +94,7 @@ class App extends React.Component {
     const contextValue={
       user_id:userId,
       bio:this.state.bio,
+      picture:this.state.picture,
       upcomingGames:this.state.upcomingGames,
       reviews:this.state.reviews,
       addReviews:this.handleAddReviews,
@@ -94,6 +102,7 @@ class App extends React.Component {
       updateReview:this.handleUpdateReview,
       deleteReview:this.handleDeleteReview,
       addUpcomingGames:this.handleAddUpcomings,
+      addPicture:this.handleAddPicture,
       addBio:this.handleAddBio,
       updateBio:this.handleUpdateBio,
       updateUpcomingGame:this.handleUpdateUpcomingGame,

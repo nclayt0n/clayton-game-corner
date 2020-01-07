@@ -43,19 +43,14 @@ class AdminReview extends React.Component{
         return(
             <section key={this.props.review.id}>
                 <form key={this.props.review.id} onSubmit={(e)=>this.onSubmit(e,this.props.review.id,this.context)}>
-                    <label htmlFor='title'> Title: 
+                    <label htmlFor='title'> Title: </label>
                         <input name='title' type="text" defaultValue={this.props.review.title}/>
-                    </label>
-                    {/* <label htmlFor='picture'>Images:<br/>
-                        <input name='picture' type="text" defaultValue={this.props.review.picture} />
-                    </label> */}
-                    <label htmlFor='review'>Review:<br/>
+                    <label htmlFor='review'>Review:</label>
                         <textarea name='review' defaultValue= {this.props.review.review}>
-                        </textarea>
-                    </label>
-                    <label htmlFor='link'>Link to Buy:
+                        </textarea><br/>
+                    <label htmlFor='link'>Link to Buy: </label>
                         <input name='link' type='url' defaultValue={this.props.review.link}/>
-                    </label>
+                    <img src={`${config.API_ENDPOINT}/${this.props.review.picture}`} alt={this.props.review.picture}/>
                     <label htmlFor='game_type'> Game Type: 
                         <select name='game_type'>
                             <option value={this.props.review.game_type}>{this.props.review.game_type}</option>

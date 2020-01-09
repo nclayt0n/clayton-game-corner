@@ -31,8 +31,8 @@ class LandingPage extends React.Component{
                     </section>
                     <section>
                         <p>
-                        To get to and test: 
-<Link to="/admin">Click Admin Login Page</Link> and you will be routed to the admin login page where email and password will be required. Test credentials will be on page.
+                        To get to and demo Admin Click: <br/>
+<Link to="/admin">Admin Login Page</Link><br/> You will then be routed to the admin login page where email and password will be required. For demostration purposes credentials will be on login page.
                         </p>
                     </section>
                     <Route 

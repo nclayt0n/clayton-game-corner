@@ -2,9 +2,6 @@ import React from 'react';
 import AdminReview from './AdminReview';
 import Pagination from '../Components/Pagination';
 import {withRouter} from 'react-router-dom';
-import { Receiver, UploadManager,UploadHandler } from 'react-file-uploader';
-import ReactDOM from 'react-dom';
-import DropzoneComponent from 'react-dropzone-component';
 import '../../node_modules/dropzone/dist/min/dropzone.min.css';
 import Nav from '../Components/Nav';
 import Header from '../Components/Header';
@@ -12,7 +9,6 @@ import config from '../config';
 import GameApiService from '../services/game-api-services';
 import Context from '../Context';
 import ValidationError from '../Validation/ValidationError';
-let ReactDOMServer = require('react-dom/server');
 const uuidv4=require('uuid');
 
 class AdminReviewList extends React.Component{
@@ -104,20 +100,6 @@ class AdminReviewList extends React.Component{
                 </form>
                 <ValidationError errorMessage={this.state.error}/>
             </section>
-            
-
-            {/* <Receiver
-                customClass={'addReview'}
-                isOpen={true}
-                // onDragEnter={FUNCTION}
-                // onDragOver={FUNCTION}
-                // onDragLeave={FUNCTION}
-                // onFileDrop={FUNCTION}
-            >
-                <div className='droppable'>
-                    visual layer of the receiver (drag & drop panel)
-                </div>
-            </Receiver> */}
 
             <h2>Review List</h2>
             {this.context.reviews.map(review=>{

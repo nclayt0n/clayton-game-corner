@@ -76,8 +76,8 @@ handleSubmitJWTAuth=ev=>{
               <ValidationError errorMessage={this.state.error}/>
             </section>
             <section>
-              <p>email: admin@test.com password: testP@ssw0rd
-Once logged in you will land on the admin Landing Page where you can view and update current welcome paragraph. Once logged in you can also now see the Nav bar Admin links as well. To add/update/delete Reviews or Upcoming Dates go to Admin Game Reviews or Admin Upcoming Game Dates.</p>
+              <p>email: admin@test.com <br/>password: testP@ssw0rd<br/>
+Once logged in you will be on the Admin Landing Page where you can view and update current welcome paragraph for the main Landing Page. You can also now view and access the Admin links in the Nav Bar. To add/update/delete Reviews, click Admin Game Reviews,or add/update/delet  Upcoming Dates, click Admin Upcoming Game Dates.</p>
             </section>
             </div>)
     }

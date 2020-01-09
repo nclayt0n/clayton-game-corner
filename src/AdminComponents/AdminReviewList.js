@@ -69,24 +69,10 @@ class AdminReviewList extends React.Component{
                 })
                 .catch(error => {
                     this.setState({ error });
-                })
+                });
     };
     render(){
-        var myDropzone;
-
-        function initCallback (dropzone) {
-            myDropzone = dropzone;
-        }
-
-        function removeFile () {
-            if (myDropzone) {
-                myDropzone.removeFile();
-            }
-        }
-        let componentConfig = { postUrl: '/uploadHandler' };
-        let djsConfig = { autoProcessQueue: false,addRemoveLinks: true, maxfilesexceeded: 1,maxfilesreached: 5, };
-        let eventHandlers = { 
-            maxfilesexceeded: 1,maxfilesreached: 5, addedfile: (file) => console.log(file) };
+      
         return(
         <>
         <Header/>
@@ -112,12 +98,6 @@ class AdminReviewList extends React.Component{
                     </select>
                     <fieldset>
                         <legend> Images (max. 5):</legend>
-                            <DropzoneComponent 
-                                config={componentConfig}
-                                eventHandlers={eventHandlers}
-                                djsConfig={djsConfig} />
-                                <button data-dz-remove >Cancel</button>
-                        
                     </fieldset>
                 </fieldset> 
                 <button type='submit'>Add Review</button>

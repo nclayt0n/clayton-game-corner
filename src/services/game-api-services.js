@@ -17,9 +17,6 @@ const GameApiService = {
         let options = {
             method: 'POST',
             body: formData,
-            "processData": false,
-            "contentType": false,
-            "mimeType": "multipart/form-data",
             // data: form,
         };
         return fetch(`${config.API_ENDPOINT}/game/review`, options)
@@ -27,7 +24,7 @@ const GameApiService = {
                 (!res.ok) ?
                 res.json().then(e => Promise.reject(e)) : res.json());
     },
-    patchReview(url, formData) {
+    patchReviewW(url, formData) {
         console.log(url, formData)
         let options = {
             method: 'PATCH',
@@ -35,7 +32,6 @@ const GameApiService = {
             "processData": false,
             "contentType": false,
             "mimeType": "multipart/form-data",
-            // data: form,
         };
         return fetch(url, options)
             .then(res =>

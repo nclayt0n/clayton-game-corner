@@ -63,7 +63,7 @@ class AdminReviewList extends React.Component{
             GameApiService.postReview(formData)
                 .then((newReview) => {
                     this.context.addReview(newReview); 
-                    this.setState({id:newReview.id,picture:''})
+                    this.setState({id:newReview.id,picture:''});
                     this.props.history.push('/admin/game/review-list');
                 })
                 .catch(error => {
@@ -83,7 +83,7 @@ class AdminReviewList extends React.Component{
     };
 
     render(){ 
-        console.log(this.context)
+        console.log(this.state.picture)
         return(
         <>
         <Header/>

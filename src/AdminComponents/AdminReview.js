@@ -15,7 +15,7 @@ class AdminReview extends React.Component{
             originalPicture:props.review.picture,
             clicked:false,
             id:props.review.id,
-            formData:''
+            res:'',
         };
     }
     
@@ -27,10 +27,8 @@ class AdminReview extends React.Component{
                 });
             this.props.history.push('/admin/game/review-list');
     }
-    onSubmit=(e,id)=>{
+    onSubmit=(e)=>{
         e.preventDefault();
-        
-        let formData= new FormData();
         
         let title=e.target.title.value;
         let review=e.target.review.value;
@@ -38,41 +36,23 @@ class AdminReview extends React.Component{
         let link=e.target.link.value;
         let picture;
         
-        formData={
-            "title":title,
-            "review":review,
-            "game_type":game_type,
-            "link":link,
-        }
-        this.state.clicked===true
-        ?formData={
-            "title":title,
-            "review":review,
-            "game_type":game_type,
-            "link":link,
-            "picture":this.state.picture
-        }:formData={
-            "title":title,
-            "review":review,
-            "game_type":game_type,
-            "link":link,
-        };
-        // formData.title=title;
-        // formData.review=review;
-        // formData.game_type=game_type;
-        // formData.link=link;
-        // formData.picture=picture;
-        console.log(formData)
         if(review.length===0){
             this.setState({error:'Must include a game review'});
         }
         if(title.length===0){
             this.setState({error:'Must include a game title'});
         }
-        if(review.length>0&&title.length>0&&game_type.length>0){
-            this.setState({error:''});
-            this.setState({formData})
-            GameApiService.patchReview(`${config.API_ENDPOINT}/game/review/${id}`,formData)
+        if(this.state.clicked===true&&review.length>0&&title.length>0&&game_type.length>0){
+            picture=this.state.picture;
+            let formData= new FormData()
+        formData.append("title", e.target.title.value);
+        formData.append("review", e.target.review.value);
+        formData.append("game_type", game_type);
+        formData.append("link", link);
+        formData.append("picture",picture);
+        formData.append("originalPicture",this.state.originalPicture);
+        this.setState({error:''});
+            GameApiService.patchReviewW(`${config.API_ENDPOINT}/game/review/${this.props.review.id}`,formData)
                 .then((updatedReview) => {
                     this.context.updateReview(updatedReview);
                     this.props.history.push('/admin/');
@@ -80,31 +60,29 @@ class AdminReview extends React.Component{
                 .catch(error => {
                     this.setState({ error:error.message });
                 });
+
+        }if(this.state.clicked===false&&review.length>0&&title.length>0&&game_type.length>0){
+
+            picture=this.state.originalPicture;
+            let updatedReview= new FormData()
+            updatedReview.append("title",  e.target.title.value);
+            updatedReview.append("review", e.target.review.value);
+            updatedReview.append("game_type", game_type);
+            updatedReview.append("link",link);
+            this.setState({error:''});
+            GameApiService.patchReviewW(`${config.API_ENDPOINT}/game/review/${this.props.review.id}`,updatedReview)
+            .then(res=>this.setState({res}))
+                .catch(error =>{
+                    this.setState({error:error.message});
+                });
         }
+       
     }
-    // onSubmit(e,id,context){
-    //     e.preventDefault();
-    //     console.log(this.props.picture)
-    //     let updatedReview={
-    //         id,
-    //         title:e.target.title.value,
-    //         game_type:e.target.game_type.value,
-    //         link:e.target.link.value,
-    //         picture:this.state.picture,
-    //         review:e.target.review.value
-    //     };
-    //     GameApiService.patchReview(`${config.API_ENDPOINT}/game/review/${id}`,updatedReview)
-    //         .then(res=>context.updateReview(res))
-    //             .catch(error =>{
-    //                 this.setState({error:error.message});
-    //             });
-    // }
 handleOnclick=()=>{
     this.state.clicked===false?
-    this.setState({clicked:true}):this.setState({clicked:false})
-}
+    this.setState({clicked:true}):this.setState({clicked:false});
+};
     render(){
-        console.log(this.state)
         return(<>
             {this.state.id<0?'':
             <section key={this.props.review.id}>
@@ -144,6 +122,7 @@ handleOnclick=()=>{
                 </form>
                 <button type='button' onClick={()=>this.onDelete(this.props.review.id,this.context)}>Delete</button>
                 <ValidationError errorMessage={this.state.error}/>
+                {this.state.res.length===0?null:<div className='res' style={{  transitionTimingFunction: 'ease'}}>{this.state.res}</div>}
             </section>
             }</>
             )

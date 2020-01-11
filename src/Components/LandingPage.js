@@ -23,16 +23,20 @@ class LandingPage extends React.Component{
     render(){
         return(
             <> 
-            <Nav/>
-                    <section>
-                        <div className='logoContainer'><img src={logo} alt='clayton game corrin big logo'/>
+            
+                    <section className='landing-page'>
+                        <div className='logo-container'>
+                            <img src={logo} alt='clayton game corrin big logo'/>
                         </div>
                         <p>{this.context.bio}</p>
                     </section>
-                    <section>
+                        
+                    <Nav/>
+                    <section className='landing-page'>
                         <p>
                         To get to and demo Admin Click: <br/>
-<Link to="/admin">Admin Login Page</Link><br/> You will then be routed to the admin login page where email and password will be required. For demostration purposes credentials will be on login page.
+                        <Link to="/admin">Admin Login Page</Link><br/> 
+                        You will then be routed to the admin login page where email and password will be required. For demostration purposes credentials will be on login page.
                         </p>
                     </section>
                     <Route 

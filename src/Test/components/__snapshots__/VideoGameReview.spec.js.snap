@@ -29,7 +29,7 @@ exports[`Video Game Review  snapshot 1`] = `
         key="85"
       >
         <Header />
-        <Nav />
+        <withRouter(Nav) />
         <h2>
           Video Game Review
         </h2>

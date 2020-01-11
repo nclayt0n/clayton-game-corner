@@ -77,7 +77,7 @@ handleSubmitJWTAuth=ev=>{
             </section>
             <section>
               <p>email: admin@test.com <br/>password: testP@ssw0rd<br/>
-Once logged in you will be on the Admin Landing Page where you can view and update current welcome paragraph for the main Landing Page. You can also now view and access the Admin links in the Nav Bar. To add/update/delete Reviews, click Admin Game Reviews,or add/update/delet  Upcoming Dates, click Admin Upcoming Game Dates.</p>
+Once logged in you will be on the Admin Landing Page where you can view and update current welcome paragraph for the User Landing Page. You can also now view and access the Admin links in the Nav Bar. To add/update/delete Reviews, click Admin Game Reviews,or add/update/delet  Upcoming Dates, click Admin Upcoming Game Dates.</p>
             </section>
             </div>)
     }

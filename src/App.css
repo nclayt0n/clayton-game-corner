@@ -153,7 +153,8 @@ nav {
     background-color: white;
 }
 
-article,
+
+/* article,
 section {
     display: flex;
     flex-direction: column;
@@ -162,7 +163,7 @@ section {
     width: 300px;
     margin: 80px auto;
     padding: 15px;
-}
+} */
 
 p {
     padding: 10px;
@@ -235,10 +236,6 @@ header {
     justify-content: space-between;
 }
 
-aside {
-    margin: 120px auto 20px;
-}
-
 #headerLogo {
     height: 90px;
     width: 80px;
@@ -259,4 +256,25 @@ aside {
 
 .notFoundPage {
     margin-top: 150px;
+}
+
+.landing-page {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--mainColor);
+    color: white;
+}
+
+.landing-page img {
+    padding: 50px;
+    width: 400px;
+    height: 400px;
+}
+
+.nav-link-container {}
+
+.nav-link-container ul {
+    display: flex;
+    justify-content: space-evenly;
 }

@@ -1,50 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Nav snapshot 1`] = `
-<Fragment>
-  <nav
-    className="nav-main"
-  >
-    <button
-      className="btn-toggle-nav"
-      type="button"
-    />
-  </nav>
-  <aside
-    className="nav-sidebar"
-  >
-    <ul
-      className="navPageLinks"
-    >
-      <li>
-        <Link
-          to="/"
-        >
-          Home
-        </Link>
-      </li>
-      <li>
-        <Link
-          to="/game/review/video"
-        >
-          Video Game Review
-        </Link>
-      </li>
-      <li>
-        <Link
-          to="/game/review/tabletop"
-        >
-          Tabletop Game Review
-        </Link>
-      </li>
-      <li>
-        <Link
-          to="/game/upcoming"
-        >
-          Upcoming Games
-        </Link>
-      </li>
-    </ul>
-  </aside>
-</Fragment>
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
 `;

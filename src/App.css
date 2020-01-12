@@ -219,7 +219,7 @@ header {
     position: fixed;
     top: 0;
     padding: 0;
-    height: fit-content;
+    height: 110px;
     width: 100%;
     text-align: center;
     width: 100%;
@@ -286,12 +286,28 @@ header {
     height: 200px;
 }
 
+.btn-toggle-nav {
+    position: relative;
+    height: 30px;
+    width: 30px;
+    position: fixed;
+    top: 5px;
+    right: 5px;
+    background-image: url('./images/white_menu_icon.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    border: none;
+}
+
 .nav-links {
     display: flex;
     justify-content: flex-end;
     position: fixed;
-    top: 30px;
+    top: 45px;
     right: 0;
+    flex-direction: column;
+    background-color: var(--mainColor);
 }
 
 .nav-links li a {

@@ -5,21 +5,28 @@ import TokenService from '../services/token-service';
 import MediaQuery from 'react-responsive';
 class Nav extends React.Component{
     static contextType=Context;
+    state={
+        clicked:false
+    }
     handleLogoutClick = () => {
         return TokenService.clearAuthToken();
     }
     render(){
+        console.log(this.state.clicked)
         return(
         <>
         <MediaQuery maxWidth={650}>
           <nav className='nav-main'>
             <button  
                 type='button'
-                className='btn-toggle-nav'>
+                className='btn-toggle-nav'
+                onClick={()=>this.state.clicked===false?this.setState({clicked:true}):this.setState({clicked:false})}
+                >
             </button>
         </nav>  
         </MediaQuery>
-        
+        {this.state.clicked===false
+        ?null:
         <aside className='nav-links-container'>
             <ul className='nav-links'>
             {(this.props.history.location.pathname==='/')
@@ -84,7 +91,7 @@ class Nav extends React.Component{
                     
                 </ul>:null}
             </ul> 
-        </aside>
+        </aside>}
         </>
         )
     

@@ -46,7 +46,7 @@ class AdminUpcomingGameList extends React.Component{
             this.setState({error:''})
             GameApiService.postUpcoming(date,game_type,title)
                 .then((game) => {
-                    this.context.addUpcomingGame(game); this.props.history.push('/game/upcoming');
+                    this.context.addUpcomingGame(game); 
                 })
                 .catch(error => {
                     this.setState({ error:error.message });

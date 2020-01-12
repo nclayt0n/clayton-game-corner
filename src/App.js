@@ -137,7 +137,10 @@ class App extends React.Component {
           <NotFound/>
         </Switch>
         </Context.Provider>
-      <Footer/>
+        {this.props.history.location.pathname==='/'
+        ?null
+        :<Footer/>
+        }
     </main>
   );
   }

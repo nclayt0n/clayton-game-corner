@@ -2,29 +2,46 @@ import React from 'react'
 import {Link,withRouter} from 'react-router-dom';
 import Context from '../Context';
 import TokenService from '../services/token-service';
+
 import MediaQuery from 'react-responsive';
+import navImage from '../images/white_menu_icon.png';
+import cancelNavImage from '../images/close-icon-13577.png';
 class Nav extends React.Component{
     static contextType=Context;
     state={
-        clicked:false
+        clicked:false,
+        image:navImage,
+        backgroundSize:'100%'
     }
     handleLogoutClick = () => {
         return TokenService.clearAuthToken();
     }
     render(){
-        console.log(this.state.clicked)
+        let buttonStyling={
+            height: '30px',
+            width: '30px',
+            position: 'fixed',
+            top: '5px',
+            right: '5px',
+            transitionTimingFunction: 'ease-in',
+            transition:'.2s',
+            backgroundImage: `url(${this.state.image})`,backgroundRepeat: 'no-repeat',
+            backgroundSize: `${this.state.backgroundSize}`,
+            backgroundPosition: 'center',
+            border: 'none'
+        };
         return(
         <>
-        <MediaQuery maxWidth={650}>
-          <nav className='nav-main'>
-            <button  
+        {/* <MediaQuery maxWidth={650}> */}
+          <nav className='nav-main' >
+            <button  style={buttonStyling}
                 type='button'
                 className='btn-toggle-nav'
-                onClick={()=>this.state.clicked===false?this.setState({clicked:true}):this.setState({clicked:false})}
+                onClick={()=>this.state.clicked===false?this.setState({clicked:true,image:cancelNavImage,backgroundSize:'60%'}):this.setState({clicked:false,image:navImage,backgroundSize:'100%'})}
                 >
             </button>
         </nav>  
-        </MediaQuery>
+        {/* </MediaQuery> */}
         {this.state.clicked===false
         ?null:
         <aside className='nav-links-container'>
@@ -59,37 +76,40 @@ class Nav extends React.Component{
                 </li>}
                 {this.context.user_id>0
                 ?
-                <ul className='admin-links-container'>
+                <ul className='admin-nav-links'>
+                    <li id='admin-folder'>
+                            Admin
+                    </li>
                     {this.props.history.location.pathname==='/admin'
-                ?null
-                :<li>
-                    <Link to={`/admin`}>
-                        Admin
-                    </Link>
-                </li>}
-                {this.props.history.location.pathname==='/admin/game/review-list'
-                ?null
-                :<li>
-                    <Link to={'/admin/game/review-list'}>
-                       Game Review
-                    </Link>
-                </li>}
-                {this.props.history.location.pathname==='/admin/game/upcoming-list'
-                ?null
-                :<li >
-                    <Link to={'/admin/game/upcoming-list'}>
-                        Upcoming Games
-                    </Link>
-                </li>}
-                <li>
-                    <Link 
-                        to='/' 
-                        onClick={this.handleLogoutClick}>
-                        Logout
-                    </Link>
-                </li>
-                    
-                </ul>:null}
+                    ?null
+                    :<li>
+                        <Link to={`/admin`}>
+                            Home
+                        </Link>
+                    </li>}
+                    {this.props.history.location.pathname==='/admin/game/review-list'
+                    ?null
+                    :<li>
+                        <Link to={'/admin/game/review-list'}>
+                        Game Review
+                        </Link>
+                    </li>}
+                    {this.props.history.location.pathname==='/admin/game/upcoming-list'
+                    ?null
+                    :<li >
+                        <Link to={'/admin/game/upcoming-list'}>
+                            Upcoming Games
+                        </Link>
+                    </li>}
+                    <li>
+                        <Link 
+                            to='/' 
+                            onClick=   {this.handleLogoutClick}>
+                            Logout
+                        </Link>
+                    </li>  
+                </ul>
+                :null}
             </ul> 
         </aside>}
         </>

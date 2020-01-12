@@ -18,10 +18,10 @@ class Nav extends React.Component{
     }
     render(){
         let buttonStyling={
-            height: '30px',
-            width: '30px',
+            height: '50px',
+            width: '50px',
             position: 'fixed',
-            top: '5px',
+            top: '30px',
             right: '5px',
             transitionTimingFunction: 'ease-in',
             transition:'.2s',

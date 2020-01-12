@@ -153,11 +153,6 @@ nav {
     background-color: white;
 }
 
-p {
-    padding: 10px;
-    margin: auto;
-}
-
 footer {
     position: fixed;
     margin-top: 50px;
@@ -227,7 +222,7 @@ header {
 #headerLogo {
     height: 90px;
     width: 80px;
-    margin-left: 25px;
+    margin: 5px 0 5px 50px;
 }
 
 #loginContainer {
@@ -244,6 +239,14 @@ header {
 
 .notFoundPage {
     margin-top: 150px;
+}
+
+#test-instructions {
+    color: var(--mainColor);
+    padding: 10px;
+    line-height: 26px;
+    font-size: 20px;
+    letter-spacing: .25px;
 }
 
 .landing-page-header p {
@@ -275,7 +278,7 @@ header {
 
 .landing-page-bio {
     width: 80%;
-    margin: 30px auto 100px;
+    margin: 100px auto 100px;
     padding: 30px;
 }
 
@@ -297,7 +300,6 @@ header {
 .nav-links li {
     text-align: right;
     font-size: 18px;
-    font-weight: bold;
 }
 
 .nav-links li a {
@@ -324,7 +326,7 @@ header {
     text-decoration: none;
     text-align: right;
     font-size: 19px;
-    letter-spacing: .35px;
+    letter-spacing: .75px;
     line-height: 25px;
     font-weight: bold;
 }
@@ -332,10 +334,6 @@ header {
 .admin-nav-links li {
     justify-content: flex-end;
     font-weight: normal;
-}
-
-.nav-links li:hover {
-    text-decoration: underline;
 }
 
 .admin-nav-links:hover {
@@ -347,6 +345,11 @@ header {
 }
 
 @media screen and (min-width:700px) {
+    #headerLogo {
+        height: 90px;
+        width: 80px;
+        margin: 5px 0 5px 50px;
+    }
     #landing-nav-links {
         display: flex;
         justify-content: space-evenly;
@@ -390,7 +393,7 @@ header {
     }
     .landing-page-bio {
         width: 70%;
-        margin: 20px auto 100px;
+        margin: 125px auto 100px;
         padding: 30px;
     }
     .nav-links {
@@ -413,6 +416,7 @@ header {
     .nav-links li a {
         text-decoration: none;
         color: white;
+        letter-spacing: 1px;
     }
     #admin-folder {
         color: white;
@@ -437,6 +441,14 @@ header {
         width: fit-content;
         border-radius: 4px;
         border: 1px solid white;
+    }
+    .admin-nav-links a:hover {
+        font-weight: bold;
+        letter-spacing: .75px;
+    }
+    .nav-links a:hover {
+        font-weight: bold;
+        letter-spacing: .75px;
     }
     #admin-folder:hover {
         border: none;
@@ -464,7 +476,7 @@ header {
     #headerLogo {
         height: 120px;
         width: 110px;
-        margin-left: 25px;
+        margin-left: 175px;
     }
     .landing-page-header {
         height: 700px;
@@ -474,5 +486,9 @@ header {
         margin: auto;
         width: 600px;
         height: 600px;
+    }
+    .nav-links {
+        top: 85px;
+        margin-right: 175px;
     }
 }

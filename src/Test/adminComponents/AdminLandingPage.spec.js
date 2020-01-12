@@ -27,7 +27,6 @@ describe('AdminLandingPage',()=>{
             <BrowserRouter>
                 <App>
                     <AdminLandingPage>
-                        <Nav/>
                         <section key='adminLandingSection'>
                             <div className='logoContainer'>
                                 <img src={logo} alt='clayton game corrin big logo'/>

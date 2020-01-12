@@ -2,7 +2,7 @@ import React from 'react'
 import {Link,withRouter} from 'react-router-dom';
 import Context from '../Context';
 import TokenService from '../services/token-service';
-import MediaQuery from 'react-responsive'
+import MediaQuery from 'react-responsive';
 class Nav extends React.Component{
     static contextType=Context;
     handleLogoutClick = () => {
@@ -11,7 +11,7 @@ class Nav extends React.Component{
     render(){
         return(
         <>
-        <MediaQuery maxWidth={600}>
+        <MediaQuery maxWidth={650}>
           <nav className='nav-main'>
             <button  
                 type='button'
@@ -20,8 +20,8 @@ class Nav extends React.Component{
         </nav>  
         </MediaQuery>
         
-        <aside className='nav-link-container'>
-            <ul className='navPageLinks'>
+        <aside className='nav-links-container'>
+            <ul className='nav-links'>
             {(this.props.history.location.pathname==='/')
                 ?(null)
                 :(<li>
@@ -51,26 +51,27 @@ class Nav extends React.Component{
                     </Link>
                 </li>}
                 {this.context.user_id>0
-                ?<>
-                {this.props.history.location.pathname==='/admin'
+                ?
+                <ul className='admin-links-container'>
+                    {this.props.history.location.pathname==='/admin'
                 ?null
                 :<li>
                     <Link to={`/admin`}>
-                        Admin Home
+                        Admin
                     </Link>
                 </li>}
                 {this.props.history.location.pathname==='/admin/game/review-list'
                 ?null
                 :<li>
                     <Link to={'/admin/game/review-list'}>
-                       Admin Game Review
+                       Game Review
                     </Link>
                 </li>}
                 {this.props.history.location.pathname==='/admin/game/upcoming-list'
                 ?null
-                :<li>
+                :<li >
                     <Link to={'/admin/game/upcoming-list'}>
-                        Admin Upcoming Games
+                        Upcoming Games
                     </Link>
                 </li>}
                 <li>
@@ -80,8 +81,8 @@ class Nav extends React.Component{
                         Logout
                     </Link>
                 </li>
-                </>
-                :null}
+                    
+                </ul>:null}
             </ul> 
         </aside>
         </>

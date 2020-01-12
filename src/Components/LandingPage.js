@@ -8,6 +8,7 @@ import logo from '../images/largelogo.png';
 import Context from '../Context';
 import GameApiService from '../services/game-api-services';
 import config from '../config';
+import LandingNav from './LandingNav';
 
 class LandingPage extends React.Component{
     static contextType=Context;
@@ -31,14 +32,14 @@ class LandingPage extends React.Component{
                         <p>{this.context.bio}</p>
                     </section>
                         
-                    <Nav/>
-                    <section className='landing-page'>
+                   <LandingNav/>
+                    {/* <section className='landing-page'>
                         <p>
                         To get to and demo Admin Click: <br/>
                         <Link to="/admin">Admin Login Page</Link><br/> 
                         You will then be routed to the admin login page where email and password will be required. For demostration purposes credentials will be on login page.
                         </p>
-                    </section>
+                    </section> */}
                     <Route 
                         path='/game/review/tabletop' 
                         component={TabletopGameReview}/>

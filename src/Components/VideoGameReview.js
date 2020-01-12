@@ -41,7 +41,6 @@ class VideoGameReview extends React.Component{
         return(
             <>
                 <Header/>
-                <Nav/>
                 <h2>Video Game Review</h2>
                 {this.context.reviews.map(review=>{
                     return <Review 

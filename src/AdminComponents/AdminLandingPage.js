@@ -5,6 +5,7 @@ import Nav from '../Components/Nav';
 import Context from '../Context';
 import GameApiService from '../services/game-api-services';
 import config from '../config';
+import LandingNav from '../Components/LandingNav';
 
 class AdminLandingPage extends React.Component{
     static contextType=Context;
@@ -37,7 +38,7 @@ class AdminLandingPage extends React.Component{
     render(){
         return(
             <>
-                <Nav/>
+                <LandingNav/>
                     <section key='adminLandingSection'>
                         <div className='logoContainer'>
                             <img src={logo} alt='clayton game corrin big logo'/>

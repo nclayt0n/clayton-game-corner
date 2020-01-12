@@ -35,7 +35,6 @@ describe('Admin Review List ',()=>{
                     <App>
                         <AdminReviewList key={6}>
                             <Header/>
-                            <Nav/>
                             <section key={626}>
                                 <form onSubmit={(e)=>this.addReview(e,this.context)}>
                                 <fieldset>
@@ -97,7 +96,6 @@ describe('Admin Review List ',()=>{
                     <Context.Provider>
                         <AdminReviewList key={6}>
                             <Header/>
-                            <Nav/>
                             <section key={301}>
                                 <form onSubmit={(e)=>this.addReview(e,this.context)}>
                                     <fieldset>

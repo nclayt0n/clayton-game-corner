@@ -42,7 +42,6 @@ class UpcomingGameList extends React.Component{
     render(){
         return(<>
         <Header/>
-        <Nav/>
         <article key={uuidv4()}>
             <h3>Upcoming Games</h3>
             {this.context.upcomingGames.map(game=>{

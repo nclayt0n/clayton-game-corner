@@ -218,10 +218,13 @@ button {
 header {
     position: fixed;
     top: 0;
+    padding: 0;
+    height: fit-content;
     width: 100%;
     text-align: center;
     width: 100%;
     background-color: var(--mainColor);
+    text-align: left;
 }
 
 .PaginationButtonContainer {
@@ -266,15 +269,108 @@ header {
     color: white;
 }
 
-.landing-page img {
-    padding: 50px;
-    width: 400px;
-    height: 400px;
+.landing-page p {
+    width: 200px;
+    margin: 0 auto 20px;
+    padding: 20px;
 }
 
-.nav-link-container {}
+.landing-page a {
+    color: white;
+}
 
-.nav-link-container ul {
+.landing-page img {
+    padding: 10px;
+    margin: 50px auto 0;
+    width: 200px;
+    height: 200px;
+}
+
+.nav-links {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+    position: fixed;
+    top: 30px;
+    right: 0;
+}
+
+.nav-links li a {
+    display: flex;
+    color: white;
+    position: relative;
+    margin: 5px;
+}
+
+@media screen and (min-width:650px) {
+    #landing-nav-links {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #landing-nav-links li a {
+        position: relative;
+    }
+    .nav-links-container {
+        font-size: 18px;
+        background-color: white;
+    }
+    .nav-links-container li a {
+        text-decoration: none;
+        color: white;
+    }
+    .nav-links-container li {
+        padding: 10px;
+    }
+    .admin-links-container {
+        height: 30px;
+        width: 75px;
+        flex-direction: column;
+        justify-content: normal;
+    }
+    .admin-links-container {
+        overflow: hidden;
+    }
+    .admin-links-container:hover {
+        height: 200px;
+        background-color: var(--mainColor);
+        width: fit-content;
+    }
+    .landing-nav-container {
+        font-size: 18px;
+        background-color: white;
+    }
+    .landing-nav-container li a {
+        text-decoration: none;
+        color: var(--mainColor);
+    }
+    .landing-nav-container li {
+        padding: 10px;
+    }
+    .landing-admin-links-container {
+        height: 30px;
+        width: 75px;
+        flex-direction: column;
+        justify-content: normal;
+    }
+    .landing-admin-links-container {
+        overflow: hidden;
+    }
+    .landing-admin-links-container:hover {
+        height: 175px;
+        /* overflow: auto; */
+        width: fit-content;
+    }
+    .landing-page {
+        padding: 30px;
+    }
+    .landing-page img {
+        padding: 10px;
+        margin: 50px auto 0;
+        width: 400px;
+        height: 400px;
+    }
+    .landing-page p {
+        width: 400px;
+        margin: 0 auto 30px;
+        padding: 30px;
+    }
 }

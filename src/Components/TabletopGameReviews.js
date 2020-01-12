@@ -42,7 +42,6 @@ class TabletopGameReview extends React.Component{
         return(
         <>
         <Header/>
-        <Nav/>
            <h2>Tabletop Game Review</h2>
            {this.context.reviews.map(review=>{
                     return <Review key={uuidv4()} review={review}/>

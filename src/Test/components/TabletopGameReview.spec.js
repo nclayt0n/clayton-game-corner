@@ -33,7 +33,6 @@ describe('Tabletop ',()=>{
                     <App>
                         <TabletopGameReview key={6}>
                             <Header/>
-                            <Nav/>
                             <h2>Tabletop Game Review</h2>
                                 {reviews.map(review=>{
                                     return <Review key={28} review={review}/>
@@ -69,7 +68,6 @@ describe('Tabletop ',()=>{
                     <Context.Provider>
                         <TabletopGameReview>
                             <Header/>
-                            <Nav/>
                             <h2>Tabletop Game Review</h2>
                             {   reviews.map(review=>{
                                     return <Review key={7} review={review}/>

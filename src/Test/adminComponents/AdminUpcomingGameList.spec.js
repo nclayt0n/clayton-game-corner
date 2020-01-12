@@ -31,7 +31,6 @@ describe('AdminUpcomingGameList',()=>{
                     <App>
                         <AdminUpcomingGameList key={4}>
                         <Header/>
-                            <Nav/>
                             <section key={78}>
                                 <form >
                                     <fieldset>
@@ -74,7 +73,6 @@ describe('AdminUpcomingGameList',()=>{
                     <Context.Provider>
                         <AdminUpcomingGameList  key={5}>
                             <Header/>
-                            <Nav/>
                             <section key={78}>
                                 <form >
                                     <fieldset>

@@ -67,7 +67,6 @@ class AdminUpcomingGameList extends React.Component{
         return(
         <>
         <Header/>
-        <Nav/>
             <section key={uuidv4()}>
                 <form onSubmit={(e)=>this.addGame(e,this.context)}>
                     <fieldset>

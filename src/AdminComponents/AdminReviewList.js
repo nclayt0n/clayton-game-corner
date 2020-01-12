@@ -72,7 +72,6 @@ class AdminReviewList extends React.Component{
         return(
         <>
         <Header/>
-        <Nav/>
             <section key={uuidv4()}>
                 <form onSubmit={(e)=>this.addReview(e,this.context)}>
                 <fieldset>

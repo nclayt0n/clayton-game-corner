@@ -22,7 +22,7 @@ class Nav extends React.Component{
             width: '50px',
             position: 'fixed',
             top: '30px',
-            right: '5px',
+            right: '25px',
             transitionTimingFunction: 'ease-in',
             transition:'.2s',
             backgroundImage: `url(${this.state.image})`,backgroundRepeat: 'no-repeat',
@@ -32,7 +32,7 @@ class Nav extends React.Component{
         };
         return(
         <>
-        {/* <MediaQuery maxWidth={650}> */}
+        <MediaQuery maxWidth={700}>
           <nav className='nav-main' >
             <button  style={buttonStyling}
                 type='button'
@@ -41,7 +41,6 @@ class Nav extends React.Component{
                 >
             </button>
         </nav>  
-        {/* </MediaQuery> */}
         {this.state.clicked===false
         ?null:
         <aside className='nav-links-container'>
@@ -112,6 +111,78 @@ class Nav extends React.Component{
                 :null}
             </ul> 
         </aside>}
+        </MediaQuery>
+        <MediaQuery minWidth={701}> 
+        <nav className='nav-links-container'>
+            <ul className='nav-links'>
+            {(this.props.history.location.pathname==='/')
+                ?(null)
+                :(<li>
+                    <Link to={`/`}>
+                        Home
+                    </Link>
+                </li>)}
+                {this.props.history.location.pathname==='/game/review/video'
+                ?null
+                :<li>
+                    <Link to={'/game/review/video'}>
+                        Video Game Review
+                    </Link>
+                </li>}
+                {this.props.history.location.pathname==='/game/review/tabletop'
+                ?null
+                :<li>
+                    <Link to={'/game/review/tabletop'}>
+                        Tabletop Game Review
+                    </Link>
+                </li>}
+                {this.props.history.location.pathname==='/game/upcoming'
+                ?null
+                :<li>
+                    <Link to={'/game/upcoming'}>
+                        Upcoming Games        
+                    </Link>
+                </li>}
+                {this.context.user_id>0
+                ?
+                <ul className='admin-nav-links'>
+                    <li id='admin-folder'>
+                            Admin
+                    </li>
+                    {this.props.history.location.pathname==='/admin'
+                    ?null
+                    :<li>
+                        <Link to={`/admin`}>
+                            Home
+                        </Link>
+                    </li>}
+                    {this.props.history.location.pathname==='/admin/game/review-list'
+                    ?null
+                    :<li>
+                        <Link to={'/admin/game/review-list'}>
+                        Game Review
+                        </Link>
+                    </li>}
+                    {this.props.history.location.pathname==='/admin/game/upcoming-list'
+                    ?null
+                    :<li >
+                        <Link to={'/admin/game/upcoming-list'}>
+                            Upcoming Games
+                        </Link>
+                    </li>}
+                    <li>
+                        <Link 
+                            to='/' 
+                            onClick=   {this.handleLogoutClick}>
+                            Logout
+                        </Link>
+                    </li>  
+                </ul>
+                :null}
+            </ul> 
+        </nav>
+
+        </MediaQuery>}
         </>
         )
     

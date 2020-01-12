@@ -44,25 +44,27 @@ class LandingNav extends React.Component{
                 {this.context.user_id>0
                 ?
                 <ul className='landing-admin-links-container'>
-                    {this.props.history.location.pathname==='/admin'
+                    <li id='landing-admin-folder'>
+                            Admin
+                    </li>{this.props.history.location.pathname==='/admin'
                     ?null
                     :<li >
                         <Link to={`/admin`}>
-                            Admin
+                            Home
                         </Link>
                     </li>}
                     {this.props.history.location.pathname==='/admin/game/review-list'
                     ?null
                     :<li className='landing-admin-links'>
                         <Link to={'/admin/game/review-list'}>
-                        Admin Game Review
+                        Game Review
                         </Link>
                     </li>}
                     {this.props.history.location.pathname==='/admin/game/upcoming-list'
                     ?null
                     :<li className='landing-admin-links'>
                         <Link to={'/admin/game/upcoming-list'}>
-                            Admin Upcoming Games
+                            Upcoming Games
                         </Link>
                     </li>}
                     <li className='landing-admin-links'>

@@ -153,35 +153,14 @@ nav {
     background-color: white;
 }
 
-
-/* article,
-section {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    border: 1px solid black;
-    width: 300px;
-    margin: 80px auto;
-    padding: 15px;
-} */
-
 p {
     padding: 10px;
     margin: auto;
 }
 
-textarea {
-    border: 1px solid black;
-}
-
-
-/* main {
-    position: relative;
-} */
-
 footer {
     position: fixed;
-    margin-top: 150px;
+    margin-top: 50px;
     bottom: 0;
     display: flex;
     width: 100%;
@@ -248,7 +227,7 @@ header {
 #headerLogo {
     height: 90px;
     width: 80px;
-    margin: 10px 25px;
+    margin-left: 25px;
 }
 
 #loginContainer {
@@ -267,29 +246,37 @@ header {
     margin-top: 150px;
 }
 
-.landing-page {
+.landing-page-header p {
+    width: 80%;
+    line-height: 25px;
+    color: white;
+    margin: 50px auto;
+}
+
+.landing-page-header {
     width: 100%;
+    height: 500px;
     text-align: center;
-    padding: 10px;
+    padding: 20px;
     background-color: var(--mainColor);
     color: white;
 }
 
-.landing-page p {
-    width: 200px;
-    margin: 0 auto 20px;
-    padding: 20px;
+.landing-page-header img {
+    padding: 10px;
+    margin: 50px auto 0;
+    width: 300px;
+    height: 300px;
 }
 
-.landing-page a {
+.landing-page-header a {
     color: white;
 }
 
-.landing-page img {
-    padding: 10px;
-    margin: 50px auto 0;
-    width: 200px;
-    height: 200px;
+.landing-page-bio {
+    width: 80%;
+    margin: 30px auto 100px;
+    padding: 30px;
 }
 
 .nav-links {
@@ -297,11 +284,11 @@ header {
     justify-content: flex-end;
     position: fixed;
     top: 85px;
-    right: 25px;
+    right: 10px;
     padding: 5px;
     flex-direction: column;
     background-color: white;
-    border: 2px solid var(--mainColor);
+    border: 3px solid #1C2420;
     border-radius: 6px;
     letter-spacing: .25px;
     width: 210px;
@@ -359,47 +346,55 @@ header {
     letter-spacing: .25px;
 }
 
-#landing-nav-links {
-    display: flex;
-    justify-content: space-evenly;
-}
-
-#landing-nav-links li a {
-    position: relative;
-}
-
-.landing-nav-container {
-    font-size: 18px;
-    background-color: white;
-}
-
-.landing-nav-container li a {
-    text-decoration: none;
-    color: var(--mainColor);
-}
-
-.landing-nav-container li {
-    padding: 10px;
-}
-
-.landing-admin-links-container {
-    height: 30px;
-    width: 75px;
-    flex-direction: column;
-    justify-content: normal;
-}
-
-.landing-admin-links-container {
-    overflow: hidden;
-}
-
-.landing-admin-links-container:hover {
-    height: 175px;
-    width: fit-content;
-}
-
 @media screen and (min-width:700px) {
+    #landing-nav-links {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    #landing-nav-links li a {
+        position: relative;
+    }
+    .landing-nav-container {
+        font-size: 18px;
+        background-color: white;
+    }
+    .landing-nav-container li {
+        text-align: right;
+        padding: 10px;
+    }
+    .landing-nav-container li a {
+        text-decoration: none;
+        color: var(--mainColor);
+        justify-content: flex-end;
+        letter-spacing: 1px;
+    }
+    .landing-nav-container a:hover {
+        font-weight: bold;
+        letter-spacing: .5px;
+    }
+    .landing-admin-links-container {
+        height: 30px;
+        width: 75px;
+        flex-direction: column;
+        justify-content: normal;
+    }
+    .landing-admin-links-container {
+        overflow: hidden;
+    }
+    .landing-admin-links-container:hover {
+        height: 200px;
+        width: fit-content;
+    }
+    .landing-admin-links-container a:hover {
+        font-weight: bold;
+    }
+    .landing-page-bio {
+        width: 70%;
+        margin: 20px auto 100px;
+        padding: 30px;
+    }
     .nav-links {
+        border: none;
         top: 65px;
         right: 25px;
         flex-direction: row;
@@ -422,6 +417,9 @@ header {
     #admin-folder {
         color: white;
     }
+    #landing-admin-folder {
+        color: var(--mainColor);
+    }
     .admin-nav-links {
         padding: 5px;
         margin: 0;
@@ -443,18 +441,38 @@ header {
     #admin-folder:hover {
         border: none;
     }
-    .landing-page {
+    .landing-page-header {
         padding: 30px;
     }
-    .landing-page img {
+    .landing-page-header img {
         padding: 10px;
-        margin: 50px auto 0;
+        margin: auto;
         width: 400px;
         height: 400px;
     }
-    .landing-page p {
+    .landing-page-header p {
         width: 400px;
-        margin: 0 auto 30px;
+        margin: 50px auto;
         padding: 30px;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    header {
+        height: 140px;
+    }
+    #headerLogo {
+        height: 120px;
+        width: 110px;
+        margin-left: 25px;
+    }
+    .landing-page-header {
+        height: 700px;
+    }
+    .landing-page-header img {
+        padding: 10px;
+        margin: auto;
+        width: 600px;
+        height: 600px;
     }
 }

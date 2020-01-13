@@ -57,29 +57,31 @@ handleSubmitJWTAuth=ev=>{
 }
     render(){
         return(
-        <div id='loginContainer'>
+        <>
         <Header/>
-            <section>
-                 <form id='loginForm' onSubmit={this.handleSubmitJWTAuth} >
+            <section id='admin-login'>
+                 <form 
+                      id='admin-login-form' 
+                      onSubmit={this.handleSubmitJWTAuth} >
                     <fieldset>
                         <legend>Login Form</legend>
-                        <label htmlFor='username'>Email:<br/>
+                        <label htmlFor='username'>Email:</label>
                             <input type='text' name='email'/>
-                        </label><br/>
-                        <label htmlFor='password'>Password:<br/>
+                        <br/>
+                        <label htmlFor='password'>Password:</label>
                             <input type='password' name='password'/>
-                        </label><br/>
+                        <br/>
                 </fieldset> 
                 <button type='submit'>Login</button>
                 <button type='button' onClick={()=>this.props.history.goBack()}>Back</button>
               </form>  
               <ValidationError errorMessage={this.state.error}/>
             </section>
-            <section>
-              <p>email: admin@test.com <br/>password: testP@ssw0rd<br/>
+            {/* <section className='landing-page-header test-instructions'>
+              <p >EMAIL: admin@test.com <br/>PASSWORD: testP@ssw0rd<br/>
 Once logged in you will be on the Admin Landing Page where you can view and update current welcome paragraph for the User Landing Page. You can also now view and access the Admin links in the Nav Bar. To add/update/delete Reviews, click Admin Game Reviews,or add/update/delet  Upcoming Dates, click Admin Upcoming Game Dates.</p>
-            </section>
-            </div>)
+            </section> */}
+            </>)
     }
 }
 export default withRouter(AdminLogin);

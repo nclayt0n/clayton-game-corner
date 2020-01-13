@@ -186,6 +186,9 @@ nav {
     background-color: white;
 }
 
+
+/*footer*/
+
 footer {
     position: fixed;
     margin-top: 50px;
@@ -223,6 +226,9 @@ footer li a {
     text-align: center;
 }
 
+
+/*header*/
+
 header {
     position: fixed;
     top: 0;
@@ -241,16 +247,55 @@ header {
     margin: 5px 0 5px 10px;
 }
 
-#loginContainer {
-    margin-top: 150px;
+
+/*admin login*/
+
+#admin-login {
+    margin: 200px auto;
 }
 
-#loginForm {
+#admin-login form {
+    margin: auto;
     width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    border: 1px solid var(--mainColor);
+    border-radius: 4px;
 }
 
-#loginForm input {
-    width: 200px;
+#admin-login legend {
+    margin: 20px auto;
+    text-transform: uppercase;
+    font-size: 22px;
+}
+
+#admin-login fieldset {
+    padding: 5px;
+    margin: auto;
+}
+
+#admin-login label {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    font-size: 18px;
+}
+
+#admin-login button {
+    margin: 10px auto;
+    font-size: 18px;
+}
+
+#admin-login input {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    flex: 1;
+    font-size: 18px;
+    border-radius: 4px;
 }
 
 .notFoundPage {
@@ -263,6 +308,9 @@ header {
     color: white;
     margin: 50px auto;
 }
+
+
+/*landing page*/
 
 .landing-page-header {
     width: 100%;
@@ -298,6 +346,9 @@ header {
     letter-spacing: .25px;
 }
 
+
+/*admin landing page*/
+
 .admin-landing-page-bio {
     margin: auto auto 120px;
 }
@@ -325,6 +376,9 @@ header {
     overflow: scroll;
     border-radius: 4px;
 }
+
+
+/*nav*/
 
 .nav-links {
     display: flex;
@@ -389,11 +443,13 @@ header {
 }
 
 @media screen and (min-width:700px) {
+    /*header*/
     #headerLogo {
         height: 90px;
         width: 80px;
         margin: 5px 0 5px 20px;
     }
+    /*nav*/
     #landing-nav-links {
         display: flex;
         justify-content: space-evenly;
@@ -435,12 +491,29 @@ header {
     .landing-admin-links-container a:hover {
         font-weight: bold;
     }
+    /*langing page*/
     .landing-page-bio {
         width: 70%;
         margin: 125px auto 100px;
         padding: 30px;
         font-size: 18px;
     }
+    .landing-page-header {
+        padding: 30px;
+    }
+    .landing-page-header img {
+        padding: 10px;
+        margin: auto;
+        width: 400px;
+        height: 400px;
+    }
+    .landing-page-instructions p {
+        width: 400px;
+        margin: 50px auto;
+        padding: 30px;
+        font-size: 18px;
+    }
+    /*admin landing page*/
     .admin-landing-page-bio form {
         width: 80%;
         margin: 80px auto 100px;
@@ -451,6 +524,7 @@ header {
         height: 400px;
         font-size: 18px;
     }
+    /*nav*/
     .nav-links {
         border: none;
         top: 65px;
@@ -508,24 +582,24 @@ header {
     #admin-folder:hover {
         border: none;
     }
-    .landing-page-header {
-        padding: 30px;
+    /*admin login*/
+    #admin-login {
+        margin: 300px auto;
     }
-    .landing-page-header img {
-        padding: 10px;
-        margin: auto;
+    #admin-login form {
         width: 400px;
-        height: 400px;
     }
-    .landing-page-instructions p {
-        width: 400px;
-        margin: 50px auto;
-        padding: 30px;
-        font-size: 18px;
+    #admin-login legend {
+        margin: 30px auto;
+        font-size: 24px;
+    }
+    #admin-login label {
+        font-size: 20px;
     }
 }
 
 @media screen and (min-width:1024px) {
+    /*header*/
     header {
         height: 140px;
     }
@@ -534,6 +608,7 @@ header {
         width: 110px;
         margin-left: 35px;
     }
+    /*landing page*/
     .landing-page-bio {
         font-size: 20px;
     }
@@ -550,8 +625,25 @@ header {
         width: 600px;
         height: 600px;
     }
+    /*nav*/
     .nav-links {
         top: 85px;
         margin-right: 0px;
+    }
+    /*admin login*/
+    #admin-login {
+        margin: 300px auto;
+    }
+    #admin-login form {
+        width: 600px;
+        padding: 40px;
+    }
+    #admin-login input,
+    #admin-login label,
+    #admin-login button {
+        font-size: 22px;
+    }
+    #admin-login legend {
+        font-size: 26px;
     }
 }

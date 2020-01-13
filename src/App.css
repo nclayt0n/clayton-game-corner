@@ -138,20 +138,11 @@ table {
 
 * {
     box-sizing: border-box;
+    font-size: 16px;
 }
 
 :root {
     --mainColor: rgb(17, 72, 82);
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    flex: 1;
-}
-
-form textarea {
-    height: 150px;
 }
 
 button {
@@ -160,6 +151,7 @@ button {
     width: 150px;
     background-color: var(--mainColor);
     color: white;
+    border-radius: 4px;
 }
 
 .PaginationButtonContainer {
@@ -264,15 +256,7 @@ header {
     margin-top: 150px;
 }
 
-#test-instructions {
-    color: var(--mainColor);
-    padding: 10px;
-    line-height: 26px;
-    font-size: 20px;
-    letter-spacing: .25px;
-}
-
-.landing-page-header p {
+.test-instructions p {
     width: 80%;
     line-height: 25px;
     color: white;
@@ -300,9 +284,45 @@ header {
 }
 
 .landing-page-bio {
-    width: 80%;
+    width: 100%;
     margin: 100px auto 100px;
+    padding: 40px;
+}
+
+.landing-page-bio p {
+    color: var(--mainColor);
+    padding: 10px;
+    line-height: 26px;
+    font-size: 20px;
+    letter-spacing: .25px;
+}
+
+.admin-landing-page-bio {
+    margin: auto auto 120px;
+}
+
+.admin-landing-page-bio form {
+    width: 100%;
+    margin: 100px auto 100px;
+    height: fit-content;
     padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-landing-page-bio textarea {
+    color: var(--mainColor);
+    padding: 10px;
+    line-height: 26px;
+    font-size: 18px;
+    letter-spacing: .25px;
+    margin: 50px auto 5px;
+    width: 100%;
+    height: 600px;
+    max-width: 700px;
+    border: 1px solid var(--mainColor);
+    overflow: scroll;
+    border-radius: 4px;
 }
 
 .nav-links {
@@ -427,6 +447,17 @@ header {
         width: 70%;
         margin: 125px auto 100px;
         padding: 30px;
+        font-size: 18px;
+    }
+    .admin-landing-page-bio form {
+        width: 80%;
+        margin: 80px auto 100px;
+        padding: 30px;
+    }
+    .admin-landing-page-bio textarea {
+        max-width: 1024px;
+        height: 400px;
+        font-size: 18px;
     }
     .nav-links {
         border: none;
@@ -494,10 +525,11 @@ header {
         width: 400px;
         height: 400px;
     }
-    .landing-page-header p {
+    .landing-page-instructions p {
         width: 400px;
         margin: 50px auto;
         padding: 30px;
+        font-size: 18px;
     }
 }
 
@@ -518,6 +550,13 @@ header {
     #siteEmail {
         margin: auto 90px;
         flex: 1;
+    }
+    .landing-page-bio {
+        font-size: 20px;
+    }
+    .admin-landing-page-bio textarea {
+        max-width: 3000;
+        font-size: 20px;
     }
     .landing-page-header {
         height: 700px;

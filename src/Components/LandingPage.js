@@ -38,11 +38,11 @@ class LandingPage extends React.Component{
                         <LandingNav/>
                     </MediaQuery>
                     <section className='landing-page-bio'>
-                        <p id='test-instructions'>{this.context.bio}</p>
+                        <p>{this.context.bio}</p>
                     </section>
                     <section className='landing-page-header test-instructions'>
                         <p >
-                        To get to and demo Admin Click: <br/>
+                        Demo Admin Click:
                         <Link to="/admin">Admin Login Page</Link><br/> 
                         You will then be routed to the admin login page where email and password will be required. For demostration purposes credentials will be on login page.
                         </p>

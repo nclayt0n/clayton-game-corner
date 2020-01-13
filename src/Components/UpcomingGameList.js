@@ -42,7 +42,7 @@ class UpcomingGameList extends React.Component{
     render(){
         return(<>
         <Header/>
-        <article key={uuidv4()}>
+        <article key={uuidv4()} id='upcoming-game-list'>
             <h3>Upcoming Games</h3>
             {this.context.upcomingGames.map(game=>{
                     return <UpcomingGameInfo 
@@ -52,7 +52,7 @@ class UpcomingGameList extends React.Component{
         </article>
         <ValidationError errorMessage={this.state.error}/>
         {this.context.upcomingGames.length===0
-            ?<section>
+            ?<section id='no-upcoming-games'>
                     <p>No Upcoming Games to be displayed</p>
                 </section>
             :<Pagination 

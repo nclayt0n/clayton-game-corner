@@ -252,23 +252,25 @@ header {
 
 #admin-login {
     margin: 200px auto;
+    height: 100%;
 }
 
 #admin-login form {
+    background-color: var(--mainColor);
     margin: auto;
     width: 300px;
     text-align: center;
     display: flex;
     flex-direction: column;
-    padding: 30px;
+    padding: 40px;
     border: 1px solid var(--mainColor);
     border-radius: 4px;
 }
 
 #admin-login legend {
     margin: 20px auto;
-    text-transform: uppercase;
     font-size: 22px;
+    display: none;
 }
 
 #admin-login fieldset {
@@ -287,6 +289,8 @@ header {
 #admin-login button {
     margin: 10px auto;
     font-size: 18px;
+    background-color: white;
+    color: var(--mainColor);
 }
 
 #admin-login input {
@@ -372,7 +376,7 @@ header {
     width: 100%;
     height: 600px;
     max-width: 700px;
-    border: 1px solid var(--mainColor);
+    border: none;
     overflow: scroll;
     border-radius: 4px;
 }
@@ -441,6 +445,36 @@ header {
     margin-left: 30px;
     letter-spacing: .25px;
 }
+
+.nav-links li a:hover {
+    color: #1C2420;
+}
+
+.admin-nav-links li a:hover {
+    color: #1C2420;
+}
+
+
+/*upcoming games*/
+
+#upcoming-game-list {
+    margin: 200px auto;
+    width: 100%;
+}
+
+#upcoming-game-list ul {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px;
+}
+
+#upcoming-game-list li {}
+
+.game-title {
+    font-weight: bold;
+}
+
+.game-type {}
 
 @media screen and (min-width:700px) {
     /*header*/
@@ -571,13 +605,11 @@ header {
         border-radius: 4px;
         border: 1px solid white;
     }
-    .admin-nav-links a:hover {
-        font-weight: bold;
-        letter-spacing: .75px;
+    .admin-nav-links li a:hover {
+        color: #EDF0F1;
     }
-    .nav-links a:hover {
-        font-weight: bold;
-        letter-spacing: .75px;
+    .nav-links li a:hover {
+        color: #EDF0F1;
     }
     #admin-folder:hover {
         border: none;

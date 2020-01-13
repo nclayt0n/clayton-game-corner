@@ -58,18 +58,24 @@ handleSubmitJWTAuth=ev=>{
     render(){
         return(
         <>
-        <Header/>
+          <Header/>
             <section id='admin-login'>
                  <form 
                       id='admin-login-form' 
                       onSubmit={this.handleSubmitJWTAuth} >
                     <fieldset>
-                        <legend>Login Form</legend>
-                        <label htmlFor='username'>Email:</label>
-                            <input type='text' name='email'/>
+                        <legend> Admin Login</legend>
+                            <input 
+                              type='text' 
+                              name='email'
+                              placeholder='email'
+                              />
                         <br/>
-                        <label htmlFor='password'>Password:</label>
-                            <input type='password' name='password'/>
+                            <input 
+                              type='password' 
+                              name='password'
+                              placeholder='password'
+                              />
                         <br/>
                 </fieldset> 
                 <button type='submit'>Login</button>

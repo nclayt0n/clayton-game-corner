@@ -212,14 +212,15 @@ footer li a {
 }
 
 #siteName {
-    margin: auto 15px;
+    margin: auto;
     flex: 1;
-    text-align: right;
+    text-align: center;
 }
 
 #siteEmail {
     margin: auto;
     flex: 1;
+    text-align: center;
 }
 
 header {
@@ -237,7 +238,7 @@ header {
 #headerLogo {
     height: 90px;
     width: 80px;
-    margin: 5px 0 5px 20px;
+    margin: 5px 0 5px 10px;
 }
 
 #loginContainer {
@@ -391,7 +392,7 @@ header {
     #headerLogo {
         height: 90px;
         width: 80px;
-        margin: 5px 0 5px 25px;
+        margin: 5px 0 5px 20px;
     }
     #landing-nav-links {
         display: flex;
@@ -399,15 +400,6 @@ header {
     }
     #landing-nav-links li a {
         position: relative;
-    }
-    #siteName {
-        margin: auto 20px;
-        flex: 1;
-        text-align: right;
-    }
-    #siteEmail {
-        margin: auto 40px;
-        flex: 1;
     }
     .landing-nav-container {
         font-size: 18px;
@@ -462,7 +454,7 @@ header {
     .nav-links {
         border: none;
         top: 65px;
-        right: 25px;
+        right: 10px;
         flex-direction: row;
         align-items: center;
         margin: auto;
@@ -540,16 +532,7 @@ header {
     #headerLogo {
         height: 120px;
         width: 110px;
-        margin-left: 95px;
-    }
-    #siteName {
-        margin: auto 70px;
-        flex: 1;
-        text-align: right;
-    }
-    #siteEmail {
-        margin: auto 90px;
-        flex: 1;
+        margin-left: 35px;
     }
     .landing-page-bio {
         font-size: 20px;
@@ -569,6 +552,6 @@ header {
     }
     .nav-links {
         top: 85px;
-        margin-right: 40px;
+        margin-right: 0px;
     }
 }

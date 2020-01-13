@@ -4,10 +4,14 @@ class Footer extends React.Component{
     render(){
         return(
         <footer>
-            <h3>Clayton Game Corner</h3>
-            <address>
-                <a href='mailto:claytongamecorner@gmail.com'>Contact</a>
-            </address>
+            <ul>
+                <li id='siteName'>Clayton Game Corner</li>
+                <li id='siteEmail'>
+                    <address>
+                        <a href='mailto:claytongamecorner@gmail.com'>Contact</a>
+                    </address>
+                </li>
+            </ul>
         </footer>
         )
     }

@@ -37,7 +37,7 @@ class Nav extends React.Component{
             width: '50px',
             position: 'fixed',
             top: '30px',
-            right: '50px',
+            right: '20px',
             transitionTimingFunction: 'ease-in',
             transition:'.2s',
             backgroundImage: `url(${this.state.image})`,backgroundRepeat: 'no-repeat',

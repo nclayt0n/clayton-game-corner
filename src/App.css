@@ -144,39 +144,6 @@ table {
     --mainColor: rgb(17, 72, 82);
 }
 
-img {
-    width: 200px;
-    height: 200px;
-}
-
-nav {
-    background-color: white;
-}
-
-footer {
-    position: fixed;
-    margin-top: 50px;
-    bottom: 0;
-    display: flex;
-    width: 100%;
-    background-color: white;
-}
-
-h2,
-h1 {
-    font-size: 22px;
-    text-align: center;
-}
-
-h3 {
-    margin: 20px auto;
-    text-align: center;
-}
-
-footer address {
-    margin: auto;
-}
-
 form {
     display: flex;
     flex-direction: column;
@@ -207,6 +174,62 @@ button {
     justify-content: space-between;
 }
 
+img {
+    width: 200px;
+    height: 200px;
+}
+
+h2,
+h1 {
+    font-size: 22px;
+    text-align: center;
+}
+
+h3 {
+    margin: 20px auto;
+    text-align: center;
+}
+
+nav {
+    background-color: white;
+}
+
+footer {
+    position: fixed;
+    margin-top: 50px;
+    bottom: 0;
+    width: 100%;
+    background-color: white;
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+}
+
+footer li {
+    padding: 10px;
+    color: var(--mainColor);
+}
+
+footer li a {
+    color: var(--mainColor);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#siteName {
+    margin: auto 15px;
+    flex: 1;
+    text-align: right;
+}
+
+#siteEmail {
+    margin: auto;
+    flex: 1;
+}
+
 header {
     position: fixed;
     top: 0;
@@ -222,7 +245,7 @@ header {
 #headerLogo {
     height: 90px;
     width: 80px;
-    margin: 5px 0 5px 50px;
+    margin: 5px 0 5px 20px;
 }
 
 #loginContainer {
@@ -348,7 +371,7 @@ header {
     #headerLogo {
         height: 90px;
         width: 80px;
-        margin: 5px 0 5px 50px;
+        margin: 5px 0 5px 25px;
     }
     #landing-nav-links {
         display: flex;
@@ -356,6 +379,15 @@ header {
     }
     #landing-nav-links li a {
         position: relative;
+    }
+    #siteName {
+        margin: auto 20px;
+        flex: 1;
+        text-align: right;
+    }
+    #siteEmail {
+        margin: auto 40px;
+        flex: 1;
     }
     .landing-nav-container {
         font-size: 18px;
@@ -476,7 +508,16 @@ header {
     #headerLogo {
         height: 120px;
         width: 110px;
-        margin-left: 175px;
+        margin-left: 95px;
+    }
+    #siteName {
+        margin: auto 70px;
+        flex: 1;
+        text-align: right;
+    }
+    #siteEmail {
+        margin: auto 90px;
+        flex: 1;
     }
     .landing-page-header {
         height: 700px;
@@ -489,6 +530,6 @@ header {
     }
     .nav-links {
         top: 85px;
-        margin-right: 175px;
+        margin-right: 40px;
     }
 }

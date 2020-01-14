@@ -21,7 +21,6 @@ class AdminUpcomingGame extends React.Component{
                 .catch(error =>{
                  this.setState({error:error.message});
                 });
-            this.props.history.push('/game/upcoming');
     }
     onSubmit(e,id,context){
         e.preventDefault();
@@ -41,26 +40,25 @@ class AdminUpcomingGame extends React.Component{
     }
     render(){
         return(
-       <section key={this.props.game.id}>
-                <form key={this.props.game.id} onSubmit={(e)=>this.onSubmit(e,this.props.game.id,this.context)}>
+       <section key={this.props.game.id} className='upcoming-game-info-container'>
+                <form  className='admin-upcoming-game-info' key={this.props.game.id} onSubmit={(e)=>this.onSubmit(e,this.props.game.id,this.context)}>
                     <label htmlFor='gameDate'> Current Date: {this.state.game.date}
                     </label>
-                    <label htmlFor='newGameDate'>New Date:
+                    <label htmlFor='newGameDate'>New Date:</label>
                         <input type="date" name='newGameDate'/>
-                    </label>
-                    <label htmlFor='title'>Title:
+                    
+                    <label htmlFor='title'>Title:</label>
                         <input type="text" name='title' defaultValue={this.props.game.title}/>
-                    </label>
-                    <label htmlFor='game_type'> Game Type: 
                         <select name='game_type'>
+                        <option value=''>Game Type:</option>
                             <option value={this.props.game.game_type}>{this.props.game.game_type}</option>
                             <option value={this.props.game.game_type==='video'?'tabletop':'video'}>{this.props.game.game_type==='video'?'tabletop':'video'}</option>
                         </select>
-                    </label>
                     <button type='submit'>Update</button>
+                    <button type='button' onClick={()=>this.onDelete(this.props.game.id,this.context)}>Delete</button>
                 </form>
                 
-                <button type='button' onClick={()=>this.onDelete(this.props.game.id,this.context)}>Delete</button>
+                
                 <ValidationError errorMessage={this.state.error}/>
             </section>)
     }

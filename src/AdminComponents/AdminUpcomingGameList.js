@@ -67,17 +67,14 @@ class AdminUpcomingGameList extends React.Component{
         return(
         <>
         <Header/>
-            <section key={uuidv4()}>
+            <section className='admin-add-upcoming-game' key={uuidv4()}>
                 <form onSubmit={(e)=>this.addGame(e,this.context)}>
                     <fieldset>
                         <legend>Add Upcoming Game</legend>
-                        <label htmlFor='date'>Date: 
                             <input name='date' type="date"/>
-                        </label>
-                        <br/>
-                        <label htmlFor='title'>Title:
-                            <input name='title' type="text"/>
-                        </label>
+                            <br/>
+                            <input placeholder='title' name='title' type="text"/>
+                        
                         <br/>
                         <select name='game_type'>
                             <option value=''>Game Type:</option>

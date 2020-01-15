@@ -43,7 +43,10 @@ class UpcomingGameList extends React.Component{
         return(<>
         <Header/>
         <article key={uuidv4()} id='upcoming-game-list'>
-            <h3>Upcoming Games</h3>
+            <div id='upcoming-header'>
+                <h3>Upcoming Games</h3>
+                <div className='horizontal-line'></div>
+            </div>
             {this.context.upcomingGames.map(game=>{
                     return <UpcomingGameInfo 
                                 key={game.id} 

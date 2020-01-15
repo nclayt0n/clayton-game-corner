@@ -2,22 +2,38 @@
 
 exports[`LandingPage snapshot 1`] = `
 <Fragment>
-  <withRouter(Nav) />
-  <section>
+  <section
+    className="landing-page-header"
+  >
     <div
-      className="logoContainer"
+      className="logo-container"
     >
       <img
         alt="clayton game corrin big logo"
         src="largelogo.png"
       />
     </div>
+  </section>
+  <MediaQuery
+    maxWidth={700}
+  >
+    <withRouter(Nav) />
+  </MediaQuery>
+  <MediaQuery
+    minWidth={701}
+  >
+    <withRouter(LandingNav) />
+  </MediaQuery>
+  <section
+    className="landing-page-bio"
+  >
     <p />
   </section>
-  <section>
+  <section
+    className="landing-page-header test-instructions"
+  >
     <p>
-      To get to and demo Admin Click: 
-      <br />
+      Demo Admin Click:
       <Link
         to="/admin"
       >

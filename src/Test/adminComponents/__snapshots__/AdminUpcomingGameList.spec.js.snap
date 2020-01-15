@@ -29,7 +29,6 @@ exports[`AdminUpcomingGameList snapshot 1`] = `
         key="5"
       >
         <Header />
-        <withRouter(Nav) />
         <section
           key="78"
         >

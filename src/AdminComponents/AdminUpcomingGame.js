@@ -25,10 +25,12 @@ class AdminUpcomingGame extends React.Component{
     onSubmit(e,id,context){
         e.preventDefault();
         let date;
+        let title;
+        (e.target.title.value.length===0)?title=this.props.game.title:title=e.target.title.value;
         (e.target.newGameDate.value.length===0)?date=this.props.game.date:date=e.target.newGameDate.value;
         let updatedGame={
             id,
-            title:e.target.title.value,
+            title:title,
             game_type:e.target.game_type.value,
             date
         };
@@ -40,17 +42,12 @@ class AdminUpcomingGame extends React.Component{
     }
     render(){
         return(
-       <section key={this.props.game.id} className='upcoming-game-info-container'>
-                <form  className='admin-upcoming-game-info' key={this.props.game.id} onSubmit={(e)=>this.onSubmit(e,this.props.game.id,this.context)}>
-                    <label htmlFor='gameDate'> Current Date: {this.state.game.date}
-                    </label>
-                    <label htmlFor='newGameDate'>New Date:</label>
-                        <input type="date" name='newGameDate'/>
-                    
-                    <label htmlFor='title'>Title:</label>
-                        <input type="text" name='title' defaultValue={this.props.game.title}/>
+       <section key={this.props.game.id} className='admin-upcoming-game-info'>
+                <form key={this.props.game.id} onSubmit={(e)=>this.onSubmit(e,this.props.game.id,this.context)}>
+                    <legend>{this.state.game.date}: {this.state.game.title}  </legend><br/>
+                        <input type='date' name='newGameDate'/><br/>
+                        <input type='text' name='title' placeholder='new title'/>
                         <select name='game_type'>
-                        <option value=''>Game Type:</option>
                             <option value={this.props.game.game_type}>{this.props.game.game_type}</option>
                             <option value={this.props.game.game_type==='video'?'tabletop':'video'}>{this.props.game.game_type==='video'?'tabletop':'video'}</option>
                         </select>

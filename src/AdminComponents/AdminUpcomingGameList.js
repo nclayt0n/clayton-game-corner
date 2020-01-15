@@ -46,7 +46,7 @@ class AdminUpcomingGameList extends React.Component{
             this.setState({error:''})
             GameApiService.postUpcoming(date,game_type,title)
                 .then((game) => {
-                    this.context.addUpcomingGame(game); this.props.history.push('/game/upcoming');
+                    this.context.addUpcomingGame(game); 
                 })
                 .catch(error => {
                     this.setState({ error:error.message });
@@ -74,7 +74,7 @@ class AdminUpcomingGameList extends React.Component{
                             <input name='date' type="date"/>
                             <br/>
                             <input placeholder='title' name='title' type="text"/>
-                        
+
                         <br/>
                         <select name='game_type'>
                             <option value=''>Game Type:</option>
@@ -84,10 +84,9 @@ class AdminUpcomingGameList extends React.Component{
                     </fieldset>
                     <button type='submit'>Add Game</button>
                 </form>
-                
                 <ValidationError errorMessage={this.state.error}/>
             </section>
-            <h2>Upcoming Game List</h2>
+            <h2>Upcoming Games</h2>
             {this.context.upcomingGames.map(game=>{
                 return <AdminUpcomingGame key={game.id} game={game}/>
             })}

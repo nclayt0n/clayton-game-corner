@@ -29,7 +29,6 @@ exports[`Admin Review List  snapshot 1`] = `
         key="6"
       >
         <Header />
-        <withRouter(Nav) />
         <section
           key="301"
         >

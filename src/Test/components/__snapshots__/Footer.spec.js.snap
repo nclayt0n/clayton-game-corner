@@ -2,15 +2,23 @@
 
 exports[`Footer snapshot 1`] = `
 <footer>
-  <h3>
-    Clayton Game Corner
-  </h3>
-  <address>
-    <a
-      href="mailto:claytongamecorner@gmail.com"
+  <ul>
+    <li
+      id="siteName"
     >
-      Contact
-    </a>
-  </address>
+      Clayton Game Corner
+    </li>
+    <li
+      id="siteEmail"
+    >
+      <address>
+        <a
+          href="mailto:claytongamecorner@gmail.com"
+        >
+          Contact
+        </a>
+      </address>
+    </li>
+  </ul>
 </footer>
 `;

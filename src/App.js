@@ -72,7 +72,7 @@ class App extends React.Component {
     this.setState({
         upcomingGames:[...this.state.upcomingGames.filter(game=>game.id!==updatedUpcomingGame.id),updatedUpcomingGame]
     });
-    this.props.history.push('/game/upcoming');
+    this.props.history.push('/game/upcoming')
   };
   handleDeleteUpcomingGame=(id)=>{
     this.setState({

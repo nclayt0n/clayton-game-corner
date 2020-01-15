@@ -25,7 +25,6 @@ exports[`AdminLandingPage snapshot 1`] = `
 >
   <withRouter(App)>
     <withRouter(AdminLandingPage)>
-      <withRouter(Nav) />
       <section
         key="adminLandingSection"
       >

@@ -22,7 +22,7 @@ class AdminReview extends React.Component{
                 });
             this.props.history.push('/admin/game/review-list');
     }
-    onSubmit(e,id,context){
+    onUpdate(e,id,context){
         e.preventDefault();
 
         let updatedReview={
@@ -33,38 +33,35 @@ class AdminReview extends React.Component{
             picture:'',
             review:e.target.review.value
         };
-        GameApiService.patchReview(`${config.API_ENDPOINT}/game/review/${id}`,updatedReview)
-            .then(res=>context.updateReview(res))
+        console.log(updatedReview.review.length)
+        if(updatedReview.review.length>1000){
+            this.setState({error:'Max characters 1000'});
+        }if(updatedReview.review.length<1000){
+            GameApiService.patchReview(`${config.API_ENDPOINT}/game/review/${id}`,updatedReview)
+            .then(res=>context.updateReview(updatedReview))
                 .catch(error =>{
                     this.setState({error:error.message});
-                });
+                });  
+        }
+      
     }
     render(){
         return(
-            <section key={this.props.review.id}>
-                <form key={this.props.review.id} onSubmit={(e)=>this.onSubmit(e,this.props.review.id,this.context)}>
-                    <label htmlFor='title'> Title: 
-                        <input name='title' type="text" defaultValue={this.props.review.title}/>
-                    </label>
-                    {/* <label htmlFor='picture'>Images:<br/>
-                        <input name='picture' type="text" defaultValue={this.props.review.picture} />
-                    </label> */}
-                    <label htmlFor='review'>Review:<br/>
-                        <textarea name='review' defaultValue= {this.props.review.review}>
-                        </textarea>
-                    </label>
-                    <label htmlFor='link'>Link to Buy:
-                        <input name='link' type='url' defaultValue={this.props.review.link}/>
-                    </label>
-                    <label htmlFor='game_type'> Game Type: 
+            <section key={this.props.review.id} className='admin-game-info'>
+                <form key={this.props.review.id} onSubmit={(e)=>this.onUpdate(e,this.props.review.id,this.context)}>
+                    <input name='title' type="text" defaultValue={this.props.review.title} placeholder='title'/>
+                    <br/>
+                    <textarea name='review' defaultValue= {this.props.review.review} placeholder='add review...'></textarea>
+                    <input name='link' type='url' defaultValue={this.props.review.link} placeholder='link to buy'/><br/>
                         <select name='game_type'>
                             <option value={this.props.review.game_type}>{this.props.review.game_type}</option>
                             <option value={this.props.review.game_type==='video'?'tabletop':'video'}>{this.props.review.game_type==='video'?'tabletop':'video'}</option>
                         </select>
-                    </label>
+                    <br/>
                     <button type='submit'>Update</button>
+                    <button type='button' onClick={()=>this.onDelete(this.props.review.id,this.context)}>Delete</button>
                 </form>
-                <button type='button' onClick={()=>this.onDelete(this.props.review.id,this.context)}>Delete</button>
+                
                 <ValidationError errorMessage={this.state.error}/>
             </section>
             )

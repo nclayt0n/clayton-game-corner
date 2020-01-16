@@ -10,12 +10,9 @@ class Review extends React.Component{
     render(){
         // let pics=this.createImages(this.props.review);
         return(
-           <article key={uuidv4}>
-                <h3>{this.props.review.title}</h3>
-                <div>
-                    {/* {pics} */}
-                </div>
-                <p>{this.props.review.review}
+           <article key={uuidv4} className='review-info'>
+                <h4>{this.props.review.title}</h4>
+                <p className='review'>{this.props.review.review}
                 </p>
                 <p>
                     <a href={this.props.review.link} target='_blank' rel='noopener noreferrer'>Buy</a>

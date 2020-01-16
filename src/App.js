@@ -7,6 +7,7 @@ import TabletopGameReview from './Components/TabletopGameReviews';
 import VideoGameReview from './Components/VideoGameReview';
 import UpcomingGameList from './Components/UpcomingGameList';
 import './App.css';
+import './Review.css';
 import NotFound from './Components/NotFound';
 import Nav from './Components/Nav';
 import Footer from './Components/Footer';
@@ -46,7 +47,6 @@ class App extends React.Component {
     this.setState({
         reviews:[...this.state.reviews.filter(review=>review.id!==updatedReview.id),updatedReview]
     });
-    this.props.history.push('/admin');
   };
   handleAddUpcomings=(upcomingGames)=>{
     this.setState({

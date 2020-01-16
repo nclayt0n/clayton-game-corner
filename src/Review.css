@@ -1,0 +1,206 @@
+.review-info {
+    border: 1px solid var(--dark);
+    width: 85%;
+    margin: 20px auto 50px;
+    padding: 20px;
+    letter-spacing: .75px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark);
+    color: white;
+}
+
+.review-list {
+    width: 90%;
+    margin: 130px auto 10px;
+}
+
+.review-info h4 {
+    margin: 10px auto;
+    font-size: 26px;
+}
+
+.review-info p {
+    margin: 10px auto;
+    width: 85%;
+}
+
+.review-info a {
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.review-header {
+    width: 75%;
+    margin: auto;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.review-header h3 {
+    color: var(--dark);
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px;
+    line-height: 40px;
+}
+
+.review {
+    background-color: var(--medium);
+    border: 1px solid var(--mainColor);
+    padding: 20px;
+}
+
+.review-header div {
+    margin: 15px auto 15px;
+    border-top: 2px solid var(--medium);
+}
+
+.admin-game-info {
+    padding: 30px;
+    margin: 10px auto;
+    width: 400px;
+}
+
+.admin-add-game-review {
+    padding: 30px;
+    margin: 150px auto 50px;
+    width: 400px;
+}
+
+.admin-add-game-review legend {
+    display: none;
+}
+
+.admin-game-info legend {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px auto;
+}
+
+.admin-game-info form {
+    background-color: var(--dark);
+    border: 2px solid var(--mainColor);
+    padding: 20px;
+    border-radius: 4px;
+    color: white;
+    margin: 10px;
+    text-align: center;
+    height: 365px;
+}
+
+.admin-add-game-review form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bright);
+    border: 2px solid var(--bright);
+    padding: 20px;
+    border-radius: 4px;
+    color: white;
+    margin: 10px;
+    text-align: center;
+}
+
+.admin-game-info fieldset,
+.admin-add-game-review fieldset {
+    margin: 20px auto;
+}
+
+.admin-game-info input,
+.admin-game-info select,
+.admin-game-info label,
+.admin-game-info textarea,
+.admin-add-game-review input,
+.admin-add-game-review select,
+.admin-add-game-review label,
+.admin-add-game-review textarea {
+    margin: 5px auto;
+    width: 200px;
+    line-height: 24px;
+    border-radius: 4px;
+    flex: 1;
+    background-color: white;
+    text-align: center;
+}
+
+.admin-game-info textarea,
+.admin-add-game-review textarea {
+    height: 150px;
+    text-align: left;
+    padding: 0;
+}
+
+.admin-game-info label,
+.admin-add-game-review label {
+    margin: 0 auto;
+    text-align: left;
+}
+
+.admin-game-info input,
+.admin-add-game-review input {
+    color: var(--mainColor);
+}
+
+.admin-game-info select,
+.admin-add-game-review select {
+    border: 1px solid white;
+    border-radius: 4px;
+    height: 24px;
+    color: var(--mainColor);
+}
+
+.admin-add-game-review button {
+    background-color: var(--dark);
+    border: 1px solid var(--dark);
+    color: white;
+    font-weight: bold;
+}
+
+.admin-game-info button {
+    margin: 5px auto;
+    background-color: var(--medium);
+    border: 1px solid var(--medium);
+    color: white;
+    font-weight: bold;
+}
+
+#admin-review-header {
+    width: 55%;
+    margin: auto;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+#admin-review-header h3 {
+    color: var(--dark);
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px;
+}
+
+#admin-review-header div {
+    margin: 15px auto 15px;
+    border-top: 2px solid var(--medium);
+}
+
+@media screen and (min-width:700px) {
+    .review-list {
+        margin: 200px auto 10px;
+        width: 500px;
+    }
+    .review-info {
+        width: 450px;
+    }
+    #admin-review-header {
+        width: 35%;
+    }
+    #admin-review-header h3 {
+        font-size: 34px;
+    }
+}

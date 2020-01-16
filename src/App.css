@@ -141,8 +141,8 @@ table {
     font-size: 16px;
 }
 
-main {
-    background-color: #EDF0F1;
+body {
+    background-color: rgb(245, 249, 250);
 }
 
 :root {
@@ -165,21 +165,18 @@ button {
     border-radius: 4px;
 }
 
-.PaginationButtonContainer {
-    flex-direction: row;
-    justify-content: center;
-}
-
-.PaginationButtonContainer button {
-    flex: 1;
-    margin: 5px;
-    padding: 5px;
-    justify-content: space-between;
-}
-
 img {
     width: 200px;
     height: 200px;
+}
+
+.none-to-display {
+    margin: 50px auto;
+    text-align: center;
+    padding: 50px;
+    width: 60%;
+    color: var(--mainColor);
+    font-size: 24px;
 }
 
 nav {
@@ -194,14 +191,14 @@ footer {
     margin-top: 50px;
     bottom: 0;
     width: 100%;
-    background-color: white;
+    background-color: rgb(245, 249, 250);
 }
 
 footer ul {
     display: flex;
     justify-content: space-between;
     font-size: 16px;
-    border-top: 2px solid var(--mainColor);
+    border-top: 1px solid var(--mainColor);
 }
 
 footer li {
@@ -312,6 +309,7 @@ header {
     width: 80%;
     line-height: 25px;
     color: white;
+    font-size: 18px;
     margin: 50px auto;
 }
 
@@ -460,12 +458,6 @@ h2 {
 
 /*admin upcoming games*/
 
-.admin-upcoming-game-info {
-    padding: 30px;
-    margin: 10px auto;
-    width: 370px;
-}
-
 .admin-add-upcoming-game {
     padding: 30px;
     margin: 150px auto 50px;
@@ -474,6 +466,12 @@ h2 {
 
 .admin-add-upcoming-game legend {
     display: none;
+}
+
+.admin-upcoming-game-info {
+    padding: 30px;
+    margin: 10px auto;
+    width: 370px;
 }
 
 .admin-upcoming-game-info legend {
@@ -521,6 +519,7 @@ h2 {
     line-height: 24px;
     border-radius: 4px;
     flex: 1;
+    background-color: white;
     text-align: center;
 }
 
@@ -607,15 +606,14 @@ h2 {
 }
 
 #upcoming-header {
-    background-color: var(--dark);
-    width: 85%;
+    width: 75%;
     margin: auto;
     border-radius: 4px;
     padding: 10px;
 }
 
 #upcoming-header h3 {
-    color: white;
+    color: var(--dark);
     margin: 5px;
 }
 
@@ -695,6 +693,8 @@ h2 {
     #landing-nav-links {
         display: flex;
         justify-content: space-evenly;
+        flex-direction: row;
+        height: 45px;
     }
     #landing-nav-links li a {
         position: relative;
@@ -702,6 +702,8 @@ h2 {
     .landing-nav-container {
         font-size: 18px;
         background-color: white;
+        position: absolute;
+        width: 100%;
     }
     .landing-nav-container li {
         text-align: right;
@@ -725,10 +727,16 @@ h2 {
     }
     .landing-admin-links-container {
         overflow: hidden;
+        background-color: white;
     }
     .landing-admin-links-container:hover {
         height: 200px;
         width: fit-content;
+        padding: 5px;
+        border: 3px solid var(--dark);
+        border-radius: 4px;
+        background-color: white;
+        margin-top: -5px;
     }
     .landing-admin-links-container a:hover {
         font-weight: bold;
@@ -794,6 +802,7 @@ h2 {
     }
     #landing-admin-folder {
         color: var(--mainColor);
+        font-weight: bold;
     }
     .admin-nav-links {
         padding: 5px;
@@ -839,9 +848,6 @@ h2 {
         font-size: 20px;
     }
     /*upcoming-games*/
-    #upcoming-header {
-        width: 90%;
-    }
     .upcoming-game-info-container {
         width: 450px;
     }
@@ -856,7 +862,8 @@ h2 {
         width: 100%;
     }
     #upcoming-game-list h3 {
-        font-size: 32px;
+        font-size: 34px;
+        line-height: 40px;
     }
     /*admin upcoming games*/
     #admin-upcoming-header {

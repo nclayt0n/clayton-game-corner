@@ -65,7 +65,6 @@ class AdminUpcomingGameList extends React.Component{
                 })
     }
     render(){
-        console.log(this.context)
         return(
         <>
         <Header/>
@@ -88,17 +87,18 @@ class AdminUpcomingGameList extends React.Component{
                 </form>
                 <ValidationError errorMessage={this.state.error}/>
             </section>
+            {this.context.upcomingGames.length===0?null:
             <div id='admin-upcoming-header'>
                 <h3>Upcoming Games</h3>
                 <div className='horizontal-line'></div>
-            </div>
+            </div>}
             <div id='admin-upcoming-game-list'>
             {this.context.upcomingGames.map(game=>{
                 return <AdminUpcomingGame key={game.id} game={game}/>
             })}
             </div>
             {this.context.upcomingGames.length===0
-                ?<section>
+                ?<section className='none-to-display'>
                     <p>No Upcoming Games to be displayed</p>
                 </section>
                 :<Pagination 

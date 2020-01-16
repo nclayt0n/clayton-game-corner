@@ -43,9 +43,10 @@ class UpcomingGameList extends React.Component{
     render(){
         return(<>
         <Header/>
-        <article key={uuidv4()}  
+        <article 
+            key={uuidv4()}  
             style={{justifyContent:this.context.upcomingGames.length<4?'center':'left'}}
-        id='upcoming-game-list'>
+            id='upcoming-game-list'>
         {this.context.upcomingGames.length===0?null:
         <div id='upcoming-header'>
                 <h3>Upcoming Games</h3>

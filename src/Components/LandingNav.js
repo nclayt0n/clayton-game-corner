@@ -2,7 +2,6 @@ import React from 'react';
 import {Link,withRouter} from 'react-router-dom';
 import Context from '../Context';
 import TokenService from '../services/token-service';
-import MediaQuery from 'react-responsive';
 
 class LandingNav extends React.Component{
     static contextType=Context;

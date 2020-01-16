@@ -5,13 +5,10 @@ import App from '../../App';
 import Pagination from '../../Components/Pagination';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Review from '../../Components/Review';
 import Context from '../../Context';
 import AdminReviewList from '../../AdminComponents/AdminReviewList';
 import Header from '../../Components/Header';
 import AdminReview from '../../AdminComponents/AdminReview';
-import Nav from '../../Components/Nav';
-const uuidv4=require('uuid');
 
 describe('Admin Review List ',()=>{
   it('renders without crashing', () => {

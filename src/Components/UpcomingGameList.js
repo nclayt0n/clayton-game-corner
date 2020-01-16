@@ -1,7 +1,6 @@
 import React from 'react';
 import UpcomingGameInfo from './UpcomingGameInfo';
 import Pagination from './Pagination';
-import Nav from './Nav';
 import Header from './Header';
 import GameApiService from '../services/game-api-services';
 import config from '../config';
@@ -23,7 +22,6 @@ class UpcomingGameList extends React.Component{
     componentDidMount(){
         GameApiService.getApiCall(`${config.API_ENDPOINT}/game/upcoming?limit=${this.state.pageLimit}&offset=${this.state.page*this.state.pageLimit}`)
         .then((games) => {
-            console.log(games)
                     this.context.addUpcomingGames(games);
                 })
                 .catch(error => {

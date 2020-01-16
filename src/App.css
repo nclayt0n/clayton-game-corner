@@ -143,6 +143,7 @@ table {
 
 body {
     background-color: rgb(245, 249, 250);
+    font-family: Tahoma, Verdana, Geneva, sans-serif;
 }
 
 :root {
@@ -151,9 +152,17 @@ body {
     --light: #06D6A0;
     --medium: #1B9AAA;
     --dark: #13293D;
+    --mediumOp: rgba(27, 153, 170, 0.5);
     /* --medium: #004BA8;
     --light: #256EFF;
     --green: #7BAF86; */
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: Verdana, Tahoma, Geneva, sans-serif;
 }
 
 button {
@@ -198,7 +207,6 @@ footer ul {
     display: flex;
     justify-content: space-between;
     font-size: 16px;
-    border-top: 1px solid var(--mainColor);
 }
 
 footer li {
@@ -808,7 +816,7 @@ h2 {
         padding: 5px;
         margin: 0;
         height: 50px;
-        width: 75px;
+        width: 80px;
         flex-direction: column;
         justify-content: normal;
         overflow: hidden;
@@ -872,6 +880,9 @@ h2 {
 }
 
 @media screen and (min-width:1024px) {
+    .admin-nav-links {
+        width: 85px;
+    }
     .pagination-button-container {
         width: 45%;
     }
@@ -880,12 +891,12 @@ h2 {
     }
     /*header*/
     header {
-        height: 140px;
+        height: 165px;
     }
     #headerLogo {
-        height: 120px;
-        width: 110px;
-        margin-left: 50px;
+        height: 155px;
+        width: 145px;
+        margin-left: 140px;
     }
     /*landing page*/
     .landing-page-bio {

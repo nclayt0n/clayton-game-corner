@@ -40,15 +40,15 @@ class AdminReviewList extends React.Component{
         if(review.length===0){
             this.setState({error:'Must include a game review'});
         }
-        if(review.length>1000){
-            this.setState({error:'Max characters is 1000'});
+        if(review.length>3000){
+            this.setState({error:'Max characters is 3000'});
         }
         if(title.length===0){
             this.setState({error:'Must include a game title'});
         }
         if(game_type.length===0){
             this.setState({error:'Must choose a game type'});
-        }if(review.length>0&&title.length>0&&game_type.length>0&&review.length<1000){
+        }if(review.length>0&&title.length>0&&game_type.length>0&&review.length<=3000){
             this.setState({error:''});
             GameApiService.postReview(title,game_type,link,picture, review)
                 .then((newReview) => {

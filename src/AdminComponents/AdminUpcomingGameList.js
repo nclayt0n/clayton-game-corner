@@ -2,7 +2,6 @@ import React from 'react';
 import AdminUpcomingGame from './AdminUpcomingGame';
 import {withRouter} from 'react-router-dom';
 import Pagination from '../Components/Pagination';
-import Nav from '../Components/Nav';
 import Header from '../Components/Header';
 import ValidationError from '../Validation/ValidationError';
 import Context from '../Context';

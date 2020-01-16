@@ -33,10 +33,9 @@ class AdminReview extends React.Component{
             picture:'',
             review:e.target.review.value
         };
-        console.log(updatedReview.review.length)
-        if(updatedReview.review.length>1000){
-            this.setState({error:'Max characters 1000'});
-        }if(updatedReview.review.length<1000){
+        if(updatedReview.review.length>3000){
+            this.setState({error:'Max characters 3000'});
+        }if(updatedReview.review.length<=3000){
             GameApiService.patchReview(`${config.API_ENDPOINT}/game/review/${id}`,updatedReview)
             .then(res=>context.updateReview(updatedReview))
                 .catch(error =>{

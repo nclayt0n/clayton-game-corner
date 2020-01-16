@@ -1,12 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {BrowserRouter,StaticRouter,Route} from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 import App from '../../App';
 import AdminLandingPage from '../../AdminComponents/AdminLandingPage';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Context from '../../Context';
-import Nav from '../../Components/Nav';
 import logo from '../../images/largelogo.png';
 describe('AdminLandingPage',()=>{
     const bio='User bio 4';

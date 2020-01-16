@@ -1,6 +1,8 @@
+/*review*/
+
 .review-info {
     border: 1px solid var(--dark);
-    width: 85%;
+    width: 100%;
     margin: 20px auto 50px;
     padding: 20px;
     letter-spacing: .75px;
@@ -12,7 +14,7 @@
 }
 
 .review-list {
-    width: 90%;
+    width: 95%;
     margin: 130px auto 10px;
 }
 
@@ -22,7 +24,7 @@
 }
 
 .review-info p {
-    margin: 10px auto;
+    margin: 20px auto;
     width: 85%;
 }
 
@@ -31,11 +33,15 @@
     color: white;
     cursor: pointer;
     display: flex;
+    text-decoration: none;
+    font-size: 20px;
     justify-content: center;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .review-header {
-    width: 75%;
+    width: 90%;
     margin: auto;
     border-radius: 4px;
     padding: 10px;
@@ -51,15 +57,22 @@
 }
 
 .review {
-    background-color: var(--medium);
-    border: 1px solid var(--mainColor);
-    padding: 20px;
+    background-color: var(--mediumOp);
+    border: 1px solid var(--mediumOp);
+    padding: 30px;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 20px auto;
+    letter-spacing: .75px;
 }
 
 .review-header div {
     margin: 15px auto 15px;
     border-top: 2px solid var(--medium);
 }
+
+
+/*admin review*/
 
 .admin-game-info {
     padding: 30px;
@@ -190,13 +203,50 @@
 }
 
 @media screen and (min-width:700px) {
+    /*review*/
+    .review {
+        font-size: 20px;
+        line-height: 24px;
+    }
     .review-list {
         margin: 200px auto 10px;
-        width: 500px;
+        width: 650px;
     }
     .review-info {
-        width: 450px;
+        width: 80%;
     }
+    .review-header {
+        width: 75%;
+    }
+    /*admin review*/
+    #admin-review-header {
+        width: 35%;
+    }
+    #admin-review-header h3 {
+        font-size: 34px;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    /*review*/
+    .review {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .review-list {
+        margin: 200px auto 10px;
+        width: 75%;
+    }
+    .review-info {
+        width: 90%;
+    }
+    .review-info h4 {
+        font-size: 30px;
+    }
+    .review-header {
+        width: 100%;
+    }
+    /*admin review*/
     #admin-review-header {
         width: 35%;
     }

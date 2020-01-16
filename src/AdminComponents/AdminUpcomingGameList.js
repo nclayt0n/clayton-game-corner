@@ -92,7 +92,8 @@ class AdminUpcomingGameList extends React.Component{
                 <h3>Upcoming Games</h3>
                 <div className='horizontal-line'></div>
             </div>}
-            <div id='admin-upcoming-game-list'>
+            <div id='admin-upcoming-game-list' 
+                 style={{justifyContent: this.context.upcomingGames.length<4 ? 'center':'left'}}>
             {this.context.upcomingGames.map(game=>{
                 return <AdminUpcomingGame key={game.id} game={game}/>
             })}

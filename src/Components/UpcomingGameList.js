@@ -23,6 +23,7 @@ class UpcomingGameList extends React.Component{
     componentDidMount(){
         GameApiService.getApiCall(`${config.API_ENDPOINT}/game/upcoming?limit=${this.state.pageLimit}&offset=${this.state.page*this.state.pageLimit}`)
         .then((games) => {
+            console.log(games)
                     this.context.addUpcomingGames(games);
                 })
                 .catch(error => {
@@ -42,7 +43,9 @@ class UpcomingGameList extends React.Component{
     render(){
         return(<>
         <Header/>
-        <article key={uuidv4()} id='upcoming-game-list'>
+        <article key={uuidv4()}  
+            style={{justifyContent:this.context.upcomingGames.length<4?'center':'left'}}
+        id='upcoming-game-list'>
         {this.context.upcomingGames.length===0?null:
         <div id='upcoming-header'>
                 <h3>Upcoming Games</h3>

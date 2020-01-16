@@ -141,6 +141,10 @@ table {
     font-size: 16px;
 }
 
+main {
+    background-color: #EDF0F1;
+}
+
 :root {
     --mainColor: rgb(17, 72, 82);
     --bright: #CE2D4F;
@@ -155,7 +159,7 @@ table {
 button {
     border: 1px solid black;
     margin: auto;
-    width: 150px;
+    width: 155px;
     background-color: var(--mainColor);
     color: white;
     border-radius: 4px;
@@ -197,11 +201,13 @@ footer ul {
     display: flex;
     justify-content: space-between;
     font-size: 16px;
+    border-top: 2px solid var(--mainColor);
 }
 
 footer li {
     padding: 10px;
     color: var(--mainColor);
+    font-weight: bold;
 }
 
 footer li a {
@@ -484,6 +490,7 @@ h2 {
     color: white;
     margin: 10px;
     text-align: center;
+    height: 315px;
 }
 
 .admin-add-upcoming-game form {
@@ -551,6 +558,26 @@ h2 {
     font-weight: bold;
 }
 
+#admin-upcoming-header {
+    width: 55%;
+    margin: auto;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+#admin-upcoming-header h3 {
+    color: var(--dark);
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px;
+}
+
+#admin-upcoming-header div {
+    margin: 15px auto 15px;
+    border-top: 2px solid var(--medium);
+}
+
 
 /*upcoming games*/
 
@@ -583,6 +610,7 @@ h2 {
     background-color: var(--dark);
     width: 85%;
     margin: auto;
+    border-radius: 4px;
     padding: 10px;
 }
 
@@ -631,12 +659,37 @@ h2 {
     font-weight: bold;
 }
 
+
+/*pagination*/
+
+.pagination-button-container {
+    display: flex;
+    margin: 50px auto 100px;
+    width: 50%;
+}
+
+.pagination-button-container button {
+    width: 100px;
+    background-color: var(--medium);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: 1px solid var(--medium);
+}
+
 @media screen and (min-width:700px) {
+    /*pagination*/
+    .pagination-button-container {
+        width: 55%;
+    }
+    .pagination-button-container button {
+        width: 140px;
+    }
     /*header*/
     #headerLogo {
         height: 90px;
         width: 80px;
-        margin: 5px 0 5px 20px;
+        margin: 5px 0 5px 30px;
     }
     /*nav*/
     #landing-nav-links {
@@ -805,9 +858,19 @@ h2 {
     #upcoming-game-list h3 {
         font-size: 32px;
     }
+    /*admin upcoming games*/
+    #admin-upcoming-header {
+        width: 35%;
+    }
 }
 
 @media screen and (min-width:1024px) {
+    .pagination-button-container {
+        width: 45%;
+    }
+    .pagination-button-container button {
+        width: 150px;
+    }
     /*header*/
     header {
         height: 140px;
@@ -815,7 +878,7 @@ h2 {
     #headerLogo {
         height: 120px;
         width: 110px;
-        margin-left: 35px;
+        margin-left: 50px;
     }
     /*landing page*/
     .landing-page-bio {
@@ -855,6 +918,18 @@ h2 {
     #admin-login legend {
         font-size: 26px;
     }
+    /*admin upcoming game*/
+    #admin-upcoming-game-list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 1024px;
+        justify-content: left;
+        margin: auto;
+    }
+    .admin-upcoming-game-info {
+        width: 340px;
+        margin: 0;
+    }
     /*upcoming game*/
     .horizontal-line {
         width: 75%;
@@ -863,7 +938,7 @@ h2 {
         display: flex;
         flex-wrap: wrap;
         width: 1024px;
-        justify-content: center;
+        justify-content: left;
     }
     #upcoming-header {
         display: flex;

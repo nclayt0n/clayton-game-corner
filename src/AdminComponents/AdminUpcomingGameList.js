@@ -17,11 +17,11 @@ class AdminUpcomingGameList extends React.Component{
         this.state={
             error:'',
             page:0,
-            pageLimit:10
+            pageLimit:12
         };
     }
     componentDidMount(){
-        GameApiService.getApiCall(`${config.API_ENDPOINT}/admin/game/upcoming`)
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/admin/game/upcoming?limit=${this.state.pageLimit}&offset=${this.state.page*this.state.pageLimit}`)
         .then((games) => {
                     this.context.addUpcomingGames(games);
                 })
@@ -29,6 +29,7 @@ class AdminUpcomingGameList extends React.Component{
                     this.setState({ error:error.message });
                 });
     }
+    
     addGame=(e)=>{
         e.preventDefault();
         let title=e.target.title.value;
@@ -64,6 +65,7 @@ class AdminUpcomingGameList extends React.Component{
                 })
     }
     render(){
+        console.log(this.context)
         return(
         <>
         <Header/>
@@ -86,10 +88,15 @@ class AdminUpcomingGameList extends React.Component{
                 </form>
                 <ValidationError errorMessage={this.state.error}/>
             </section>
-            <h2>Upcoming Games</h2>
+            <div id='admin-upcoming-header'>
+                <h3>Upcoming Games</h3>
+                <div className='horizontal-line'></div>
+            </div>
+            <div id='admin-upcoming-game-list'>
             {this.context.upcomingGames.map(game=>{
                 return <AdminUpcomingGame key={game.id} game={game}/>
             })}
+            </div>
             {this.context.upcomingGames.length===0
                 ?<section>
                     <p>No Upcoming Games to be displayed</p>

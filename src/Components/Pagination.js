@@ -6,7 +6,7 @@ class Pagination extends React.Component{
     
     render(){
         return(
-            <section className='PaginationButtonContainer'>
+            <section className='pagination-button-container'>
                 {this.props.page<1 
                     ? null
                     :<button 

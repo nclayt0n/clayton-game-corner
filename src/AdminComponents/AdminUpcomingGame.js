@@ -44,6 +44,7 @@ class AdminUpcomingGame extends React.Component{
         return(
        <section key={this.props.game.id} className='admin-upcoming-game-info'>
                 <form key={this.props.game.id} onSubmit={(e)=>this.onSubmit(e,this.props.game.id,this.context)}>
+                    <fieldset>
                     <legend>{this.state.game.date}: {this.state.game.title}  </legend><br/>
                         <input type='date' name='newGameDate'/><br/>
                         <input type='text' name='title' placeholder='new title'/>
@@ -53,6 +54,7 @@ class AdminUpcomingGame extends React.Component{
                         </select>
                     <button type='submit'>Update</button>
                     <button type='button' onClick={()=>this.onDelete(this.props.game.id,this.context)}>Delete</button>
+                    </fieldset>
                 </form>
                 
                 

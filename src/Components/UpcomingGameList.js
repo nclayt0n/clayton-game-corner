@@ -17,11 +17,11 @@ class UpcomingGameList extends React.Component{
         this.state={
             error:'',
             page:0,
-            pageLimit:30
+            pageLimit:19
         };
     }
     componentDidMount(){
-        GameApiService.getApiCall(`${config.API_ENDPOINT}/game/upcoming?limit=${this.state.pageLimit}&offset=.GF${this.state.page*this.state.pageLimit}`)
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/game/upcoming?limit=${this.state.pageLimit}&offset=${this.state.page*this.state.pageLimit}`)
         .then((games) => {
                     this.context.addUpcomingGames(games);
                 })

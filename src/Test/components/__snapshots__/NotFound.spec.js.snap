@@ -10,7 +10,7 @@ exports[`LandingPage snapshot 1`] = `
        404 - Page not found 
     </h2>
     <p>
-       Try going back to your previous page. 
+       Try returning to previous page. 
     </p>
   </section>
 </Fragment>

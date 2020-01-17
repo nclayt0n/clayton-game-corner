@@ -30,17 +30,35 @@ exports[`LandingPage snapshot 1`] = `
     <p />
   </section>
   <section
-    className="landing-page-header test-instructions"
+    style={
+      Object {
+        "backgroundColor": "var(--mainColor)",
+        "color": "white",
+        "display": "flex",
+        "margin": "auto",
+        "padding": "100px",
+        "width": "100%",
+      }
+    }
   >
-    <p>
+    <p
+      style={
+        Object {
+          "margin": "50px auto",
+        }
+      }
+    >
       Demo Admin Click:
       <Link
+        style={
+          Object {
+            "color": "white",
+          }
+        }
         to="/admin"
       >
-        Admin Login Page
+         Admin Login Page
       </Link>
-      <br />
-      You will then be routed to the admin login page where email and password will be required. For demostration purposes credentials will be on login page.
     </p>
   </section>
   <Route

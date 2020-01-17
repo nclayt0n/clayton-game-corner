@@ -1068,10 +1068,6 @@ h2 {
     #admin-login form {
         width: 400px;
     }
-    #admin-login legend {
-        margin: 30px auto;
-        font-size: 24px;
-    }
     #admin-login label {
         font-size: 20px;
     }
@@ -1084,7 +1080,7 @@ h2 {
         width: 500px;
     }
     .upcoming-game-info li {
-        font-size: 24px;
+        font-size: 20px;
     }
     .upcoming-game-info {
         width: 100%;
@@ -1099,7 +1095,7 @@ h2 {
     }
     /*review*/
     .review {
-        font-size: 20px;
+        font-size: 16px;
         line-height: 24px;
     }
     .review-list {
@@ -1131,24 +1127,13 @@ h2 {
     .pagination-button-container button {
         width: 150px;
     }
-    /*header*/
-    header {
-        height: 165px;
-        display: flex;
-        justify-content: space-between;
-    }
-    #headerLogo {
-        height: 155px;
-        width: 145px;
-        margin-left: 20px;
-    }
     /*landing page*/
     .landing-page-bio {
         font-size: 20px;
     }
     .admin-landing-page-bio textarea {
         max-width: 3000;
-        font-size: 20px;
+        font-size: 18px;
     }
     .landing-page-header {
         height: 700px;
@@ -1164,14 +1149,10 @@ h2 {
         width: 100px;
     }
     #admin-folder {
-        font-size: 24px;
-    }
-    .nav-links {
-        top: 105px;
-        margin-right: 0px;
+        font-size: 20px;
     }
     .nav-links li {
-        font-size: 24px;
+        font-size: 20px;
     }
     /*admin login*/
     #admin-login {
@@ -1184,10 +1165,7 @@ h2 {
     #admin-login input,
     #admin-login label,
     #admin-login button {
-        font-size: 22px;
-    }
-    #admin-login legend {
-        font-size: 26px;
+        font-size: 20px;
     }
     /*admin upcoming game*/
     #admin-upcoming-game-list {
@@ -1208,7 +1186,7 @@ h2 {
     #upcoming-game-list {
         display: flex;
         flex-wrap: wrap;
-        width: 1024px;
+        width: 965px;
         justify-content: left;
     }
     #upcoming-header {
@@ -1218,7 +1196,7 @@ h2 {
         align-items: center;
         padding: 15px;
         margin: 15px;
-        width: 225px;
+        width: 200px;
     }
     #upcoming-header h3 {
         color: var(--dark);
@@ -1230,23 +1208,23 @@ h2 {
         display: block;
     }
     .upcoming-game-info-container {
-        width: 225px;
+        width: 200px;
         margin: 15px;
     }
     /*review*/
     .review {
-        font-size: 22px;
-        line-height: 26px;
+        font-size: 20px;
+        line-height: 24px;
     }
     .review-list {
         margin: 200px auto 10px;
-        width: 70%;
+        width: 90s%;
     }
     .review-info {
         width: 90%;
     }
     .review-info h4 {
-        font-size: 30px;
+        font-size: 28px;
     }
     .review-header {
         width: 100%;
@@ -1263,7 +1241,7 @@ h2 {
         width: 35%;
     }
     #admin-review-header h3 {
-        font-size: 34px;
+        font-size: 30px;
     }
     .admin-game-info {
         margin: auto 10px;

@@ -54,6 +54,7 @@ class Nav extends React.Component{
                 type='button'
                 className='btn-toggle-nav'
                 onClick={()=>this.handleOnclick()}
+                aria-label='nav-toggle-button'
                 >
             </button>
         </nav>  

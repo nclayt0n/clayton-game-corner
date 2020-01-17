@@ -27,9 +27,9 @@ Back-End: Node.js, Express, PostgreSQL
 deployed using Heroku
 
 ### `Screenshots`
-<img src='https://nclayt0n.github.io/clayton-game-corner/src/images/admin-review.png' alt="App landing Page" width='250'>
-<img src='https://nclayt0n.github.io/clayton-game-corner/src/images/Home.png' alt='App Home Page'width='250'>
-<img src='https://nclayt0n.github.io/clayton-game-corner/src/images/review.png' alt='App Folder List Page' width='250'>
-<img src='https://nclayt0n.github.io/clayton-game-corner/src/images/admin-upcoming.png' alt='App Ingredients Page' width='250'>
-<img src='https://nclayt0n.github.io/v/src/images/upcoming.png' alt='App Recipe List Page' width='250'>
+<img src='/src/images/admin-review.png' alt="App landing Page" width='250'>
+<img src='/src/images/Home.png' alt='App Home Page'width='250'>
+<img src='/src/images/review.png' alt='App Folder List Page' width='250'>
+<img src='/src/images/admin-upcoming.png' alt='App Ingredients Page' width='250'>
+<img src='src/images/upcoming.png' alt='App Recipe List Page' width='250'>
 

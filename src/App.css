@@ -784,12 +784,6 @@ h2 {
     display: none;
 }
 
-.admin-game-info legend {
-    font-size: 22px;
-    font-weight: bold;
-    margin: 10px auto;
-}
-
 .admin-game-info form {
     background-color: var(--dark);
     border: 2px solid var(--mainColor);
@@ -1013,7 +1007,7 @@ h2 {
         height: 40px;
     }
     .nav-links li {
-        font-size: 20px;
+        font-size: 18px;
         padding: 10px;
         position: relative;
     }
@@ -1218,7 +1212,7 @@ h2 {
     }
     .review-list {
         margin: 200px auto 10px;
-        width: 90s%;
+        width: 90%;
     }
     .review-info {
         width: 90%;

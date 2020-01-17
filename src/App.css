@@ -180,10 +180,10 @@ img {
 }
 
 .none-to-display {
-    margin: 50px auto;
+    margin: 150px auto;
     text-align: center;
     padding: 50px;
-    width: 60%;
+    width: 70%;
     color: var(--mainColor);
     font-size: 24px;
 }

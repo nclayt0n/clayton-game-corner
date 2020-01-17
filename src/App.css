@@ -206,7 +206,7 @@ footer {
 footer ul {
     display: flex;
     justify-content: space-between;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 footer li {
@@ -276,7 +276,7 @@ header {
 
 #admin-login legend {
     margin: 20px auto;
-    font-size: 22px;
+    font-size: 18px;
     display: none;
 }
 
@@ -362,7 +362,7 @@ header {
     color: var(--mainColor);
     padding: 10px;
     line-height: 26px;
-    font-size: 20px;
+    font-size: 18px;
     letter-spacing: .25px;
 }
 
@@ -395,7 +395,7 @@ h2 {
     color: var(--mainColor);
     padding: 10px;
     line-height: 26px;
-    font-size: 18px;
+    font-size: 16px;
     letter-spacing: .25px;
     margin: 50px auto 5px;
     width: 100%;
@@ -426,7 +426,7 @@ h2 {
 
 .nav-links li {
     text-align: right;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .nav-links li a {
@@ -452,7 +452,7 @@ h2 {
     color: var(--mainColor);
     text-decoration: none;
     text-align: right;
-    font-size: 19px;
+    font-size: 17px;
     letter-spacing: .75px;
     line-height: 25px;
     font-weight: bold;
@@ -491,7 +491,7 @@ h2 {
 }
 
 .admin-upcoming-game-info legend {
-    font-size: 22px;
+    font-size: 18px;
     font-weight: bold;
     margin: 10px auto;
 }
@@ -613,16 +613,17 @@ h2 {
 }
 
 #upcoming-game-list h3 {
-    font-size: 28px;
+    font-size: 34px;
     font-weight: bold;
     letter-spacing: .75px;
     color: var(--dark);
     text-align: center;
     text-shadow: .5px .5px var(--green);
+    line-height: 40px;
 }
 
 #upcoming-header {
-    width: 75%;
+    width: 95%;
     margin: auto;
     border-radius: 4px;
     padding: 10px;
@@ -646,7 +647,7 @@ h2 {
 .upcoming-game-info li {
     letter-spacing: .75px;
     display: inline-block;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 .horizontal-line {
@@ -687,7 +688,7 @@ h2 {
     background-color: var(--medium);
     color: white;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
     border: 1px solid var(--medium);
 }
 
@@ -714,7 +715,7 @@ h2 {
 
 .review-info h4 {
     margin: 10px auto;
-    font-size: 26px;
+    font-size: 24px;
 }
 
 .review-info p {
@@ -728,7 +729,7 @@ h2 {
     cursor: pointer;
     display: flex;
     text-decoration: none;
-    font-size: 20px;
+    font-size: 18px;
     justify-content: center;
     font-weight: bold;
     letter-spacing: 1px;
@@ -754,7 +755,7 @@ h2 {
     background-color: var(--mediumOp);
     border: 1px solid var(--mediumOp);
     padding: 30px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 24px;
     margin: 20px auto;
     letter-spacing: .75px;
@@ -919,7 +920,7 @@ h2 {
         position: relative;
     }
     .landing-nav-container {
-        font-size: 18px;
+        font-size: 16px;
         background-color: white;
         position: absolute;
         width: 100%;
@@ -965,7 +966,7 @@ h2 {
         width: 70%;
         margin: 125px auto 100px;
         padding: 30px;
-        font-size: 18px;
+        font-size: 16px;
     }
     .landing-page-header {
         padding: 30px;
@@ -980,7 +981,7 @@ h2 {
         width: 400px;
         margin: 50px auto;
         padding: 30px;
-        font-size: 18px;
+        font-size: 16px;
     }
     /*admin landing page*/
     .admin-landing-page-bio form {
@@ -991,7 +992,7 @@ h2 {
     .admin-landing-page-bio textarea {
         max-width: 1024px;
         height: 400px;
-        font-size: 18px;
+        font-size: 16px;
     }
     /*nav*/
     .nav-links {
@@ -1007,7 +1008,7 @@ h2 {
         height: 40px;
     }
     .nav-links li {
-        font-size: 18px;
+        font-size: 16px;
         padding: 10px;
         position: relative;
     }
@@ -1063,7 +1064,7 @@ h2 {
         width: 400px;
     }
     #admin-login label {
-        font-size: 20px;
+        font-size: 16px;
     }
     /*upcoming-games*/
     .upcoming-game-info-container {
@@ -1074,7 +1075,7 @@ h2 {
         width: 500px;
     }
     .upcoming-game-info li {
-        font-size: 20px;
+        font-size: 16px;
     }
     .upcoming-game-info {
         width: 100%;
@@ -1127,7 +1128,7 @@ h2 {
     }
     .admin-landing-page-bio textarea {
         max-width: 3000;
-        font-size: 18px;
+        font-size: 16px;
     }
     .landing-page-header {
         height: 700px;
@@ -1143,10 +1144,10 @@ h2 {
         width: 100px;
     }
     #admin-folder {
-        font-size: 20px;
+        font-size: 16px;
     }
     .nav-links li {
-        font-size: 20px;
+        font-size: 16px;
     }
     /*admin login*/
     #admin-login {
@@ -1159,7 +1160,7 @@ h2 {
     #admin-login input,
     #admin-login label,
     #admin-login button {
-        font-size: 20px;
+        font-size: 18px;
     }
     /*admin upcoming game*/
     #admin-upcoming-game-list {
@@ -1196,6 +1197,7 @@ h2 {
         color: var(--dark);
         font-size: 23px;
         margin: 20px auto 25px;
+        line-height: 28px;
     }
     #upcoming-header div {
         width: 60%;
@@ -1207,7 +1209,7 @@ h2 {
     }
     /*review*/
     .review {
-        font-size: 20px;
+        font-size: 16px;
         line-height: 24px;
     }
     .review-list {
@@ -1218,7 +1220,7 @@ h2 {
         width: 90%;
     }
     .review-info h4 {
-        font-size: 28px;
+        font-size: 24px;
     }
     .review-header {
         width: 100%;

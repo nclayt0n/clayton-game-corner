@@ -31,5 +31,5 @@ deployed using Heroku
 <img src='/src/images/Home.png' alt='App Home Page'width='250'>
 <img src='/src/images/review.png' alt='App Folder List Page' width='250'>
 <img src='/src/images/admin-upcoming.png' alt='App Ingredients Page' width='250'>
-<img src='src/images/upcoming.png' alt='App Recipe List Page' width='250'>
+<img src='/src/images/upcoming.png' alt='App Recipe List Page' width='250'>
 

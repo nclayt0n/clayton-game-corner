@@ -27,9 +27,9 @@ Back-End: Node.js, Express, PostgreSQL
 deployed using Heroku
 
 ### `Screenshots`
-<img src='/src/images/admin-review.png' alt="App landing Page" width='250'>
-<img src='/src/images/Home.png' alt='App Home Page'width='250'>
-<img src='/src/images/review.png' alt='App Folder List Page' width='250'>
-<img src='/src/images/admin-upcoming.png' alt='App Ingredients Page' width='250'>
-<img src='/src/images/upcoming.png' alt='App Recipe List Page' width='250'>
+<img src='/src/images/Home.png' alt='Home Page'width='250'>
+<img src='/src/images/admin-review.png' alt="Admin Game Review" width='250'>
+<img src='/src/images/review.png' alt='Game Review Page' width='250'>
+<img src='/src/images/admin-upcoming.png' alt='Admin Upcoming Game Page' width='250'>
+<img src='/src/images/upcoming.png' alt='Upcoming Page' width='250'>
 

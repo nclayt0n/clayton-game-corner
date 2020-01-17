@@ -40,11 +40,10 @@ class LandingPage extends React.Component{
                     <section className='landing-page-bio'>
                         <p>{this.context.bio}</p>
                     </section>
-                    <section className='landing-page-header test-instructions'>
-                        <p >
+                    <section style={{width:'100%',backgroundColor:'var(--mainColor)',margin:'auto', padding:'100px', color:'white',display:'flex'}}>
+                        <p style={{margin:'50px auto'}} >
                         Demo Admin Click:
-                        <Link to="/admin">Admin Login Page</Link><br/> 
-                        You will then be routed to the admin login page where email and password will be required. For demostration purposes credentials will be on login page.
+                        <Link to="/admin" style={{color:'white'}}> Admin Login Page</Link>
                         </p>
                     </section>
                     <Route 

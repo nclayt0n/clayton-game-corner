@@ -7,7 +7,6 @@ import TabletopGameReview from './Components/TabletopGameReviews';
 import VideoGameReview from './Components/VideoGameReview';
 import UpcomingGameList from './Components/UpcomingGameList';
 import './App.css';
-import './Review.css';
 import NotFound from './Components/NotFound';
 import Nav from './Components/Nav';
 import Footer from './Components/Footer';

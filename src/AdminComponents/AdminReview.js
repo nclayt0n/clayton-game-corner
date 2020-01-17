@@ -48,6 +48,7 @@ class AdminReview extends React.Component{
         return(
             <section key={this.props.review.id} className='admin-game-info'>
                 <form key={this.props.review.id} onSubmit={(e)=>this.onUpdate(e,this.props.review.id,this.context)}>
+                    <fieldset>
                     <input name='title' type="text" defaultValue={this.props.review.title} placeholder='title'/>
                     <br/>
                     <textarea name='review' defaultValue= {this.props.review.review} placeholder='add review...'></textarea>
@@ -56,7 +57,7 @@ class AdminReview extends React.Component{
                             <option value={this.props.review.game_type}>{this.props.review.game_type}</option>
                             <option value={this.props.review.game_type==='video'?'tabletop':'video'}>{this.props.review.game_type==='video'?'tabletop':'video'}</option>
                         </select>
-                    <br/>
+                        </fieldset>
                     <button type='submit'>Update</button>
                     <button type='button' onClick={()=>this.onDelete(this.props.review.id,this.context)}>Delete</button>
                 </form>

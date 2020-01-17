@@ -82,7 +82,7 @@ class AdminUpcomingGameList extends React.Component{
                             <option value='tabletop'>Tabletop</option>
                         </select>
                     </fieldset>
-                    <button type='submit'>Add Game</button>
+                    <button type='submit' aria-label='submit-add-game-review'>Add Game</button>
                 </form>
                 <ValidationError errorMessage={this.state.error}/>
             </section>

@@ -52,8 +52,8 @@ class AdminUpcomingGame extends React.Component{
                             <option value={this.props.game.game_type}>{this.props.game.game_type}</option>
                             <option value={this.props.game.game_type==='video'?'tabletop':'video'}>{this.props.game.game_type==='video'?'tabletop':'video'}</option>
                         </select>
-                    <button type='submit'>Update</button>
-                    <button type='button' onClick={()=>this.onDelete(this.props.game.id,this.context)}>Delete</button>
+                    <button type='submit' aria-label='submit-upcoming-game-update'>Update</button>
+                    <button type='button' onClick={()=>this.onDelete(this.props.game.id,this.context)} aria-label='delete-upcoming-game'>Delete</button>
                     </fieldset>
                 </form>
                 

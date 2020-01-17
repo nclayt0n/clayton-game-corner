@@ -78,8 +78,8 @@ handleSubmitJWTAuth=ev=>{
                               />
                         <br/>
                 </fieldset> 
-                <button type='submit'>Login</button>
-                <button type='button' onClick={()=>this.props.history.goBack()}>Back</button>
+                <button type='submit' aria-label='login-button'>Login</button>
+                <button type='button' onClick={()=>this.props.history.goBack()} aria-label='back-button'>Back</button>
               </form>  
               <ValidationError errorMessage={this.state.error}/>
             </section>

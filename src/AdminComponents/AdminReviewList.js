@@ -91,7 +91,7 @@ class AdminReviewList extends React.Component{
                         <option value='tabletop'>Tabletop</option>
                     </select>
                 </fieldset> 
-                <button type='submit'>Add Review</button>
+                <button type='submit' aria-label='submit-game-review'>Add Review</button>
                 </form>
                 <ValidationError errorMessage={this.state.error}/>
             </section>

@@ -58,8 +58,8 @@ class AdminReview extends React.Component{
                             <option value={this.props.review.game_type==='video'?'tabletop':'video'}>{this.props.review.game_type==='video'?'tabletop':'video'}</option>
                         </select>
                         </fieldset>
-                    <button type='submit'>Update</button>
-                    <button type='button' onClick={()=>this.onDelete(this.props.review.id,this.context)}>Delete</button>
+                    <button type='submit' aria-label='submit-game-review-update'>Update</button>
+                    <button type='button' onClick={()=>this.onDelete(this.props.review.id,this.context)} aria-label='delete-game-review'>Delete</button>
                 </form>
                 
                 <ValidationError errorMessage={this.state.error}/>

@@ -5,11 +5,13 @@ import Nav from '../Components/Nav';
 import Context from '../Context';
 import GameApiService from '../services/game-api-services';
 import config from '../config';
+import LandingNav from '../Components/LandingNav';
+import MediaQuery from 'react-responsive';
 
 class AdminLandingPage extends React.Component{
     static contextType=Context;
     componentDidMount(){
-        GameApiService.getApiCall(`${config.API_ENDPOINT}/users/1`)
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/users/2`)
         .then(([user]) => {
                     this.context.addBio(user.bio);
                 })
@@ -37,17 +39,26 @@ class AdminLandingPage extends React.Component{
     render(){
         return(
             <>
-                <Nav/>
-                    <section key='adminLandingSection'>
-                        <div className='logoContainer'>
+                
+                    <section 
+                            key='adminLandingSection' className='landing-page-header'>
+                        <div className='logo-container'>
                             <img src={logo} alt='clayton game corrin big logo'/>
                         </div>
-                        <form onSubmit={(e)=>this.updateBio(e)}>
+                        
+                    </section>
+                    <MediaQuery maxWidth={700}>
+                        <Nav/>
+                     </MediaQuery>  
+                    <MediaQuery minWidth={701}>
+                        <LandingNav/>
+                    </MediaQuery>
+                    <section className='admin-landing-page-bio'>
+                       <form onSubmit={(e)=>this.updateBio(e)}>
                             <textarea name='bio' defaultValue={this.context.bio}>
-                            
                             </textarea>
                             <button type='submit'>Update</button>
-                        </form>
+                        </form> 
                     </section>
             </>
         )

@@ -46,7 +46,6 @@ class App extends React.Component {
     this.setState({
         reviews:[...this.state.reviews.filter(review=>review.id!==updatedReview.id),updatedReview]
     });
-    this.props.history.push('/admin');
   };
   handleAddUpcomings=(upcomingGames)=>{
     this.setState({
@@ -72,7 +71,7 @@ class App extends React.Component {
     this.setState({
         upcomingGames:[...this.state.upcomingGames.filter(game=>game.id!==updatedUpcomingGame.id),updatedUpcomingGame]
     });
-    this.props.history.push('/game/upcoming');
+    this.props.history.push('/game/upcoming')
   };
   handleDeleteUpcomingGame=(id)=>{
     this.setState({
@@ -137,7 +136,8 @@ class App extends React.Component {
           <NotFound/>
         </Switch>
         </Context.Provider>
-      <Footer/>
+        <Footer/>
+        
     </main>
   );
   }

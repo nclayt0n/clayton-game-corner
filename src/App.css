@@ -136,8 +136,42 @@ table {
     border-spacing: 0;
 }
 
+* {
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+body {
+    background-color: rgb(245, 249, 250);
+    font-family: Tahoma, Verdana, Geneva, sans-serif;
+}
+
 :root {
     --mainColor: rgb(17, 72, 82);
+    --bright: #CE2D4F;
+    --light: #06D6A0;
+    --medium: #1B9AAA;
+    --dark: #13293D;
+    --mediumOp: rgba(27, 153, 170, 0.5);
+    /* --medium: #004BA8;
+    --light: #256EFF;
+    --green: #7BAF86; */
+}
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: Verdana, Tahoma, Geneva, sans-serif;
+}
+
+button {
+    border: 1px solid black;
+    margin: auto;
+    width: 155px;
+    background-color: var(--mainColor);
+    color: white;
+    border-radius: 4px;
 }
 
 img {
@@ -145,118 +179,1101 @@ img {
     height: 200px;
 }
 
-main {
-    margin-bottom: 150px;
+.none-to-display {
+    margin: 50px auto;
+    text-align: center;
+    padding: 50px;
+    width: 60%;
+    color: var(--mainColor);
+    font-size: 24px;
 }
 
 nav {
     background-color: white;
 }
 
-article,
-section {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    border: 1px solid black;
-    width: 300px;
-    margin: 80px auto;
-    padding: 15px;
-}
 
-p {
-    padding: 10px;
-    margin: auto;
-}
-
-textarea {
-    border: 1px solid black;
-}
+/*footer*/
 
 footer {
     position: fixed;
+    margin-top: 50px;
     bottom: 0;
-    display: flex;
     width: 100%;
-    background-color: white;
+    background-color: rgb(245, 249, 250);
 }
 
-h2,
-h1 {
-    font-size: 22px;
-    text-align: center;
-}
-
-h3 {
-    margin: 20px auto;
-    text-align: center;
-}
-
-footer address {
-    margin: auto;
-}
-
-form {
+footer ul {
     display: flex;
-    flex-direction: column;
-    flex: 1;
+    justify-content: space-between;
+    font-size: 16px;
 }
 
-form textarea {
-    height: 150px;
+footer li {
+    padding: 10px;
+    color: var(--mainColor);
+    font-weight: bold;
 }
 
-button {
-    border: 1px solid black;
+footer li a {
+    color: var(--mainColor);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#siteName {
     margin: auto;
-    width: 150px;
-    background-color: var(--mainColor);
-    color: white;
+    flex: 1;
+    text-align: center;
 }
+
+#siteEmail {
+    margin: auto;
+    flex: 1;
+    text-align: center;
+}
+
+
+/*header*/
 
 header {
     position: fixed;
     top: 0;
+    padding: 0;
+    height: 110px;
     width: 100%;
     text-align: center;
     width: 100%;
     background-color: var(--mainColor);
-}
-
-.PaginationButtonContainer {
-    flex-direction: row;
-    justify-content: center;
-}
-
-.PaginationButtonContainer button {
-    flex: 1;
-    margin: 5px;
-    padding: 5px;
-    justify-content: space-between;
-}
-
-aside {
-    margin: 120px auto 20px;
+    text-align: left;
 }
 
 #headerLogo {
     height: 90px;
     width: 80px;
-    margin: 10px;
+    margin: 5px 0 5px 10px;
 }
 
-#loginContainer {
-    margin-top: 150px;
+
+/*admin login*/
+
+#admin-login {
+    margin: 200px auto;
+    height: 100%;
 }
 
-#loginForm {
+#admin-login form {
+    background-color: var(--mainColor);
+    margin: auto;
     width: 300px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    border: 1px solid var(--mainColor);
+    border-radius: 4px;
 }
 
-#loginForm input {
-    width: 200px;
+#admin-login legend {
+    margin: 20px auto;
+    font-size: 22px;
+    display: none;
+}
+
+#admin-login fieldset {
+    padding: 5px;
+    margin: auto;
+}
+
+#admin-login label {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    font-size: 18px;
+}
+
+#admin-login button {
+    margin: 10px auto;
+    font-size: 18px;
+    background-color: white;
+    color: var(--mainColor);
+}
+
+#admin-login input {
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    flex: 1;
+    font-size: 18px;
+    border-radius: 4px;
 }
 
 .notFoundPage {
-    margin-top: 150px;
+    margin-top: 250px;
+}
+
+.notFoundPage p {
+    margin: 50px auto;
+    padding: 50px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 22px;
+}
+
+.test-instructions p {
+    width: 80%;
+    line-height: 25px;
+    color: white;
+    font-size: 18px;
+    margin: 50px auto;
+}
+
+
+/*landing page*/
+
+.landing-page-header {
+    width: 100%;
+    height: 500px;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--mainColor);
+    color: white;
+}
+
+.landing-page-header img {
+    padding: 10px;
+    margin: 50px auto 0;
+    width: 300px;
+    height: 300px;
+}
+
+.landing-page-header a {
+    color: white;
+}
+
+.landing-page-bio {
+    width: 100%;
+    margin: 100px auto 100px;
+    padding: 40px;
+}
+
+.landing-page-bio p {
+    color: var(--mainColor);
+    padding: 10px;
+    line-height: 26px;
+    font-size: 20px;
+    letter-spacing: .25px;
+}
+
+
+/*admin landing page*/
+
+h2 {
+    font-size: 34px;
+    text-align: center;
+    color: var(--dark);
+    font-weight: bold;
+    margin: 0 auto;
+    text-shadow: .5px .5px var(--mainColor);
+}
+
+.admin-landing-page-bio {
+    margin: auto auto 120px;
+}
+
+.admin-landing-page-bio form {
+    width: 100%;
+    margin: 100px auto 100px;
+    height: fit-content;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.admin-landing-page-bio textarea {
+    color: var(--mainColor);
+    padding: 10px;
+    line-height: 26px;
+    font-size: 18px;
+    letter-spacing: .25px;
+    margin: 50px auto 5px;
+    width: 100%;
+    height: 600px;
+    max-width: 700px;
+    border: none;
+    overflow: scroll;
+    border-radius: 4px;
+}
+
+
+/*nav*/
+
+.nav-links {
+    display: flex;
+    justify-content: flex-end;
+    position: fixed;
+    top: 85px;
+    right: 10px;
+    padding: 5px;
+    flex-direction: column;
+    background-color: white;
+    border: 3px solid #1C2420;
+    border-radius: 6px;
+    letter-spacing: .25px;
+    width: 210px;
+}
+
+.nav-links li {
+    text-align: right;
+    font-size: 18px;
+}
+
+.nav-links li a {
+    display: flex;
+    color: var(--mainColor);
+    position: relative;
+    margin: 5px;
+    justify-content: flex-end;
+    text-decoration: none;
+    cursor: pointer;
+    line-height: 25px;
+}
+
+.admin-nav-links {
+    text-align: right;
+    overflow: hidden;
+    height: 30px;
+    margin-left: 120px;
+    padding: 5px;
+}
+
+#admin-folder {
+    color: var(--mainColor);
+    text-decoration: none;
+    text-align: right;
+    font-size: 19px;
+    letter-spacing: .75px;
+    line-height: 25px;
+    font-weight: bold;
+}
+
+.admin-nav-links li {
+    justify-content: flex-end;
+    font-weight: normal;
+}
+
+.admin-nav-links:hover {
+    height: 150px;
+    background-color: white;
+    width: fit-content;
+    margin-left: 30px;
+    letter-spacing: .25px;
+}
+
+
+/*admin upcoming games*/
+
+.admin-add-upcoming-game {
+    padding: 30px;
+    margin: 150px auto 50px;
+    width: 350px;
+}
+
+.admin-add-upcoming-game legend {
+    display: none;
+}
+
+.admin-upcoming-game-info {
+    padding: 30px;
+    margin: 10px auto;
+    width: 370px;
+}
+
+.admin-upcoming-game-info legend {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px auto;
+}
+
+.admin-upcoming-game-info form {
+    background-color: var(--dark);
+    border: 2px solid var(--mainColor);
+    padding: 20px;
+    border-radius: 4px;
+    color: white;
+    margin: 10px;
+    text-align: center;
+    height: 315px;
+}
+
+.admin-add-upcoming-game form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bright);
+    border: 2px solid var(--bright);
+    padding: 20px;
+    border-radius: 4px;
+    color: white;
+    margin: 10px;
+    text-align: center;
+}
+
+.admin-upcoming-game-info fieldset,
+.admin-add-upcoming-game fieldset {
+    margin: 20px auto;
+}
+
+.admin-upcoming-game-info input,
+.admin-upcoming-game-info select,
+.admin-upcoming-game-info label,
+.admin-add-upcoming-game input,
+.admin-add-upcoming-game select,
+.admin-add-upcoming-game label {
+    margin: 5px auto;
+    width: 155px;
+    line-height: 24px;
+    border-radius: 4px;
+    flex: 1;
+    background-color: white;
+    text-align: center;
+}
+
+.admin-upcoming-game-info label,
+.admin-add-upcoming-game label {
+    margin: 0 auto;
+    text-align: left;
+}
+
+.admin-upcoming-game-info input,
+.admin-add-upcoming-game input {
+    color: var(--mainColor);
+}
+
+.admin-upcoming-game-info select,
+.admin-add-upcoming-game select {
+    border: 1px solid white;
+    border-radius: 4px;
+    height: 24px;
+    color: var(--mainColor);
+}
+
+.admin-add-upcoming-game button {
+    background-color: var(--dark);
+    border: 1px solid var(--dark);
+    color: white;
+    font-weight: bold;
+}
+
+.admin-upcoming-game-info button {
+    margin: 5px auto;
+    background-color: var(--medium);
+    border: 1px solid var(--medium);
+    color: white;
+    font-weight: bold;
+}
+
+#admin-upcoming-header {
+    width: 55%;
+    margin: auto;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+#admin-upcoming-header h3 {
+    color: var(--dark);
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px;
+}
+
+#admin-upcoming-header div {
+    margin: 15px auto 15px;
+    border-top: 2px solid var(--medium);
+}
+
+
+/*upcoming games*/
+
+#upcoming-game-list {
+    margin: 130px auto 10px;
+    width: 90%;
+}
+
+.upcoming-game-info-container {
+    border: 2px solid var(--dark);
+    border-radius: 4px;
+    margin: 20px auto;
+    padding: 20px;
+    width: 85%;
+    color: white;
+    background-color: var(--dark);
+    letter-spacing: .75px;
+}
+
+#upcoming-game-list h3 {
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: .75px;
+    color: var(--dark);
+    text-align: center;
+    text-shadow: .5px .5px var(--green);
+}
+
+#upcoming-header {
+    width: 75%;
+    margin: auto;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+#upcoming-header h3 {
+    color: var(--dark);
+    margin: 5px;
+}
+
+#upcoming-header div {
+    margin: 15px auto 15px;
+}
+
+.upcoming-game-info {
+    width: 90%;
+    display: inline-block;
+    margin: auto 20px;
+}
+
+.upcoming-game-info li {
+    letter-spacing: .75px;
+    display: inline-block;
+    font-size: 20px;
+}
+
+.horizontal-line {
+    width: 90%;
+    height: 1px;
+    padding: 0;
+    border-top: 2px solid var(--mainColor);
+}
+
+.game-title {
+    font-weight: bold;
+    padding: 10px;
+    text-shadow: .5px .5px black;
+}
+
+.game-date {
+    padding: 10px;
+    text-shadow: .5px .5px var(--mainColor);
+}
+
+.game-type {
+    color: var(--medium);
+    margin: 5px;
+    font-weight: bold;
+}
+
+
+/*pagination*/
+
+.pagination-button-container {
+    display: flex;
+    margin: 50px auto 100px;
+    width: 50%;
+}
+
+.pagination-button-container button {
+    width: 100px;
+    background-color: var(--medium);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border: 1px solid var(--medium);
+}
+
+
+/*review*/
+
+.review-info {
+    border: 1px solid var(--dark);
+    width: 100%;
+    margin: 20px auto 50px;
+    padding: 20px;
+    letter-spacing: .75px;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark);
+    color: white;
+}
+
+.review-list {
+    width: 95%;
+    margin: 130px auto 10px;
+}
+
+.review-info h4 {
+    margin: 10px auto;
+    font-size: 26px;
+}
+
+.review-info p {
+    margin: 20px auto;
+    width: 85%;
+}
+
+.review-info a {
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    text-decoration: none;
+    font-size: 20px;
+    justify-content: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.review-header {
+    width: 90%;
+    margin: auto;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+.review-header h3 {
+    color: var(--dark);
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px;
+    line-height: 40px;
+}
+
+.review {
+    background-color: var(--mediumOp);
+    border: 1px solid var(--mediumOp);
+    padding: 30px;
+    font-size: 18px;
+    line-height: 24px;
+    margin: 20px auto;
+    letter-spacing: .75px;
+}
+
+.review-header div {
+    margin: 15px auto 15px;
+    border-top: 2px solid var(--medium);
+}
+
+
+/*admin review*/
+
+.admin-game-info {
+    padding: 30px;
+    margin: 10px auto;
+    width: 400px;
+}
+
+.admin-add-game-review {
+    padding: 30px;
+    margin: 150px auto 50px;
+    width: 400px;
+}
+
+.admin-add-game-review legend {
+    display: none;
+}
+
+.admin-game-info legend {
+    font-size: 22px;
+    font-weight: bold;
+    margin: 10px auto;
+}
+
+.admin-game-info form {
+    background-color: var(--dark);
+    border: 2px solid var(--mainColor);
+    padding: 20px;
+    border-radius: 4px;
+    color: white;
+    margin: 10px;
+    text-align: center;
+    height: 445px;
+}
+
+.admin-add-game-review form {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bright);
+    border: 2px solid var(--bright);
+    padding: 20px;
+    border-radius: 4px;
+    color: white;
+    margin: 10px;
+    text-align: center;
+    height: 400px;
+}
+
+.admin-game-info fieldset,
+.admin-add-game-review fieldset {
+    margin: 20px auto;
+}
+
+.admin-game-info input,
+.admin-game-info select,
+.admin-game-info label,
+.admin-game-info textarea,
+.admin-add-game-review input,
+.admin-add-game-review select,
+.admin-add-game-review label,
+.admin-add-game-review textarea {
+    margin: 5px auto;
+    width: 200px;
+    line-height: 24px;
+    border-radius: 4px;
+    flex: 1;
+    background-color: white;
+    text-align: center;
+}
+
+.admin-game-info textarea,
+.admin-add-game-review textarea {
+    height: 150px;
+    text-align: left;
+    padding: 0;
+}
+
+.admin-game-info label,
+.admin-add-game-review label {
+    margin: 0 auto;
+    text-align: left;
+}
+
+.admin-game-info input,
+.admin-add-game-review input {
+    color: var(--mainColor);
+}
+
+.admin-game-info select,
+.admin-add-game-review select {
+    border: 1px solid white;
+    border-radius: 4px;
+    height: 24px;
+    color: var(--mainColor);
+}
+
+.admin-add-game-review button {
+    background-color: var(--dark);
+    border: 1px solid var(--dark);
+    color: white;
+    font-weight: bold;
+}
+
+.admin-game-info button {
+    margin: 5px auto;
+    background-color: var(--medium);
+    border: 1px solid var(--medium);
+    color: white;
+    font-weight: bold;
+}
+
+#admin-review-header {
+    width: 55%;
+    margin: auto;
+    border-radius: 4px;
+    padding: 10px;
+}
+
+#admin-review-header h3 {
+    color: var(--dark);
+    font-size: 34px;
+    font-weight: bold;
+    text-align: center;
+    margin: 5px;
+}
+
+#admin-review-header div {
+    margin: 15px auto 15px;
+    border-top: 2px solid var(--medium);
+}
+
+@media screen and (min-width:700px) {
+    /*pagination*/
+    .pagination-button-container {
+        width: 55%;
+    }
+    .pagination-button-container button {
+        width: 140px;
+    }
+    /*header*/
+    header {
+        height: 120px;
+    }
+    #headerLogo {
+        height: 100px;
+        width: 90px;
+        margin: 5px 0 5px 30px;
+    }
+    /*nav*/
+    #landing-nav-links {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        height: 45px;
+    }
+    #landing-nav-links li a {
+        position: relative;
+    }
+    .landing-nav-container {
+        font-size: 18px;
+        background-color: white;
+        position: absolute;
+        width: 100%;
+    }
+    .landing-nav-container li {
+        text-align: right;
+        padding: 10px;
+    }
+    .landing-nav-container li a {
+        text-decoration: none;
+        color: var(--mainColor);
+        justify-content: flex-end;
+        letter-spacing: 1.25px;
+    }
+    .landing-nav-container a:hover {
+        font-weight: bold;
+        letter-spacing: .15px;
+    }
+    .landing-admin-links-container {
+        height: 30px;
+        width: 75px;
+        flex-direction: column;
+        justify-content: normal;
+    }
+    .landing-admin-links-container {
+        overflow: hidden;
+        background-color: white;
+    }
+    .landing-admin-links-container:hover {
+        height: 210px;
+        width: 210px;
+        padding: 5px;
+        border: 3px solid var(--dark);
+        border-radius: 4px;
+        background-color: white;
+        margin-top: -5px;
+    }
+    .landing-admin-links-container a:hover {
+        font-weight: bold;
+    }
+    /*langing page*/
+    .landing-page-bio {
+        width: 70%;
+        margin: 125px auto 100px;
+        padding: 30px;
+        font-size: 18px;
+    }
+    .landing-page-header {
+        padding: 30px;
+    }
+    .landing-page-header img {
+        padding: 10px;
+        margin: auto;
+        width: 400px;
+        height: 400px;
+    }
+    .landing-page-instructions p {
+        width: 400px;
+        margin: 50px auto;
+        padding: 30px;
+        font-size: 18px;
+    }
+    /*admin landing page*/
+    .admin-landing-page-bio form {
+        width: 80%;
+        margin: 80px auto 100px;
+        padding: 30px;
+    }
+    .admin-landing-page-bio textarea {
+        max-width: 1024px;
+        height: 400px;
+        font-size: 18px;
+    }
+    /*nav*/
+    .nav-links {
+        border: none;
+        top: 65px;
+        right: 10px;
+        flex-direction: row;
+        align-items: center;
+        margin: auto;
+        width: fit-content;
+        background-color: var(--mainColor);
+        color: white;
+        height: 40px;
+    }
+    .nav-links li {
+        font-size: 20px;
+        padding: 10px;
+        position: relative;
+    }
+    .nav-links li a {
+        text-decoration: none;
+        color: white;
+        letter-spacing: 1.25px;
+    }
+    .nav-links {
+        letter-spacing: .15px;
+    }
+    #admin-folder {
+        color: white;
+    }
+    #landing-admin-folder {
+        color: var(--mainColor);
+        font-weight: bold;
+    }
+    .admin-nav-links {
+        padding: 5px;
+        margin: 0;
+        height: 50px;
+        width: 80px;
+        flex-direction: column;
+        justify-content: normal;
+        overflow: hidden;
+    }
+    .admin-nav-links:hover {
+        position: relative;
+        top: 115px;
+        height: 275px;
+        background-color: var(--mainColor);
+        width: 275px;
+        border-radius: 4px;
+        border: 1px solid white;
+    }
+    .admin-nav-links li a:hover {
+        font-weight: bold;
+        letter-spacing: .5px;
+    }
+    .nav-links li a:hover {
+        font-weight: bold;
+        letter-spacing: .5px;
+    }
+    #admin-folder:hover {
+        border: none;
+    }
+    /*admin login*/
+    #admin-login {
+        margin: 300px auto;
+    }
+    #admin-login form {
+        width: 400px;
+    }
+    #admin-login legend {
+        margin: 30px auto;
+        font-size: 24px;
+    }
+    #admin-login label {
+        font-size: 20px;
+    }
+    /*upcoming-games*/
+    .upcoming-game-info-container {
+        width: 450px;
+    }
+    #upcoming-game-list {
+        margin: 200px auto 10px;
+        width: 500px;
+    }
+    .upcoming-game-info li {
+        font-size: 24px;
+    }
+    .upcoming-game-info {
+        width: 100%;
+    }
+    #upcoming-game-list h3 {
+        font-size: 34px;
+        line-height: 40px;
+    }
+    /*admin upcoming games*/
+    #admin-upcoming-header {
+        width: 35%;
+    }
+    /*review*/
+    .review {
+        font-size: 20px;
+        line-height: 24px;
+    }
+    .review-list {
+        margin: 200px auto 10px;
+        width: 650px;
+    }
+    .review-info {
+        width: 80%;
+    }
+    .review-header {
+        width: 75%;
+    }
+    /*admin review*/
+    #admin-review-header {
+        width: 35%;
+    }
+    #admin-review-header h3 {
+        font-size: 34px;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    .admin-nav-links {
+        width: 85px;
+    }
+    .pagination-button-container {
+        width: 45%;
+    }
+    .pagination-button-container button {
+        width: 150px;
+    }
+    /*header*/
+    header {
+        height: 165px;
+        display: flex;
+        justify-content: space-between;
+    }
+    #headerLogo {
+        height: 155px;
+        width: 145px;
+        margin-left: 20px;
+    }
+    /*landing page*/
+    .landing-page-bio {
+        font-size: 20px;
+    }
+    .admin-landing-page-bio textarea {
+        max-width: 3000;
+        font-size: 20px;
+    }
+    .landing-page-header {
+        height: 700px;
+    }
+    .landing-page-header img {
+        padding: 10px;
+        margin: auto;
+        width: 600px;
+        height: 600px;
+    }
+    /*nav*/
+    .admin-nav-links {
+        width: 100px;
+    }
+    #admin-folder {
+        font-size: 24px;
+    }
+    .nav-links {
+        top: 105px;
+        margin-right: 0px;
+    }
+    .nav-links li {
+        font-size: 24px;
+    }
+    /*admin login*/
+    #admin-login {
+        margin: 300px auto;
+    }
+    #admin-login form {
+        width: 600px;
+        padding: 40px;
+    }
+    #admin-login input,
+    #admin-login label,
+    #admin-login button {
+        font-size: 22px;
+    }
+    #admin-login legend {
+        font-size: 26px;
+    }
+    /*admin upcoming game*/
+    #admin-upcoming-game-list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 1024px;
+        justify-content: left;
+        margin: auto;
+    }
+    .admin-upcoming-game-info {
+        width: 340px;
+        margin: 0;
+    }
+    /*upcoming game*/
+    .horizontal-line {
+        width: 75%;
+    }
+    #upcoming-game-list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 1024px;
+        justify-content: left;
+    }
+    #upcoming-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 15px;
+        margin: 15px;
+        width: 225px;
+    }
+    #upcoming-header h3 {
+        color: var(--dark);
+        font-size: 23px;
+        margin: 20px auto 25px;
+    }
+    #upcoming-header div {
+        width: 60%;
+        display: block;
+    }
+    .upcoming-game-info-container {
+        width: 225px;
+        margin: 15px;
+    }
+    /*review*/
+    .review {
+        font-size: 22px;
+        line-height: 26px;
+    }
+    .review-list {
+        margin: 200px auto 10px;
+        width: 70%;
+    }
+    .review-info {
+        width: 90%;
+    }
+    .review-info h4 {
+        font-size: 30px;
+    }
+    .review-header {
+        width: 100%;
+    }
+    /*admin review*/
+    #admin-game-review-list {
+        display: flex;
+        flex-wrap: wrap;
+        width: 1024px;
+        margin: auto;
+        justify-content: space-between;
+    }
+    #admin-review-header {
+        width: 35%;
+    }
+    #admin-review-header h3 {
+        font-size: 34px;
+    }
+    .admin-game-info {
+        margin: auto 10px;
+        padding: 30px;
+    }
+}
+
+@media screen and (min-width:1500px) {
+    #admin-game-review-list {
+        width: 1275px;
+        text-align: left;
+    }
 }

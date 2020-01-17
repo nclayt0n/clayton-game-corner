@@ -29,7 +29,6 @@ exports[`AdminUpcomingGameList snapshot 1`] = `
         key="5"
       >
         <Header />
-        <Nav />
         <section
           key="78"
         >

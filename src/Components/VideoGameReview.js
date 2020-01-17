@@ -1,12 +1,12 @@
 import React from 'react';
 import Review from './Review';
 import Pagination from './Pagination';
-import Nav from './Nav';
 import Header from './Header';
 import GameApiService from '../services/game-api-services';
 import config from '../config';
 import Context from '../Context';
 import ValidationError from '../Validation/ValidationError';
+const uuidv4 = require('uuid/v4');
 
 class VideoGameReview extends React.Component{
     static contextType=Context;
@@ -41,16 +41,19 @@ class VideoGameReview extends React.Component{
         return(
             <>
                 <Header/>
-                <Nav/>
-                <h2>Video Game Review</h2>
-                {this.context.reviews.map(review=>{
-                    return <Review 
-                                key={review.id} 
-                                review={review}/>
-                })}
-                <ValidationError errorMessage={this.state.error}/>
+                <section className='review-list'>
+                    {this.context.reviews.length===0?null:
+                        <div className='review-header'>
+                            <h3>Video Game Review</h3>
+                            <div className='horizontal-line'></div>
+                        </div>}
+                    {this.context.reviews.map(review=>{
+                        return <Review key={uuidv4()} review={review}/>
+                    })}
+                    <ValidationError errorMessage={this.state.error}/>
+                </section>
                 {this.context.reviews.length===0
-                    ?<section>
+                    ?<section className='none-to-display'>
                         <p>No Reviews to be displayed</p>
                     </section>
                     :<Pagination 

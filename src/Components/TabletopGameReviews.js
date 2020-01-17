@@ -1,7 +1,6 @@
 import React from 'react';
 import Review from './Review';
 import Pagination from './Pagination';
-import Nav from './Nav';
 import Header from './Header';
 import GameApiService from '../services/game-api-services';
 import config from '../config';
@@ -42,14 +41,20 @@ class TabletopGameReview extends React.Component{
         return(
         <>
         <Header/>
-        <Nav/>
-           <h2>Tabletop Game Review</h2>
-           {this.context.reviews.map(review=>{
+            <section className='review-list'>
+            {this.context.reviews.length===0?null:
+                <div className='review-header'>
+                    <h3>Tabletop Game Review</h3>
+                    <div className='horizontal-line'>
+                </div>
+            </div>}
+                {this.context.reviews.map(review=>{
                     return <Review key={uuidv4()} review={review}/>
                 })}
                 <ValidationError errorMessage={this.state.error}/>
+            </section>
                 {this.context.reviews.length===0
-                    ?<section>
+                    ?<section className='none-to-display'>
                         <p>No Reviews to be displayed</p>
                     </section>
                     :<Pagination 

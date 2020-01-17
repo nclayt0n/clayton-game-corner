@@ -2,7 +2,6 @@ import React from 'react';
 import AdminUpcomingGame from './AdminUpcomingGame';
 import {withRouter} from 'react-router-dom';
 import Pagination from '../Components/Pagination';
-import Nav from '../Components/Nav';
 import Header from '../Components/Header';
 import ValidationError from '../Validation/ValidationError';
 import Context from '../Context';
@@ -17,11 +16,11 @@ class AdminUpcomingGameList extends React.Component{
         this.state={
             error:'',
             page:0,
-            pageLimit:10
+            pageLimit:12
         };
     }
     componentDidMount(){
-        GameApiService.getApiCall(`${config.API_ENDPOINT}/admin/game/upcoming`)
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/admin/game/upcoming?limit=${this.state.pageLimit}&offset=${this.state.page*this.state.pageLimit}`)
         .then((games) => {
                     this.context.addUpcomingGames(games);
                 })
@@ -29,6 +28,7 @@ class AdminUpcomingGameList extends React.Component{
                     this.setState({ error:error.message });
                 });
     }
+    
     addGame=(e)=>{
         e.preventDefault();
         let title=e.target.title.value;
@@ -67,18 +67,14 @@ class AdminUpcomingGameList extends React.Component{
         return(
         <>
         <Header/>
-        <Nav/>
-            <section key={uuidv4()}>
+            <section className='admin-add-upcoming-game' key={uuidv4()}>
                 <form onSubmit={(e)=>this.addGame(e,this.context)}>
                     <fieldset>
                         <legend>Add Upcoming Game</legend>
-                        <label htmlFor='date'>Date: 
                             <input name='date' type="date"/>
-                        </label>
-                        <br/>
-                        <label htmlFor='title'>Title:
-                            <input name='title' type="text"/>
-                        </label>
+                            <br/>
+                            <input placeholder='title' name='title' type="text"/>
+
                         <br/>
                         <select name='game_type'>
                             <option value=''>Game Type:</option>
@@ -88,15 +84,21 @@ class AdminUpcomingGameList extends React.Component{
                     </fieldset>
                     <button type='submit'>Add Game</button>
                 </form>
-                
                 <ValidationError errorMessage={this.state.error}/>
             </section>
-            <h2>Upcoming Game List</h2>
+            {this.context.upcomingGames.length===0?null:
+            <div id='admin-upcoming-header'>
+                <h3>Upcoming Games</h3>
+                <div className='horizontal-line'></div>
+            </div>}
+            <div id='admin-upcoming-game-list' 
+                 style={{justifyContent: this.context.upcomingGames.length<4 ? 'center':'left'}}>
             {this.context.upcomingGames.map(game=>{
                 return <AdminUpcomingGame key={game.id} game={game}/>
             })}
+            </div>
             {this.context.upcomingGames.length===0
-                ?<section>
+                ?<section className='none-to-display'>
                     <p>No Upcoming Games to be displayed</p>
                 </section>
                 :<Pagination 

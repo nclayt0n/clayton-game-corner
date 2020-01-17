@@ -1,7 +1,6 @@
 import React from 'react';
 import UpcomingGameInfo from './UpcomingGameInfo';
 import Pagination from './Pagination';
-import Nav from './Nav';
 import Header from './Header';
 import GameApiService from '../services/game-api-services';
 import config from '../config';
@@ -17,11 +16,11 @@ class UpcomingGameList extends React.Component{
         this.state={
             error:'',
             page:0,
-            pageLimit:30
+            pageLimit:19
         };
     }
     componentDidMount(){
-        GameApiService.getApiCall(`${config.API_ENDPOINT}/game/upcoming?limit=${this.state.pageLimit}&offset=.GF${this.state.page*this.state.pageLimit}`)
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/game/upcoming?limit=${this.state.pageLimit}&offset=${this.state.page*this.state.pageLimit}`)
         .then((games) => {
                     this.context.addUpcomingGames(games);
                 })
@@ -42,9 +41,15 @@ class UpcomingGameList extends React.Component{
     render(){
         return(<>
         <Header/>
-        <Nav/>
-        <article key={uuidv4()}>
-            <h3>Upcoming Games</h3>
+        <article 
+            key={uuidv4()}  
+            style={{justifyContent:this.context.upcomingGames.length<4?'center':'left'}}
+            id='upcoming-game-list'>
+        {this.context.upcomingGames.length===0?null:
+        <div id='upcoming-header'>
+                <h3>Upcoming Games</h3>
+                <div className='horizontal-line'></div>
+            </div>}
             {this.context.upcomingGames.map(game=>{
                     return <UpcomingGameInfo 
                                 key={game.id} 
@@ -53,7 +58,7 @@ class UpcomingGameList extends React.Component{
         </article>
         <ValidationError errorMessage={this.state.error}/>
         {this.context.upcomingGames.length===0
-            ?<section>
+            ?<section className='none-to-display'>
                     <p>No Upcoming Games to be displayed</p>
                 </section>
             :<Pagination 

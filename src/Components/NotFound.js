@@ -8,7 +8,7 @@ class NotFound extends React.Component {
                 <Header/>
                 <section className = 'notFoundPage' >
                     <h2> 404 - Page not found </h2> 
-                    <p> Try going back to your previous page. </p> 
+                    <p> Try returning to previous page. </p> 
                 </section>
             </>
         )

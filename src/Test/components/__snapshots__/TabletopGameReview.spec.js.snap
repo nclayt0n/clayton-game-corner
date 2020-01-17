@@ -27,7 +27,6 @@ exports[`Tabletop  snapshot 1`] = `
     <ContextProvider>
       <TabletopGameReview>
         <Header />
-        <Nav />
         <h2>
           Tabletop Game Review
         </h2>

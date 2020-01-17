@@ -2,7 +2,7 @@
 
 exports[`Pagination  snapshot 1`] = `
 <section
-  className="PaginationButtonContainer"
+  className="pagination-button-container"
 >
   <button
     aria-label="current page"

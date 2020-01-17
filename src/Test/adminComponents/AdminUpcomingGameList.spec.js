@@ -7,7 +7,6 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import Context from '../../Context';
 import Header from '../../Components/Header';
-import Nav from '../../Components/Nav';
 import AdminUpcomingGameList from '../../AdminComponents/AdminUpcomingGameList';
 import AdminUpcomingGame from '../../AdminComponents/AdminUpcomingGame';
 
@@ -31,7 +30,6 @@ describe('AdminUpcomingGameList',()=>{
                     <App>
                         <AdminUpcomingGameList key={4}>
                         <Header/>
-                            <Nav/>
                             <section key={78}>
                                 <form >
                                     <fieldset>
@@ -74,7 +72,6 @@ describe('AdminUpcomingGameList',()=>{
                     <Context.Provider>
                         <AdminUpcomingGameList  key={5}>
                             <Header/>
-                            <Nav/>
                             <section key={78}>
                                 <form >
                                     <fieldset>

@@ -9,5 +9,6 @@ exports[`Header snapshot 1`] = `
       src="smallCGCLogo.png"
     />
   </header>
+  <withRouter(Nav) />
 </Fragment>
 `;

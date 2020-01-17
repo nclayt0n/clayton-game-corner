@@ -5,13 +5,10 @@ import App from '../../App';
 import Pagination from '../../Components/Pagination';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-import Review from '../../Components/Review';
 import Context from '../../Context';
 import AdminReviewList from '../../AdminComponents/AdminReviewList';
 import Header from '../../Components/Header';
 import AdminReview from '../../AdminComponents/AdminReview';
-import Nav from '../../Components/Nav';
-const uuidv4=require('uuid');
 
 describe('Admin Review List ',()=>{
   it('renders without crashing', () => {
@@ -35,7 +32,6 @@ describe('Admin Review List ',()=>{
                     <App>
                         <AdminReviewList key={6}>
                             <Header/>
-                            <Nav/>
                             <section key={626}>
                                 <form onSubmit={(e)=>this.addReview(e,this.context)}>
                                 <fieldset>
@@ -97,7 +93,6 @@ describe('Admin Review List ',()=>{
                     <Context.Provider>
                         <AdminReviewList key={6}>
                             <Header/>
-                            <Nav/>
                             <section key={301}>
                                 <form onSubmit={(e)=>this.addReview(e,this.context)}>
                                     <fieldset>

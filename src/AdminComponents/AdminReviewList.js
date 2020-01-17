@@ -3,7 +3,6 @@ import AdminReview from './AdminReview';
 import Pagination from '../Components/Pagination';
 import {withRouter} from 'react-router-dom';
 import '../../node_modules/dropzone/dist/min/dropzone.min.css';
-import Nav from '../Components/Nav';
 import Header from '../Components/Header';
 import config from '../config';
 import GameApiService from '../services/game-api-services';
@@ -41,12 +40,15 @@ class AdminReviewList extends React.Component{
         if(review.length===0){
             this.setState({error:'Must include a game review'});
         }
+        if(review.length>3000){
+            this.setState({error:'Max characters is 3000'});
+        }
         if(title.length===0){
             this.setState({error:'Must include a game title'});
         }
         if(game_type.length===0){
             this.setState({error:'Must choose a game type'});
-        }if(review.length>0&&title.length>0&&game_type.length>0){
+        }if(review.length>0&&title.length>0&&game_type.length>0&&review.length<=3000){
             this.setState({error:''});
             GameApiService.postReview(title,game_type,link,picture, review)
                 .then((newReview) => {
@@ -72,41 +74,40 @@ class AdminReviewList extends React.Component{
         return(
         <>
         <Header/>
-        <Nav/>
-            <section key={uuidv4()}>
+            <section key={uuidv4()} className='admin-add-game-review'>
                 <form onSubmit={(e)=>this.addReview(e,this.context)}>
                 <fieldset>
                     <legend>Add Game Review
                     </legend>
-                    <label htmlFor='title'>Title: 
-                        <input name='title' type="text"/>
-                    </label><br/>
-                    <label htmlFor='review'>Review: <br/>
-                        <textarea placeholder='add review here' name='review'></textarea>
-                    </label><br/>
-                    <label htmlFor='link'>Link to Buy: 
-                        <input name='link' type="url"/>
-                    </label><br/>
+                        <input name='title' type='text' placeholder='title'/>
+                    <br/>
+                        <textarea placeholder='add review...' name='review'></textarea>
+                    <br/>
+                        <input name='link' type='url' placeholder='link to buy'/>
+                    <br/>
                     <select name='game_type'>
                         <option value=''>Game Type:</option>
                         <option value='video'>Video</option>
                         <option value='tabletop'>Tabletop</option>
                     </select>
-                    <fieldset>
-                        <legend> Images (max. 5):</legend>
-                    </fieldset>
                 </fieldset> 
                 <button type='submit'>Add Review</button>
                 </form>
                 <ValidationError errorMessage={this.state.error}/>
             </section>
 
-            <h2>Review List</h2>
-            {this.context.reviews.map(review=>{
+            {this.context.reviews.length===0?null:
+            <div id='admin-review-header'>
+                <h3>Reviews</h3>
+                <div className='horizontal-line'></div>
+            </div>}
+            <div id='admin-game-review-list'>
+                {this.context.reviews.map(review=>{
                     return <AdminReview key={review.id} review={review}/>
-            })}
+                })}
+            </div>
             {this.context.reviews.length===0
-                ?<section>
+                ?<section className='none-to-display'>
                     <p>No Reviews to be displayed</p>
                 </section>
                 :<Pagination 

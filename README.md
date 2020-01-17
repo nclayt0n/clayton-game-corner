@@ -27,6 +27,7 @@ Back-End: Node.js, Express, PostgreSQL
 deployed using Heroku
 
 ### `Screenshots`
+
 <img src='/src/images/Home.png' alt='Home Page'width='250'>
 <img src='/src/images/admin-review.png' alt="Admin Game Review" width='250'>
 <img src='/src/images/review.png' alt='Game Review Page' width='250'>

@@ -1,6 +1,5 @@
 {
     "version": 2,
-    "alias": "nclayton-CGC",
     "name": "clayton-game-corner",
     "routes": [
         { "handle": "filesystem" },

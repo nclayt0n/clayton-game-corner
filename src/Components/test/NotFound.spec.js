@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import App from '../../App';
-import NotFound from '../../Components/NotFound';
+import NotFound from '../NotFound';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 describe('LandingPage',()=>{

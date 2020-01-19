@@ -7,8 +7,8 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import Context from '../../Context';
 import Header from '../../Components/Header';
-import AdminUpcomingGameList from '../../AdminComponents/AdminUpcomingGameList';
-import AdminUpcomingGame from '../../AdminComponents/AdminUpcomingGame';
+import AdminUpcomingGameList from '../AdminUpcomingGameList';
+import AdminUpcomingGame from '../AdminUpcomingGame';
 
 describe('AdminUpcomingGameList',()=>{
     let games=[{

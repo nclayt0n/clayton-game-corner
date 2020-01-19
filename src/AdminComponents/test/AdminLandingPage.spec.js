@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import App from '../../App';
-import AdminLandingPage from '../../AdminComponents/AdminLandingPage';
+import AdminLandingPage from '../AdminLandingPage';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import logo from '../../images/largelogo.png';

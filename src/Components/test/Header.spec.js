@@ -2,16 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import App from '../../App';
-import LandingPage from '../../Components/LandingPage';
+import Header from '../Header';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-describe('LandingPage',()=>{
+describe('Header',()=>{
   it('renders without crashing', () => {
             const div = document.createElement('div');
             ReactDOM.render(
                 <BrowserRouter>
                     <App>
-                        <LandingPage/>
+                        <Header/>
                     </App>
                 </BrowserRouter>,
                 div
@@ -19,7 +19,7 @@ describe('LandingPage',()=>{
             ReactDOM.unmountComponentAtNode(div);
         });
     it('snapshot', () => {
-        const wrapper=shallow(<LandingPage/>)
+        const wrapper=shallow(<Header/>)
         expect(toJson(wrapper))
  .      toMatchSnapshot()
     });

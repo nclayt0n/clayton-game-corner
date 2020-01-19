@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter,StaticRouter,Route} from 'react-router-dom';
 import App from '../../App';
-import AdminLogin from '../../AdminComponents/AdminLogin';
+import AdminLogin from '../AdminLogin';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import Header from '../../Components/Header';

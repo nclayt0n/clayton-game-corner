@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter} from 'react-router-dom';
 import App from '../../App';
-import Nav from '../../Components/Nav';
+import Nav from '../Nav';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 describe('Nav',()=>{

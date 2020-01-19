@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import {BrowserRouter,StaticRouter} from 'react-router-dom';
 import App from '../../App';
-import Pagination from '../../Components/Pagination';
+import Pagination from '../Pagination';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import Context from '../../Context';

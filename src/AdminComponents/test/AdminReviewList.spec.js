@@ -6,9 +6,9 @@ import Pagination from '../../Components/Pagination';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import Context from '../../Context';
-import AdminReviewList from '../../AdminComponents/AdminReviewList';
+import AdminReviewList from '../AdminReviewList';
 import Header from '../../Components/Header';
-import AdminReview from '../../AdminComponents/AdminReview';
+import AdminReview from '../AdminReview';
 
 describe('Admin Review List ',()=>{
   it('renders without crashing', () => {

@@ -714,15 +714,18 @@ h2 {
 }
 
 .review-info h4 {
-    margin: 10px auto;
+    width: fit-content;
+    text-align: center;
     font-size: 24px;
+    line-height: 30px;
 }
 
-.review-info div {
+
+/* .review-info div {
     margin: 20px auto;
     width: 95%;
     word-wrap: break-word;
-}
+} */
 
 .review-info a {
     text-align: center;
@@ -736,14 +739,38 @@ h2 {
     letter-spacing: 1px;
 }
 
-.review-header {
+.review-info-header {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 20px 0;
+    padding: 5px;
+    align-items: center;
+}
+
+.review-info h4 {
+    text-align: left;
+    margin: auto;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.review-info-header p,
+.review-info-header a {
+    margin: 0;
+    width: fit-content;
+    border-left: 1px solid var(--bright);
+    width: 55px;
+    line-height: 20px;
+}
+
+.review-list-header {
     width: 90%;
     margin: auto;
     border-radius: 4px;
     padding: 10px;
 }
 
-.review-header h3 {
+.review-list-header h3 {
     color: var(--dark);
     font-size: 34px;
     font-weight: bold;
@@ -753,6 +780,8 @@ h2 {
 }
 
 .review {
+    width: 95%;
+    word-wrap: break-word;
     background-color: var(--mediumOp);
     border: 1px solid var(--mediumOp);
     padding: 30px;
@@ -762,7 +791,7 @@ h2 {
     letter-spacing: .75px;
 }
 
-.review-header div {
+.review-list-header div {
     margin: 15px auto 15px;
     border-top: 2px solid var(--medium);
 }
@@ -1101,7 +1130,7 @@ h2 {
     .review-info {
         width: 80%;
     }
-    .review-header {
+    .review-list-header {
         width: 85%;
     }
     /*admin review*/
@@ -1110,6 +1139,30 @@ h2 {
     }
     #admin-review-header h3 {
         font-size: 34px;
+    }
+    .review-info h4 {
+        margin: 0;
+    }
+    .review-info-header {
+        display: flex;
+        justify-content: space-between;
+        margin: auto 20px 0;
+        padding: 5px;
+        align-items: center;
+    }
+    .review-info-header h4 {
+        width: fit-content;
+        /* margin: 10px auto; */
+        font-size: 24px;
+        line-height: 30px;
+    }
+    .review-info-header p,
+    .review-info-header a {
+        margin: 0;
+        width: fit-content;
+        border-left: 1px solid var(--bright);
+        width: 55px;
+        line-height: 20px;
     }
 }
 
@@ -1226,7 +1279,7 @@ h2 {
     .review-info h4 {
         font-size: 24px;
     }
-    .review-header {
+    .review-list-header {
         width: 100%;
     }
     /*admin review*/

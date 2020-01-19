@@ -43,7 +43,7 @@ class VideoGameReview extends React.Component{
                 <Header/>
                 <section className='review-list'>
                     {this.context.reviews.length===0?null:
-                        <div className='review-header'>
+                        <div className='review-list-header'>
                             <h3>Video Game Review</h3>
                             <div className='horizontal-line'></div>
                         </div>}

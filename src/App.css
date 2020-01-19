@@ -718,10 +718,19 @@ h2 {
     font-size: 24px;
 }
 
-.review-info p {
+.review-info div {
     margin: 20px auto;
     width: 95%;
+    word-wrap: break-word;
+    position: relative;
 }
+
+
+/* .review-info p {
+    margin: 20px auto;
+    width: 95%;
+    word-wrap: break-word;
+} */
 
 .review-info a {
     text-align: center;

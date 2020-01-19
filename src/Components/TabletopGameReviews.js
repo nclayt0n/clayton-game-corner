@@ -27,15 +27,17 @@ class TabletopGameReview extends React.Component{
                     this.setState({ error });
                 });
     }
-    setPage=(page)=>{
-        this.setState({page:page})
+    setPage(page){
+        this.setState({page:page});
+
         GameApiService.getApiCall(`${config.API_ENDPOINT}/game/review/tabletop?limit=${this.state.pageLimit}&offset=${page*this.state.pageLimit}`)
         .then((reviews) => {
+            
                     this.context.addReviews(reviews);
                 })
                 .catch(error => {
                     this.setState({ error });
-                })
+                });
     }
     render(){
         return(

@@ -53,8 +53,8 @@ class AdminUpcomingGameList extends React.Component{
                 });
         }
     }
-    setPage=(page)=>{
-        this.setState({page:page})
+    setPage(page){
+        this.setState({page:page});
         GameApiService.getApiCall(`${config.API_ENDPOINT}/admin/game/upcoming?limit=${this.state.pageLimit}&offset=${page*this.state.pageLimit}`)
         .then((games) => {
                     this.context.addUpcomingGames(games);

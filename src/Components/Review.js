@@ -9,7 +9,7 @@ class Review extends React.Component {
                 <div className='review'>
                     <p >{this.props.review.review}</p>
                     <br />
-                    <p className='review-date-created' style={{ textAlign: 'right', fontSize: '14px', marginRight: '5px', marginBottom: '-20px' }}>created: {this.props.review.date_created}</p>
+                    <p className='review-date-created' style={{ textAlign: 'right', fontSize: '12px', marginRight: '10px', marginBottom: '-20px' }}>{this.props.review.date_created}</p>
                 </div>
                 {this.props.review.link.length === 0 ? null :
 

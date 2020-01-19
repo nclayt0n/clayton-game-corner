@@ -28,8 +28,8 @@ class UpcomingGameList extends React.Component{
                     this.setState({ error });
                 });
     }
-    setPage=(page)=>{
-        this.setState({page:page})
+    setPage(page){
+        this.setState({page:page});
         GameApiService.getApiCall(`${config.API_ENDPOINT}/game/upcoming?limit=${this.state.pageLimit}&offset=${page*this.state.pageLimit}`)
         .then((games) => {
                     this.context.addUpcomingGames(games);

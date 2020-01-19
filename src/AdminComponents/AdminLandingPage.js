@@ -16,7 +16,7 @@ class AdminLandingPage extends React.Component{
                     this.context.addBio(user.bio);
                 })
                 .catch(error => {
-                    this.setState({ error });
+                    this.setState({ error:error.message });
                 });
     }
     updateBio(e){

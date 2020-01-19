@@ -59,7 +59,7 @@ class AdminReviewList extends React.Component{
                 });
         }
     }
-    setPage=(page)=>{
+    setPage(page){
         this.setState({page:page})
         GameApiService.getApiCall(`${config.API_ENDPOINT}/game/review/tabletop?limit=${this.state.pageLimit}&offset=${page*this.state.pageLimit}`)
         .then((reviews) => {

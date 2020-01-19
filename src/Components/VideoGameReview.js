@@ -24,18 +24,18 @@ class VideoGameReview extends React.Component{
                     this.context.addReviews(reviews);
                 })
                 .catch(error => {
-                    this.setState({ error });
+                    this.setState({ error:error.message  });
                 });
     }
-    setPage=(page)=>{
-        this.setState({page:page})
+    setPage(page){
+        this.setState({page:page});
         GameApiService.getApiCall(`${config.API_ENDPOINT}/game/review/video?limit=${this.state.pageLimit}&offset=${page*this.state.pageLimit}`)
         .then((reviews) => {
                     this.context.addReviews(reviews);
                 })
                 .catch(error => {
-                    this.setState({ error });
-                })
+                    this.setState({ error:error.message });
+                });
     }
     render(){
         return(

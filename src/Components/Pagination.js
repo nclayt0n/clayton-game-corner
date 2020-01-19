@@ -23,15 +23,15 @@ class Pagination extends React.Component{
                         id='currentPage' 
                         type='button'>Page {this.props.page+1}
                     </button>
-                {this.props.items.length <this.props.pageLimit
-                    ?null
-                    :
+                {this.props.items.length >=this.props.pageLimit
+                    ?
                     <button 
                         aria-label='button for next page of users'
                         className='button' 
                         type='button' 
                         onClick={()=>this.props.setPage(this.props.page+1)}>Next
-                    </button>
+                    </button> 
+                    :null
                     }
             </section>
         )

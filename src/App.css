@@ -641,13 +641,18 @@ h2 {
 .upcoming-game-info {
     width: 90%;
     display: inline-block;
-    margin: auto 20px;
+    margin: 20px auto;
 }
 
 .upcoming-game-info li {
     letter-spacing: .75px;
     display: inline-block;
     font-size: 18px;
+    word-wrap: break-word;
+}
+
+.upcoming-game-info .horizontal-line {
+    width: 100%;
 }
 
 .horizontal-line {

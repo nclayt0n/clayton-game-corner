@@ -22,9 +22,7 @@ CGC Landing Page/Admin Landing Page are both currently set up to GET and POST bi
 ### `Technologies`
 Technologies used in this project include;<br/>
 Front-End: React, Html, CSS
-deployed using ZEIT Now<br/>
-Back-End: Node.js, Express, PostgreSQL
-deployed using Heroku
+deployed using ZEIT Now
 
 ### `Screenshots`
 <img src='/src/images/admin-review.png' alt="Admin Game Review" width='250'>

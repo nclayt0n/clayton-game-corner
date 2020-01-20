@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Upcoming Games  snapshot 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+  staticContext={Object {}}
+>
+  <UpcomingGameInfo
+    game={
+      Object {
+        "date": "02/01/2020",
+        "game_type": "video",
+        "title": "Upcoming test Game 1",
+      }
+    }
+    key="36"
+  />
+  <UpcomingGameInfo
+    game={
+      Object {
+        "date": "03/01/2020",
+        "game_type": "tabletop",
+        "title": "Upcoming test Game 2",
+      }
+    }
+    key="36"
+  />
+</Router>
+`;

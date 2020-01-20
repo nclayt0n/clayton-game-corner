@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Admin Review List  snapshot 1`] = `
+<Router
+  history={
+    Object {
+      "action": "POP",
+      "block": [Function],
+      "createHref": [Function],
+      "go": [Function],
+      "goBack": [Function],
+      "goForward": [Function],
+      "listen": [Function],
+      "location": Object {
+        "hash": "",
+        "pathname": "/",
+        "search": "",
+        "state": undefined,
+      },
+      "push": [Function],
+      "replace": [Function],
+    }
+  }
+  staticContext={Object {}}
+>
+  <withRouter(AdminReview)
+    key="288"
+    review={
+      Object {
+        "game_type": "tabletop",
+        "link": "http://www.notArealSite.com",
+        "picture": "['http://ecx.images-amazon.com/images/I/51l4YWeAEvL._SY300_.jpg']",
+        "review": "This was the best game ever!",
+        "title": "Test Review 1",
+      }
+    }
+  />
+  <withRouter(AdminReview)
+    key="288"
+    review={
+      Object {
+        "game_type": "tabletop",
+        "link": "http://www.notArealSite.com",
+        "picture": "['http://ecx.images-amazon.com/images/I/51l4YWeAEvL._SY300_.jpg']",
+        "review": "This was an ok game.",
+        "title": "Test Review 2",
+      }
+    }
+  />
+</Router>
+`;

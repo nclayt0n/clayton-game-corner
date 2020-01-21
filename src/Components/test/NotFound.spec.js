@@ -5,7 +5,7 @@ import App from '../../App';
 import NotFound from '../NotFound';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-describe('LandingPage',()=>{
+describe('NotFound',()=>{
   it('renders without crashing', () => {
             const div = document.createElement('div');
             ReactDOM.render(

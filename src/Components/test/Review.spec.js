@@ -9,7 +9,7 @@ import Review from '../../Components/Review';
 import TabletopGameReview from '../../Components/TabletopGameReviews';
 import Header from '../../Components/Header';
 
-describe('Tabletop ',()=>{
+describe('Review ',()=>{
   it('renders without crashing', () => {
       let reviews = [{
             "title": "Test Review 1",

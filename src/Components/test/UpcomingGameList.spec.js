@@ -6,10 +6,10 @@ import Pagination from '../Pagination';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import Context from '../../Context';
-import UpcomingGameList from '../../Components/UpcomingGameList';
-import UpcomingGameInfo from '../../Components/UpcomingGameInfo';
+import UpcomingGameList from '../UpcomingGameList';
+import UpcomingGameInfo from '../UpcomingGameInfo';
 
-describe('Upcoming Games ',()=>{
+describe('Upcoming Game List',()=>{
     let games=[{
             "title": "Upcoming test Game 1",
             "date": "02/01/2020",

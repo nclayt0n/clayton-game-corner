@@ -6,7 +6,7 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import AdminReview from '../AdminReview';
 
-describe('Admin Review List ',()=>{
+describe('Admin Review ',()=>{
   it('renders without crashing', () => {
       let reviews = [{
             "title": "Test Review 1",

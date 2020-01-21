@@ -6,7 +6,7 @@ import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 import AdminUpcomingGame from '../AdminUpcomingGame';
 
-describe('AdminUpcomingGameList',()=>{
+describe('AdminUpcomingGame',()=>{
     let games=[{
             "title": "Upcoming test Game 1",
             "date": "02/01/2020",

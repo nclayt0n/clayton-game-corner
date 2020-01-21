@@ -35,27 +35,30 @@ exports[`AdminUpcomingGameList snapshot 1`] = `
           <form>
             <fieldset>
               <legend>
-                Add Upcoming Game
+                 Add Upcoming Game 
               </legend>
+               
               <label
                 htmlFor="date"
               >
-                Date:
+                 Date:
                 <input
                   name="date"
                   type="date"
                 />
               </label>
+               
               <br />
               <label
                 htmlFor="title"
               >
-                Title:
+                 Title:
                 <input
                   name="title"
                   type="text"
                 />
               </label>
+               
               <br />
               <select
                 name="game_type"
@@ -63,30 +66,39 @@ exports[`AdminUpcomingGameList snapshot 1`] = `
                 <option
                   value=""
                 >
-                  Game Type:
+                   Game Type: 
                 </option>
+                 
                 <option
                   value="video"
                 >
-                  Video
+                   Video 
                 </option>
+                 
                 <option
                   value="tabletop"
                 >
-                  Tabletop
+                   Tabletop 
                 </option>
+                 
               </select>
+               
             </fieldset>
+             
             <button
               type="submit"
             >
-              Add Game
+               Add Game 
             </button>
+             
           </form>
+           
         </section>
+         
         <h2>
-          Upcoming Game List
+           Upcoming Game List 
         </h2>
+         
         <withRouter(AdminUpcomingGame)
           game={
             Object {
@@ -107,6 +119,7 @@ exports[`AdminUpcomingGameList snapshot 1`] = `
           }
           key="42"
         />
+         
         <Pagination
           items={
             Array [
@@ -125,8 +138,12 @@ exports[`AdminUpcomingGameList snapshot 1`] = `
           page={0}
           pageLimit={10}
         />
+         
       </withRouter(AdminUpcomingGameList)>
+       
     </ContextProvider>
+     
   </withRouter(App)>
+   
 </Router>
 `;

@@ -14,7 +14,7 @@ import MediaQuery from 'react-responsive';
 class LandingPage extends React.Component{
     static contextType=Context;
     componentDidMount(){
-        GameApiService.getApiCall(`${config.API_ENDPOINT}/users/2`)
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/users/1`)
         .then(([user]) => {
             this.context.addBio(user.bio);
         })

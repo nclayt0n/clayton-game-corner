@@ -11,7 +11,7 @@ import MediaQuery from 'react-responsive';
 class AdminLandingPage extends React.Component{
     static contextType=Context;
     componentDidMount(){
-        GameApiService.getApiCall(`${config.API_ENDPOINT}/users/2`)
+        GameApiService.getApiCall(`${config.API_ENDPOINT}/users/1`)
         .then(([user]) => {
                     this.context.addBio(user.bio);
                 })
@@ -29,7 +29,7 @@ class AdminLandingPage extends React.Component{
             },
             body: JSON.stringify({ bio })
         };
-        fetch(`${config.API_ENDPOINT}/users/2`, options)
+        fetch(`${config.API_ENDPOINT}/users/1`, options)
         .then(this.context.updateBio(bio))
         .then(this.props.history.push('/'))
                 .catch(error =>{

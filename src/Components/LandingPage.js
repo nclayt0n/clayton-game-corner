@@ -40,12 +40,6 @@ class LandingPage extends React.Component{
                     <section className='landing-page-bio'>
                         <p>{this.context.bio}</p>
                     </section>
-                    <section style={{width:'100%',backgroundColor:'var(--mainColor)',margin:'auto', padding:'100px', color:'white',display:'flex'}}>
-                        <p style={{margin:'50px auto'}} >
-                        Demo Admin Click:
-                        <Link to="/admin" style={{color:'white'}}> Admin Login Page</Link>
-                        </p>
-                    </section>
                     <Route 
                         path='/game/review/tabletop' 
                         component={TabletopGameReview}/>

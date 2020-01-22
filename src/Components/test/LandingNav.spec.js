@@ -7,7 +7,7 @@ import LandingNav from '../LandingNav';
 import Context from '../../Context';
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
-describe('LandingPage',()=>{
+describe('LandingNav',()=>{
   it('renders without crashing', () => {
             const div = document.createElement('div');
             ReactDOM.render(

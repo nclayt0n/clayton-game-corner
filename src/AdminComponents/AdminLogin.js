@@ -83,10 +83,6 @@ handleSubmitJWTAuth=ev=>{
               </form>  
               <ValidationError errorMessage={this.state.error}/>
             </section>
-            <section className='landing-page-header test-instructions'>
-              <p >EMAIL: admin@test.com <br/>PASSWORD: testP@ssw0rd<br/>
-Once logged in you will be on the Admin Landing Page where you can view and update current welcome paragraph for the User Landing Page. You can also now view and access the Admin links in the Nav Bar. To add/update/delete Reviews, click Admin Game Reviews,or add/update/delet  Upcoming Dates, click Admin Upcoming Game Dates.</p>
-            </section>
             </>)
     }
 }
